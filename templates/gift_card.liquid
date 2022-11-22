@@ -1,0 +1,94 @@
+{% layout none %}
+
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <script src="#url" defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#">
+    <link rel="canonical" href="#url">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    {%- unless settings.type_header_font.system? -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    {%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros | strip_html -%}
+
+    <title>Gift card</title>
+
+    <meta name="description" content="#">
+
+    {{ content_for_header }}
+
+    {% style %}
+    {% endstyle %}
+  </head>
+
+  <body class="gradient">
+    <header class="gift-card__title">
+      <span class="h2">Shop name</span>
+      <h1 class="gift-card__heading">Gift card issue subtext</h1>
+      <div class="gift-card__price">
+        <p>Price</p>
+        <p class="gift-card__label badge badge--[badge color]">Gift card expired</p>
+      </div>
+      <p class="gift-card__label caption-large">Gift card balance</p>
+    </header>
+
+    <main class="gift-card">
+      <div class="gift-card__image-wrapper">
+        <img src="#url" alt="" class="gift-card__image" height="auto" width="570" loading="lazy">
+      </div>
+      <div class="gift-card__qr-code" data-identifier="qr_identifier"></div>
+      <div class="gift-card__information">
+        <input
+          type="text"
+          class="gift-card__number"
+          value="gift_card_code"
+          aria-label="gift_card_code"
+          readonly
+        >
+        <div class="gift-card__copy-code">
+          <button class="link gift-card__copy-link">gift_cards_copy_code</button>
+          <span class="gift-card__copy-success form__message" role="status"></span>
+          <template>
+            gift_cards_copy_code_success
+          </template>
+        </div>
+        <a href="#gift_card_pass_url" class="gift_card__apple-wallet">
+          <img src="#gift-card_add-to-apple-wallet_svg" width="120" height="40" alt="gift_cards_add_to_apple_wallet_alt" loading="lazy">
+        </a>
+        <div class="gift-card__buttons no-print">
+          <a
+            href="#shop_url"
+            class="button"
+            target="_blank"
+            rel="noopener"
+            aria-describedby="a11y-new-window-message"
+          >
+            gift_cards_shop_link
+          </a>
+          <button
+            class="button button--secondary"
+            onclick="window.print();"
+          >
+            gift_cards_print_gift_card
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div hidden>
+      <span id="a11y-new-window-message">accessibility_link_messages_new_window</span>
+    </div>
+
+    <script></script>
+  </body>
+</html>
