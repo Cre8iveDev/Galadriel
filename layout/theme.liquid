@@ -12,7 +12,7 @@
         <title>Cre8iveDev's Portfolio</title>
         <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
         {{ 'content_for_header' }}
-        {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+        <link rel="stylesheet" href="{{ 'bootstrap.min.css' | asset_url }}"  type="text/css">
         {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
         {{ 'animate.min.css' | asset_url | stylesheet_tag }}
         {{ 'creatic.style.css' | asset_url | stylesheet_tag }}
