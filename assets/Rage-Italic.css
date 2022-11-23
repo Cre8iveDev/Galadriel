@@ -1,9 +1,8 @@
 @font-face {
   font-family: "Rage Italic";
-  src: url({{"RAGE.eot"|asset_url}});
-  src: url({{"RAGE.eot?#iefix"|asset_url}}) format("embedded-opentype"),
-    url({{" RAGE.woff2"|asset_url}}) format("woff2"),
-    url({{"RAGE.woff"|asset_url}}) format("woff"),
-    url({{"RAGE.ttf"|asset_url}}) format("truetype"),
-    url({{"RAGE.svg#Rage Italic"|asset_url}}) format("svg");
+  src: url("RAGE.eot");
+  src: url("RAGE.eot?#iefix") format("embedded-opentype"),
+    url(" RAGE.woff2") format("woff2"), url("RAGE.woff") format("woff"),
+    url("RAGE.ttf") format("truetype"),
+    url("RAGE.svg#Rage Italic") format("svg");
 }
