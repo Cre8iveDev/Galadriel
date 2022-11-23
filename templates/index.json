@@ -1,0 +1,8 @@
+{
+  "sections": {
+    "header-home": {
+      "type": "header-home"
+    }
+  },
+  "order": ["header-home"]
+}
