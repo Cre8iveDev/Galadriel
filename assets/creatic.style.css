@@ -1,18 +1,19 @@
 @font-face {
-  font-family: 'creatic';
-  src:  url('fonts/creatic.eot?oqq2cg');
-  src:  url('fonts/creatic.eot?oqq2cg#iefix') format('embedded-opentype'),
-    url('fonts/creatic.ttf?oqq2cg') format('truetype'),
-    url('fonts/creatic.woff?oqq2cg') format('woff'),
-    url('fonts/creatic.svg?oqq2cg#creatic') format('svg');
+  font-family: "creatic";
+  src: url({{"creatic.eot?oqq2cg"|asset_url}});
+  src: url({{"creatic.eot?oqq2cg#iefix"|asset_url}}) format("embedded-opentype"),
+    url({{"creatic.ttf?oqq2cg"|asset_url}}) format("truetype"),
+    url({{"creatic.woff?oqq2cg"|asset_url}}) format("woff"),
+    url({{"creatic.svg?oqq2cg#creatic"|asset_url}}) format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="creatic-"], [class*=" creatic-"] {
+[class^="creatic-"],
+[class*=" creatic-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'creatic' !important;
+  font-family: "creatic" !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
