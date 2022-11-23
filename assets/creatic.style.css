@@ -1,10 +1,10 @@
 @font-face {
   font-family: "creatic";
-  src: url({{"creatic.eot?oqq2cg"|asset_url}});
-  src: url({{"creatic.eot?oqq2cg#iefix"|asset_url}}) format("embedded-opentype"),
-    url({{"creatic.ttf?oqq2cg"|asset_url}}) format("truetype"),
-    url({{"creatic.woff?oqq2cg"|asset_url}}) format("woff"),
-    url({{"creatic.svg?oqq2cg#creatic"|asset_url}}) format("svg");
+  src: url("creatic.eot?oqq2cg");
+  src: url("creatic.eot?oqq2cg#iefix") format("embedded-opentype"),
+    url("creatic.ttf?oqq2cg") format("truetype"),
+    url("creatic.woff?oqq2cg") format("woff"),
+    url("creatic.svg?oqq2cg#creatic") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
