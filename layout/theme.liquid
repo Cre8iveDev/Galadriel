@@ -10,16 +10,16 @@
         <link rel="manifest" href="{{ favicon.site.webmanifest | asset_url }}">
         <title>Cre8iveDev's Portfolio</title>
         <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ bootstrap.min.css | asset_url }}">
-        <link rel="stylesheet" href="{{ font-awesome.min.css | asset_url }}">
-        <link rel="stylesheet" href="{{ animate.min.css | asset_url }}">
-        <link rel="stylesheet" href="{{ creatic.style.css | asset_url }}">
-        <link rel="stylesheet" href="{{ owl.carousel.min.css | asset_url }}">
-        <link rel="stylesheet" href="{{ owl.theme.default.min.css | asset_url }}">
-        <link rel="stylesheet" href="{{ jquery.mCustomScrollbar.min.css | asset_url }}">
-        <link rel="stylesheet" href="{{ Rage-Italic.css | asset_url }}">
-        <link rel="stylesheet" href="{{ style.css | asset_url }}">
-        <link rel="stylesheet" href="{{ responsive.css | asset_url }}">
+        <link rel="stylesheet" href="{{ bootstrap.min.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ font-awesome.min.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ animate.min.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ creatic.style.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ owl.carousel.min.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ owl.theme.default.min.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ jquery.mCustomScrollbar.min.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ Rage-Italic.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ style.css | asset_url | stylesheet_tag }}">
+        <link rel="stylesheet" href="{{ responsive.css | asset_url | stylesheet_tag }}">
         {{ content_for_header }}
     </head>
     
@@ -834,18 +834,18 @@
         {% section 'footer-home' %}        
 
         <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-        <script src="{{ jquery.min.js | asset_url }}"></script>
-        <script src="{{ bootstrap.bundle.min.js | asset_url }}"></script>
-        <script src="{{ TweenMax.min.js | asset_url }}"></script>
-        <script src="{{ owl.carousel.min.js | asset_url }}"></script>
-        <script src="{{ jquery.easing.min.js | asset_url }}"></script>
-        <script src="{{ wow.js | asset_url }}"></script>
-        <script src="{{ waypoints.min.js | asset_url }}"></script>
-        <script src="{{ jquery.counterup.min.js | asset_url }}"></script>
-        <script src="{{ progressbar.min.js | asset_url }}"></script>
-        <script src="{{ jquery.mCustomScrollbar.concat.min.js | asset_url }}"></script>
-        <script src="{{ typed.min.js | asset_url }}"></script>
-        <script src="{{ jquery.validate.min.js | asset_url }}"></script>
-        <script src="{{ theme.js | asset_url }}"></script>
+        <script src="{{ jquery.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ bootstrap.bundle.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ TweenMax.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ owl.carousel.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ jquery.easing.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ wow.js | asset_url | script_tag  }}"></script>
+        <script src="{{ waypoints.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ jquery.counterup.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ progressbar.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ jquery.mCustomScrollbar.concat.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ typed.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ jquery.validate.min.js | asset_url | script_tag  }}"></script>
+        <script src="{{ theme.js | asset_url | script_tag  }}"></script>
     </body>
 </html>
