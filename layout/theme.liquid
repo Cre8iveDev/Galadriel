@@ -1,295 +1,852 @@
-<!doctype html>
-    <html class="no-js" lang="{{ request.locale.iso_code }}">
-      <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="theme-color" content="">
-        <link rel="canonical" href="{{ canonical_url }}">
-        <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-    
-        {%- if settings.favicon != blank -%}
-          <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
-        {%- endif -%}
-    
-        {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
-          <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-        {%- endunless -%}
-    
-        <title>
-          {{ page_title }}
-          {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
-          {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-          {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
-        </title>
-    
-        {% if page_description %}
-          <meta name="description" content="{{ page_description | escape }}">
-        {% endif %}
-    
-        {% render 'meta-tags' %}
-    
-        <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
+<!DOCTYPE html>
+    <html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ favicon.apple-touch-icon.png | asset_url }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ favicon-32x32.png | asset_url }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ favicon-16x16.png | asset_url }}">
+        <link rel="manifest" href="{{ favicon.site.webmanifest | asset_url }}">
+        <title>Cre8iveDev's Portfolio</title>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ bootstrap.min.css | asset_url }}">
+        <link rel="stylesheet" href="{{ font-awesome.min.css | asset_url }}">
+        <link rel="stylesheet" href="{{ animate.min.css | asset_url }}">
+        <link rel="stylesheet" href="{{ creatic.style.css | asset_url }}">
+        <link rel="stylesheet" href="{{ owl.carousel.min.css | asset_url }}">
+        <link rel="stylesheet" href="{{ owl.theme.default.min.css | asset_url }}">
+        <link rel="stylesheet" href="{{ jquery.mCustomScrollbar.min.css | asset_url }}">
+        <link rel="stylesheet" href="{{ Rage-Italic.css | asset_url }}">
+        <link rel="stylesheet" href="{{ style.css | asset_url }}">
+        <link rel="stylesheet" href="{{ responsive.css | asset_url }}">
         {{ content_for_header }}
+    </head>
     
-        {%- liquid
-          assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
-          assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
-          assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
-        %}
-    
-        {% style %}
-          {{ settings.type_body_font | font_face: font_display: 'swap' }}
-          {{ body_font_bold | font_face: font_display: 'swap' }}
-          {{ body_font_italic | font_face: font_display: 'swap' }}
-          {{ body_font_bold_italic | font_face: font_display: 'swap' }}
-          {{ settings.type_header_font | font_face: font_display: 'swap' }}
-    
-          :root {
-            --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-            --font-body-style: {{ settings.type_body_font.style }};
-            --font-body-weight: {{ settings.type_body_font.weight }};
-            --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
-    
-            --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
-            --font-heading-style: {{ settings.type_header_font.style }};
-            --font-heading-weight: {{ settings.type_header_font.weight }};
-    
-            --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
-            --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
-    
-            --color-base-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-            --color-shadow: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
-            --color-base-background-1: {{ settings.colors_background_1.red }}, {{ settings.colors_background_1.green }}, {{ settings.colors_background_1.blue }};
-            --color-base-background-2: {{ settings.colors_background_2.red }}, {{ settings.colors_background_2.green }}, {{ settings.colors_background_2.blue }};
-            --color-base-solid-button-labels: {{ settings.colors_solid_button_labels.red }}, {{ settings.colors_solid_button_labels.green }}, {{ settings.colors_solid_button_labels.blue }};
-            --color-base-outline-button-labels: {{ settings.colors_outline_button_labels.red }}, {{ settings.colors_outline_button_labels.green }}, {{ settings.colors_outline_button_labels.blue }};
-            --color-base-accent-1: {{ settings.colors_accent_1.red }}, {{ settings.colors_accent_1.green }}, {{ settings.colors_accent_1.blue }};
-            --color-base-accent-2: {{ settings.colors_accent_2.red }}, {{ settings.colors_accent_2.green }}, {{ settings.colors_accent_2.blue }};
-            --payment-terms-background-color: {{ settings.colors_background_1 }};
-    
-            --gradient-base-background-1: {% if settings.gradient_background_1 != blank %}{{ settings.gradient_background_1 }}{% else %}{{ settings.colors_background_1 }}{% endif %};
-            --gradient-base-background-2: {% if settings.gradient_background_2 != blank %}{{ settings.gradient_background_2 }}{% else %}{{ settings.colors_background_2 }}{% endif %};
-            --gradient-base-accent-1: {% if settings.gradient_accent_1 != blank %}{{ settings.gradient_accent_1 }}{% else %}{{ settings.colors_accent_1 }}{% endif %};
-            --gradient-base-accent-2: {% if settings.gradient_accent_2 != blank %}{{ settings.gradient_accent_2 }}{% else %}{{ settings.colors_accent_2 }}{% endif %};
-    
-            --media-padding: {{ settings.media_padding }}px;
-            --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
-            --media-border-width: {{ settings.media_border_thickness }}px;
-            --media-radius: {{ settings.media_radius }}px;
-            --media-shadow-opacity: {{ settings.media_shadow_opacity | divided_by: 100.0 }};
-            --media-shadow-horizontal-offset: {{ settings.media_shadow_horizontal_offset }}px;
-            --media-shadow-vertical-offset: {{ settings.media_shadow_vertical_offset }}px;
-            --media-shadow-blur-radius: {{ settings.media_shadow_blur }}px;
-            --media-shadow-visible: {% if settings.media_shadow_opacity > 0 %}1{% else %}0{% endif %};
-    
-            --page-width: {{ settings.page_width | divided_by: 10 }}rem;
-            --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
-    
-            --product-card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
-            --product-card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
-            --product-card-text-alignment: {{ settings.card_text_alignment }};
-            --product-card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
-            --product-card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
-            --product-card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
-            --product-card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-            --product-card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-            --product-card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-            --product-card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
-    
-            --collection-card-image-padding: {{ settings.collection_card_image_padding | divided_by: 10.0 }}rem;
-            --collection-card-corner-radius: {{ settings.collection_card_corner_radius | divided_by: 10.0 }}rem;
-            --collection-card-text-alignment: {{ settings.collection_card_text_alignment }};
-            --collection-card-border-width: {{ settings.collection_card_border_thickness | divided_by: 10.0 }}rem;
-            --collection-card-border-opacity: {{ settings.collection_card_border_opacity | divided_by: 100.0 }};
-            --collection-card-shadow-opacity: {{ settings.collection_card_shadow_opacity | divided_by: 100.0 }};
-            --collection-card-shadow-visible: {% if settings.collection_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-            --collection-card-shadow-horizontal-offset: {{ settings.collection_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-            --collection-card-shadow-vertical-offset: {{ settings.collection_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-            --collection-card-shadow-blur-radius: {{ settings.collection_card_shadow_blur | divided_by: 10.0 }}rem;
-    
-            --blog-card-image-padding: {{ settings.blog_card_image_padding | divided_by: 10.0 }}rem;
-            --blog-card-corner-radius: {{ settings.blog_card_corner_radius | divided_by: 10.0 }}rem;
-            --blog-card-text-alignment: {{ settings.blog_card_text_alignment }};
-            --blog-card-border-width: {{ settings.blog_card_border_thickness | divided_by: 10.0 }}rem;
-            --blog-card-border-opacity: {{ settings.blog_card_border_opacity | divided_by: 100.0 }};
-            --blog-card-shadow-opacity: {{ settings.blog_card_shadow_opacity | divided_by: 100.0 }};
-            --blog-card-shadow-visible: {% if settings.blog_card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-            --blog-card-shadow-horizontal-offset: {{ settings.blog_card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-            --blog-card-shadow-vertical-offset: {{ settings.blog_card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-            --blog-card-shadow-blur-radius: {{ settings.blog_card_shadow_blur | divided_by: 10.0 }}rem;
-    
-            --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
-    
-            --popup-border-width: {{ settings.popup_border_thickness }}px;
-            --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
-            --popup-corner-radius: {{ settings.popup_corner_radius }}px;
-            --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
-            --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
-            --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
-            --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
-    
-            --drawer-border-width: {{ settings.drawer_border_thickness }}px;
-            --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
-            --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
-            --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
-            --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
-            --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
-    
-            --spacing-sections-desktop: {{ settings.spacing_sections }}px;
-            --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
-    
-            --grid-desktop-vertical-spacing: {{ settings.spacing_grid_vertical }}px;
-            --grid-desktop-horizontal-spacing: {{ settings.spacing_grid_horizontal }}px;
-            --grid-mobile-vertical-spacing: {{ settings.spacing_grid_vertical | divided_by: 2 }}px;
-            --grid-mobile-horizontal-spacing: {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
-    
-            --text-boxes-border-opacity: {{ settings.text_boxes_border_opacity | divided_by: 100.0 }};
-            --text-boxes-border-width: {{ settings.text_boxes_border_thickness }}px;
-            --text-boxes-radius: {{ settings.text_boxes_radius }}px;
-            --text-boxes-shadow-opacity: {{ settings.text_boxes_shadow_opacity | divided_by: 100.0 }};
-            --text-boxes-shadow-visible: {% if settings.text_boxes_shadow_opacity > 0 %}1{% else %}0{% endif %};
-            --text-boxes-shadow-horizontal-offset: {{ settings.text_boxes_shadow_horizontal_offset }}px;
-            --text-boxes-shadow-vertical-offset: {{ settings.text_boxes_shadow_vertical_offset }}px;
-            --text-boxes-shadow-blur-radius: {{ settings.text_boxes_shadow_blur }}px;
-    
-            --buttons-radius: {{ settings.buttons_radius }}px;
-            --buttons-radius-outset: {% if settings.buttons_radius > 0 %}{{ settings.buttons_radius | plus: settings.buttons_border_thickness }}{% else %}0{% endif %}px;
-            --buttons-border-width: {% if settings.buttons_border_opacity > 0 %}{{ settings.buttons_border_thickness }}{% else %}0{% endif %}px;
-            --buttons-border-opacity: {{ settings.buttons_border_opacity | divided_by: 100.0 }};
-            --buttons-shadow-opacity: {{ settings.buttons_shadow_opacity | divided_by: 100.0 }};
-            --buttons-shadow-visible: {% if settings.buttons_shadow_opacity > 0 %}1{% else %}0{% endif %};
-            --buttons-shadow-horizontal-offset: {{ settings.buttons_shadow_horizontal_offset }}px;
-            --buttons-shadow-vertical-offset: {{ settings.buttons_shadow_vertical_offset }}px;
-            --buttons-shadow-blur-radius: {{ settings.buttons_shadow_blur }}px;
-            --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
-    
-            --inputs-radius: {{ settings.inputs_radius }}px;
-            --inputs-border-width: {{ settings.inputs_border_thickness }}px;
-            --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
-            --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
-            --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
-            --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
-            --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
-            --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
-            --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
-    
-            --variant-pills-radius: {{ settings.variant_pills_radius }}px;
-            --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
-            --variant-pills-border-opacity: {{ settings.variant_pills_border_opacity | divided_by: 100.0 }};
-            --variant-pills-shadow-opacity: {{ settings.variant_pills_shadow_opacity | divided_by: 100.0 }};
-            --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
-            --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
-            --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
-          }
-    
-          *,
-          *::before,
-          *::after {
-            box-sizing: inherit;
-          }
-    
-          html {
-            box-sizing: border-box;
-            font-size: calc(var(--font-body-scale) * 62.5%);
-            height: 100%;
-          }
-    
-          body {
-            display: grid;
-            grid-template-rows: auto auto 1fr auto;
-            grid-template-columns: 100%;
-            min-height: 100%;
-            margin: 0;
-            font-size: 1.5rem;
-            letter-spacing: 0.06rem;
-            line-height: calc(1 + 0.8 / var(--font-body-scale));
-            font-family: var(--font-body-family);
-            font-style: var(--font-body-style);
-            font-weight: var(--font-body-weight);
-          }
-    
-          @media screen and (min-width: 750px) {
-            body {
-              font-size: 1.6rem;
-            }
-          }
-        {% endstyle %}
-    
-        {{ 'base.css' | asset_url | stylesheet_tag }}
-    
-        {%- unless settings.type_body_font.system? -%}
-          <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
-        {%- endunless -%}
-        {%- unless settings.type_header_font.system? -%}
-          <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
-        {%- endunless -%}
-    
-        {%- if settings.predictive_search_enabled -%}
-          <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
-        {%- endif -%}
-    
-        <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-        if (Shopify.designMode) {
-          document.documentElement.classList.add('shopify-design-mode');
-        }
-        </script>
-      </head>
-    
-      <body class="gradient">
-        <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-          {{ "accessibility.skip_to_text" | t }}
-        </a>
-    
-        {%- if settings.cart_type == 'drawer' -%}
-          {%- render 'cart-drawer' -%}
-        {%- endif -%}
-    
-        {% section 'announcement-bar' %}
-        {% section 'header' %}
-        <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
-          {{ content_for_layout }}
-        </main>
-    
-        {% section 'footer' %}
-    
-        <ul hidden>
-          <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>
-          <li id="a11y-new-window-message">{{ 'accessibility.link_messages.new_window' | t }}</li>
-        </ul>
-    
-        <script>
-          window.shopUrl = '{{ request.origin }}';
-          window.routes = {
-            cart_add_url: '{{ routes.cart_add_url }}',
-            cart_change_url: '{{ routes.cart_change_url }}',
-            cart_update_url: '{{ routes.cart_update_url }}',
-            cart_url: '{{ routes.cart_url }}',
-            predictive_search_url: '{{ routes.predictive_search_url }}'
-          };
-    
-          window.cartStrings = {
-            error: `{{ 'sections.cart.cart_error' | t }}`,
-            quantityError: `{{ 'sections.cart.cart_quantity_error_html' | t: quantity: '[quantity]' }}`
-          }
-    
-          window.variantStrings = {
-            addToCart: `{{ 'products.product.add_to_cart' | t }}`,
-            soldOut: `{{ 'products.product.sold_out' | t }}`,
-            unavailable: `{{ 'products.product.unavailable' | t }}`,
-            unavailable_with_option: `{{ 'products.product.value_unavailable' | t: option_value: '[value]' }}`,
-          }
-    
-          window.accessibilityStrings = {
-            imageAvailable: `{{ 'products.product.media.image_available' | t: index: '[index]' }}`,
-            shareSuccess: `{{ 'general.share.success_message' | t }}`,
-            pauseSlideshow: `{{ 'sections.slideshow.pause_slideshow' | t }}`,
-            playSlideshow: `{{ 'sections.slideshow.play_slideshow' | t }}`,
-          }
-        </script>
-    
-        {%- if settings.predictive_search_enabled -%}
-          <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
-        {%- endif -%}
-      </body>
-    </html>
+    <body class="home-one bg-gray-700 px-10 py-20 mx-auto">
+        <div class="preloader"></div><!-- /.preloader -->
+        <main class="page-wrapper">
+            <div class="banner-wrapper" id="home">
+                <div class="banner-one__nav">
+                    <a href="#" class="banner-one__nav-left"><i class="fa fa-angle-left"></i><!-- /.fa fa-angle-left --></a>
+                    <a href="#" class="banner-one__nav-right"><i class="fa fa-angle-right"></i>
+                        <!-- /.fa fa-angle-right --></a>
+                </div><!-- /.banner-one__nav -->
+                <section class="banner-one banner-carousel__one owl-theme owl-carousel">
+                    <div class="item">
+                        <div class="banner-one__slide  banner-one__slide-one"
+                            style="background-image: url(images/slider-1-2.jpg);">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <h3 class="banner-one__title banner-one__light-color">Introducing <br>
+                                            Creatic Template</h3>
+                                        <p class="banner-one__text banner-one__light-color">Excepteur sint occaecat
+                                            cupidatat non
+                                            proident sunt in culpa qui officia <br> deserunt mollit anim id est laborum.</p>
+                                        <div class="banner-one__btn-block">
+                                            <a href="#" class="thm-btn banner-one__btn">Discover More</a>
+                                        </div><!-- /.btn-block -->
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.container -->
+                        </div><!-- /.banner-one__slide -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="banner-one__slide  banner-one__slide-two"
+                            style="background-image: url(images/slider-1-1.jpg);">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <h3 class="banner-one__title banner-one__light-color">Introducing <br>
+                                            Creatic Template</h3>
+                                        <p class="banner-one__text banner-one__light-color">Excepteur sint occaecat
+                                            cupidatat non
+                                            proident sunt in culpa qui officia <br> deserunt mollit anim id est laborum.</p>
+                                        <div class="banner-one__btn-block">
+                                            <a href="#" class="thm-btn banner-one__btn">Discover More</a>
+                                        </div><!-- /.btn-block -->
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.container -->
+                        </div><!-- /.banner-one__slide -->
+                    </div><!-- /.item -->
+                </section><!-- /.banner-one -->
+            </div><!-- /.banner-wrapper -->
+            <section class="service-two" id="about">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Discover the world of creatic</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">We are committed to providing our customers with exceptional service
+                            <br>
+                            while offering our employees the best training.</p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="service-two__single">
+                                <div class="service-two__img">
+                                    <img src="images/service-1-2.jpg" alt="">
+                                </div><!-- /.service-two__img -->
+                                <div class="service-two__content">
+                                    <h2 class="service-two__title"><a href="#">The Best One Page
+                                            Template You’ll Ever Need</a></h2><!-- /.service-two__title -->
+                                    <a href="#" class="service-two__link"><i class="fa fa-angle-double-right"></i>
+                                        <!-- /.fa fa-angle-double-right --></a><!-- /.service-two__link -->
+                                </div><!-- /.service-two__content -->
+                            </div><!-- /.service-two__single -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="service-two__single">
+                                <div class="service-two__img">
+                                    <img src="images/service-1-1.jpg" alt="">
+                                </div><!-- /.service-two__img -->
+                                <div class="service-two__content">
+                                    <h2 class="service-two__title"><a href="#">An All-in-One Web
+                                            Solution for Your
+                                            Business</a></h2><!-- /.service-two__title -->
+                                    <a href="#" class="service-two__link"><i class="fa fa-angle-double-right"></i>
+                                        <!-- /.fa fa-angle-double-right --></a><!-- /.service-two__link -->
+                                </div><!-- /.service-two__content -->
+                            </div><!-- /.service-two__single -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.service-two -->
+            <section class="service-one thm-gray-bg">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Services we are offering</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">Over half of the fortune 100. Creatic design used by busy people from
+                            <br>
+                            amazing companies all over the world.
+
+                        </p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+                    <div class="service-one__carousel owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-1.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Creatic across all
+                                        devices</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-2.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Endless design
+                                        possibilities</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-3.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Customer direct
+                                        approach</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-4.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Premium quality
+                                        services</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-1.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Creatic across all
+                                        devices</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-2.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Endless design
+                                        possibilities</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-3.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Customer direct
+                                        approach</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="service-one__single">
+                                <img src="images/icon-1-4.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Premium quality
+                                        services</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+
+                            <div class="service-one__single">
+                                <img src="images/icon-1-2.png" alt="">
+                                <h2 class="service-one__title"><a href="#">Endless design
+                                        possibilities</a></h2><!-- /.service-one__title -->
+                                <p class="service-one__text">There are many variations of passages of lorem Ipsum available
+                                    but the
+                                    majority have suffered.</p><!-- /.service-one__text -->
+                            </div><!-- /.service-one__single -->
+
+                        </div><!-- /.item -->
+                    </div><!-- /.service-one__carousel owl-carousel owl-theme -->
+                </div><!-- /.container -->
+            </section><!-- /.service-one -->
+            <section class="testimonials-one">
+                <div class="container">
+                    <div class="testimonials-one__carousel owl-carousel owl-theme">
+                        <div class="item">
+                            <div class="testimonials-one__single">
+                                <img src="images/testi-qoute-1-1.png" alt="">
+                                <p class="testimonials-one__text">This is due to their excellent service, competitive
+                                    pricing and
+                                    customer support. It’s throughly refresing to get such a personal touch.
+                                </p><!-- /.testimonials-one__text -->
+                                <h3 class="testimonials-one__name">Jacob Holmes</h3><!-- /.testimonials-one__name -->
+                            </div><!-- /.testimonials-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="testimonials-one__single">
+                                <img src="images/testi-qoute-1-1.png" alt="">
+                                <p class="testimonials-one__text">This is due to their excellent service, competitive
+                                    pricing and
+                                    customer support. It’s throughly refresing to get such a personal touch.
+                                </p><!-- /.testimonials-one__text -->
+                                <h3 class="testimonials-one__name">Alberta Chambers</h3><!-- /.testimonials-one__name -->
+                            </div><!-- /.testimonials-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="testimonials-one__single">
+                                <img src="images/testi-qoute-1-1.png" alt="">
+                                <p class="testimonials-one__text">This is due to their excellent service, competitive
+                                    pricing and
+                                    customer support. It’s throughly refresing to get such a personal touch.
+                                </p><!-- /.testimonials-one__text -->
+                                <h3 class="testimonials-one__name">Wayne Robinson</h3><!-- /.testimonials-one__name -->
+                            </div><!-- /.testimonials-one__single -->
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <div class="testimonials-one__single">
+                                <img src="images/testi-qoute-1-1.png" alt="">
+                                <p class="testimonials-one__text">This is due to their excellent service, competitive
+                                    pricing and
+                                    customer support. It’s throughly refresing to get such a personal touch.
+                                </p><!-- /.testimonials-one__text -->
+                                <h3 class="testimonials-one__name">Nora Keller</h3><!-- /.testimonials-one__name -->
+                            </div><!-- /.testimonials-one__single -->
+                        </div><!-- /.item -->
+                    </div><!-- /.testimonials-one__carousel -->
+                </div><!-- /.container -->
+            </section><!-- /.testimonials-one -->
+            <section class="progress-one">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-12">
+                            <div class="progress-one__content">
+                                <div class="block-title text-left">
+                                    <h2 class="block-title__title">We are the stand out <br>
+                                        experts in business</h2><!-- /.block-title__title -->
+                                    <span class="block-title__line"></span><!-- /.block-title__line -->
+                                    <p class="block-title__text">We believe that success is achieved through a highly
+                                        collaborative
+                                        interaction, so that we can work together to identify and evaluate opportunities
+                                        beyond your
+                                        current operations. </p><!-- /.block-title__text -->
+                                </div><!-- /.block-title -->
+                            </div><!-- /.progress-one__content -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="progress-one__single">
+                                        <div class="progress-one__top">
+                                            <div class="circular-progress" data-color="#ed2c41" id="progress-1"
+                                                data-progress-count=".90">
+                                                <div class="other-ball" id="progress-1-other-ball"></div>
+                                                <!-- /.other-ball -->
+                                            </div><!-- /.circular-progress -->
+                                            <div class="progress-one__text-box">90%</div><!-- /.progress-one__text-box -->
+                                        </div><!-- /.progress-one__top -->
+                                        <h3 class="progress-one__title">Quality <br>
+                                            Services</h3>
+                                    </div><!-- /.progress-one__single -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="progress-one__single">
+                                        <div class="progress-one__top">
+                                            <div class="circular-progress" data-color="#ed2c41" id="progress-2"
+                                                data-progress-count=".50">
+                                                <div class="other-ball" id="progress-2-other-ball"></div>
+                                                <!-- /.other-ball -->
+                                            </div><!-- /.circular-progress -->
+                                            <div class="progress-one__text-box">50%</div><!-- /.progress-one__text-box -->
+                                        </div><!-- /.progress-one__top -->
+                                        <h3 class="progress-one__title">Skilled <br>
+                                            Employee</h3>
+                                    </div><!-- /.progress-one__single -->
+                                </div><!-- /.col-md-6 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-xl-6 col-lg-12 d-flex justify-content-xl-end">
+                            <div class="video-one wow fadeInRight" data-wow-duration="1500ms">
+                                <img src="images/video-1-1.jpg" alt="">
+                                <a href="#" class="video-one__play"><i class="fa fa-play"></i><!-- /.fa fa-play --></a>
+                                <!-- /.video-one__play -->
+                            </div><!-- /.video-one -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.progress-one -->
+            <section class="portfolio-one thm-gray-bg" id="portfolio">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Our latest projects</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">Over half of the fortune 100. Creatic design used by busy people from
+                            <br>
+                            amazing companies all over the world.</p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="portfolio-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <img src="images/gallery-1-1.jpg" alt="">
+                                <a href="#" class="portfolio-one__zoom"><i class="fa fa-search"></i>
+                                    <!-- /.fa fa-search --></a>
+                                <div class="portfolio-one__content">
+                                    <h2 class="portfolio-one__title"><a href="#">Mokeh nehyt</a></h2>
+                                    <!-- /.portfolio-one__title -->
+                                    <p class="portfolio-one__category"><a href="#">Printing</a><span>,</span> <a
+                                            href="#">Media</a>
+                                    </p>
+                                    <!-- /.portfolio-one__category -->
+                                </div><!-- /.portfolio-one__content -->
+                            </div><!-- /.portfolio-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="portfolio-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <img src="images/gallery-1-2.jpg" alt="">
+                                <a href="#" class="portfolio-one__zoom"><i class="fa fa-search"></i>
+                                    <!-- /.fa fa-search --></a>
+                                <div class="portfolio-one__content">
+                                    <h2 class="portfolio-one__title"><a href="#">Mokeh nehyt</a></h2>
+                                    <!-- /.portfolio-one__title -->
+                                    <p class="portfolio-one__category"><a href="#">Printing</a><span>,</span> <a
+                                            href="#">Media</a>
+                                    </p>
+                                    <!-- /.portfolio-one__category -->
+                                </div><!-- /.portfolio-one__content -->
+                            </div><!-- /.portfolio-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="portfolio-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <img src="images/gallery-1-3.jpg" alt="">
+                                <a href="#" class="portfolio-one__zoom"><i class="fa fa-search"></i>
+                                    <!-- /.fa fa-search --></a>
+                                <div class="portfolio-one__content">
+                                    <h2 class="portfolio-one__title"><a href="#">Mokeh nehyt</a></h2>
+                                    <!-- /.portfolio-one__title -->
+                                    <p class="portfolio-one__category"><a href="#">Printing</a><span>,</span> <a
+                                            href="#">Media</a>
+                                    </p>
+                                    <!-- /.portfolio-one__category -->
+                                </div><!-- /.portfolio-one__content -->
+                            </div><!-- /.portfolio-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="portfolio-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <img src="images/gallery-1-4.jpg" alt="">
+                                <a href="#" class="portfolio-one__zoom"><i class="fa fa-search"></i>
+                                    <!-- /.fa fa-search --></a>
+                                <div class="portfolio-one__content">
+                                    <h2 class="portfolio-one__title"><a href="#">Mokeh nehyt</a></h2>
+                                    <!-- /.portfolio-one__title -->
+                                    <p class="portfolio-one__category"><a href="#">Printing</a><span>,</span> <a
+                                            href="#">Media</a>
+                                    </p>
+                                    <!-- /.portfolio-one__category -->
+                                </div><!-- /.portfolio-one__content -->
+                            </div><!-- /.portfolio-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="portfolio-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <img src="images/gallery-1-5.jpg" alt="">
+                                <a href="#" class="portfolio-one__zoom"><i class="fa fa-search"></i>
+                                    <!-- /.fa fa-search --></a>
+                                <div class="portfolio-one__content">
+                                    <h2 class="portfolio-one__title"><a href="#">Mokeh nehyt</a></h2>
+                                    <!-- /.portfolio-one__title -->
+                                    <p class="portfolio-one__category"><a href="#">Printing</a><span>,</span> <a
+                                            href="#">Media</a>
+                                    </p>
+                                    <!-- /.portfolio-one__category -->
+                                </div><!-- /.portfolio-one__content -->
+                            </div><!-- /.portfolio-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="portfolio-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <img src="images/gallery-1-6.jpg" alt="">
+                                <a href="#" class="portfolio-one__zoom"><i class="fa fa-search"></i>
+                                    <!-- /.fa fa-search --></a>
+                                <div class="portfolio-one__content">
+                                    <h2 class="portfolio-one__title"><a href="#">Mokeh nehyt</a></h2>
+                                    <!-- /.portfolio-one__title -->
+                                    <p class="portfolio-one__category"><a href="#">Printing</a><span>,</span> <a
+                                            href="#">Media</a>
+                                    </p>
+                                    <!-- /.portfolio-one__category -->
+                                </div><!-- /.portfolio-one__content -->
+                            </div><!-- /.portfolio-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.portfolio-one -->
+            <section class="team-one" id="team">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Meet the creatic experts</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">At the Creatic company, we have assembled an outstanding team, who <br>
+                            are
+                            skilled in the business and corporate fields.</p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="team-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="team-one__img">
+                                    <img src="images/team-1-1.jpg" alt="">
+                                </div><!-- /.team-one__img -->
+                                <div class="team-one__content">
+                                    <h2 class="team-one__name">Susie Black</h2><!-- /.team-one__name -->
+                                    <p class="team-one__designation">Co Founder</p><!-- /.team-one__designation -->
+                                    <div class="team-one__social">
+                                        <a href="#"><i class="fa fa-twitter"></i><!-- /.fa fa-twitter --></a>
+                                        <a href="#"><i class="fa fa-facebook-f"></i><!-- /.fa fa-twitter --></a>
+                                    </div><!-- /.team-one__social -->
+                                </div><!-- /.team-one__content -->
+                            </div><!-- /.team-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="team-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="team-one__img">
+                                    <img src="images/team-1-2.jpg" alt="">
+                                </div><!-- /.team-one__img -->
+                                <div class="team-one__content">
+                                    <h2 class="team-one__name">Ernest McBride</h2><!-- /.team-one__name -->
+                                    <p class="team-one__designation">Co Founder</p><!-- /.team-one__designation -->
+                                    <div class="team-one__social">
+                                        <a href="#"><i class="fa fa-twitter"></i><!-- /.fa fa-twitter --></a>
+                                        <a href="#"><i class="fa fa-facebook-f"></i><!-- /.fa fa-twitter --></a>
+                                    </div><!-- /.team-one__social -->
+                                </div><!-- /.team-one__content -->
+                            </div><!-- /.team-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="team-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <div class="team-one__img">
+                                    <img src="images/team-1-3.jpg" alt="">
+                                </div><!-- /.team-one__img -->
+                                <div class="team-one__content">
+                                    <h2 class="team-one__name">Marie Pratt</h2><!-- /.team-one__name -->
+                                    <p class="team-one__designation">Co Founder</p><!-- /.team-one__designation -->
+                                    <div class="team-one__social">
+                                        <a href="#"><i class="fa fa-twitter"></i><!-- /.fa fa-twitter --></a>
+                                        <a href="#"><i class="fa fa-facebook-f"></i><!-- /.fa fa-twitter --></a>
+                                    </div><!-- /.team-one__social -->
+                                </div><!-- /.team-one__content -->
+                            </div><!-- /.team-one__single -->
+                        </div><!-- /.col-lg-4 -->
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.team-one -->
+            <section class="funfact-one">
+                <div class="container">
+                    <div class="row justify-content-end">
+                        <div class="col-lg-8">
+                            <div class="funfact-one__content">
+                                <div class="block-title text-left">
+                                    <h2 class="block-title__title">We Work Hard: We Don’t <br>
+                                        Waste Time</h2><!-- /.block-title__title -->
+                                    <span class="block-title__line"></span><!-- /.block-title__line -->
+                                    <p class="block-title__text">There are many variations of passages of Lorem Ipsum
+                                        available, but
+                                        the majority is have suffered alteration in some form, by injected humour, or
+                                        randomised
+                                        words which don't look even slightly believable. If you are going to use a lorem
+                                        passage of
+                                        Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
+                                        middle of
+                                        text.</p><!-- /.block-title__text -->
+                                </div><!-- /.block-title -->
+                                <div class="funfact-one__wrap">
+                                    <div class="funfact-one__single text-center">
+                                        <div class="funfact-one__single-inner">
+                                            <h2 class="funfact-one__number counter">875</h2><!-- /.funfact-one__number -->
+                                            <p class="funfact-one__text">Projects Completed</p><!-- /.funfact-one__text -->
+                                        </div><!-- /.funfact-one__single-inner -->
+                                    </div><!-- /.funfact-one__single -->
+                                    <div class="funfact-one__single text-center">
+                                        <div class="funfact-one__single-inner">
+                                            <h2 class="funfact-one__number counter">303
+                                            </h2><!-- /.funfact-one__number -->
+                                            <p class="funfact-one__text">Active Clients</p><!-- /.funfact-one__text -->
+                                        </div><!-- /.funfact-one__single-inner -->
+                                    </div><!-- /.funfact-one__single -->
+                                    <div class="funfact-one__single text-center">
+                                        <div class="funfact-one__single-inner">
+                                            <h2 class="funfact-one__number counter">75
+                                            </h2><!-- /.funfact-one__number -->
+                                            <p class="funfact-one__text">Cups of Coffee</p><!-- /.funfact-one__text -->
+                                        </div><!-- /.funfact-one__single-inner -->
+                                    </div><!-- /.funfact-one__single -->
+                                </div><!-- /.funfact-one__wrap -->
+                            </div><!-- /.funfact-one__content -->
+                        </div><!-- /.col-lg-8 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.funfact-one -->
+            <section class="pricing-one" id="pricing">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Select a right plan for you</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">Choose a right monthly subscription for your business, and you can <br>
+                            cancel
+                            your subscription any time. No hard feeling.
+                            while offering our employees the best training.</p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+                    <div class="row">
+                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="0000ms">
+                            <div class="pricing-one__single text-center"
+                                style="background-image: url(images/pricing-1-1.jpg);">
+                                <div class="pricing-one__inner">
+                                    <span class="pricing-one__period">Monthly</span><!-- /.pricing-one__period -->
+                                    <h3 class="pricing-one__title">Standard</h3><!-- /.pricing-one__title -->
+                                    <p class="pricing-one__amount"><span>$</span> 25.00</p><!-- /.pricing-one__amount -->
+                                    <span class="pricing-one__line"></span><!-- /.pricing-one__line -->
+                                    <ul class="list-unstyled pricing-one__list">
+                                        <li>10 pages</li>
+
+                                        <li>500 Gb storage</li>
+
+                                        <li>Integrated e-commerce</li>
+
+                                        <li>Custom domain free</li>
+
+                                        <li>24/7 Customer support</li>
+                                    </ul><!-- /.list-unstyled pricing-one__list -->
+                                    <a href="#" class="pricing-one__btn thm-btn">Get Started</a><!-- /.pricing-one__btn -->
+                                </div><!-- /.pricing-one__inner -->
+                            </div><!-- /.pricing-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="1000ms">
+                            <div class="pricing-one__single text-center"
+                                style="background-image: url(images/pricing-1-2.jpg);">
+                                <div class="pricing-one__inner">
+                                    <span class="pricing-one__period">Monthly</span><!-- /.pricing-one__period -->
+                                    <h3 class="pricing-one__title">Professional</h3><!-- /.pricing-one__title -->
+                                    <p class="pricing-one__amount"><span>$</span> 35.00</p><!-- /.pricing-one__amount -->
+                                    <span class="pricing-one__line"></span><!-- /.pricing-one__line -->
+                                    <ul class="list-unstyled pricing-one__list">
+                                        <li>10 pages</li>
+
+                                        <li>500 Gb storage</li>
+
+                                        <li>Integrated e-commerce</li>
+
+                                        <li>Custom domain free</li>
+
+                                        <li>24/7 Customer support</li>
+                                    </ul><!-- /.list-unstyled pricing-one__list -->
+                                    <a href="#" class="pricing-one__btn thm-btn">Get Started</a><!-- /.pricing-one__btn -->
+                                </div><!-- /.pricing-one__inner -->
+                            </div><!-- /.pricing-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4 wow fadeInUp" data-wow-delay="2000ms">
+                            <div class="pricing-one__single text-center"
+                                style="background-image: url(images/pricing-1-3.jpg);">
+                                <div class="pricing-one__inner">
+                                    <span class="pricing-one__period">Monthly</span><!-- /.pricing-one__period -->
+                                    <h3 class="pricing-one__title">Premium</h3><!-- /.pricing-one__title -->
+                                    <p class="pricing-one__amount"><span>$</span> 45.00</p><!-- /.pricing-one__amount -->
+                                    <span class="pricing-one__line"></span><!-- /.pricing-one__line -->
+                                    <ul class="list-unstyled pricing-one__list">
+                                        <li>10 pages</li>
+
+                                        <li>500 Gb storage</li>
+
+                                        <li>Integrated e-commerce</li>
+
+                                        <li>Custom domain free</li>
+
+                                        <li>24/7 Customer support</li>
+                                    </ul><!-- /.list-unstyled pricing-one__list -->
+                                    <a href="#" class="pricing-one__btn thm-btn">Get Started</a><!-- /.pricing-one__btn -->
+                                </div><!-- /.pricing-one__inner -->
+                            </div><!-- /.pricing-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.pricing-one -->
+            <section class="brand-one">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Clients who have trusted us</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">Over half of the fortune 100. Creatic design used by busy people from
+                            <br>
+                            amazing companies all over the world.
+                        </p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+                    <div class="brand-one__carousel owl-carousel owl-theme">
+                        <div class="item">
+                            <img src="images/brand-1-1.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-2.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-3.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-4.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-5.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-6.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-1.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-2.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-3.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-4.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-5.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-6.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-1.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-2.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-3.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-4.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-5.jpg" alt="">
+                        </div><!-- /.item -->
+                        <div class="item">
+                            <img src="images/brand-1-6.jpg" alt="">
+                        </div><!-- /.item -->
+                    </div><!-- /.brand-one__carousel -->
+                </div><!-- /.container -->
+            </section><!-- /.brand-one -->
+            <section class="blog-one blog-one__home-one" id="blog">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Check out our latest news</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">Our recent blog posts, news, media assets and latest updates about <br>
+                            creatic
+                            - all available only in one place</p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="blog-one__single">
+                                <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
+                                    <img src="images/blog-1.jpg" alt="">
+                                </div><!-- /.blog-one__image -->
+                                <div class="blog-one__content">
+                                    <h3 class="blog-one__title"><a href="blog-details.html">Learn basic rules of new
+                                            corporate
+                                            business</a></h3><!-- /.blog-one__title -->
+                                    <div class="blog-one__meta">
+                                        <a href="#" class="blog-one__meta-link"><i class="fa fa-user"></i>By admin</a>
+                                        <!-- /.blog-one__meta-link -->
+                                        <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>March 5th,
+                                            2018</a>
+                                        <!-- /.blog-one__meta-link -->
+                                    </div><!-- /.blog-one__meta -->
+                                    <p class="blog-one__text">Lorem Ipsum is simply dummy text of the new design printng and
+                                        type
+                                        setting Ipsum has been the is industrys ...</p><!-- /.blog-one__text -->
+                                    <a href="#" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
+                                </div><!-- /.blog-one__content -->
+                            </div><!-- /.blog-one__single -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <div class="blog-one__single">
+                                <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
+                                    <img src="images/blog-2.jpg" alt="">
+                                </div><!-- /.blog-one__image -->
+                                <div class="blog-one__content">
+                                    <h3 class="blog-one__title"><a href="blog-details.html">Learn basic rules of new
+                                            corporate
+                                            business</a></h3>
+                                    <!-- /.blog-one__title -->
+                                    <div class="blog-one__meta">
+                                        <a href="#" class="blog-one__meta-link"><i class="fa fa-user"></i>By admin</a>
+                                        <!-- /.blog-one__meta-link -->
+                                        <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>March 5th,
+                                            2018</a>
+                                        <!-- /.blog-one__meta-link -->
+                                    </div><!-- /.blog-one__meta -->
+                                    <p class="blog-one__text">Lorem Ipsum is simply dummy text of the new design printng and
+                                        type
+                                        setting Ipsum
+                                        has been the is industrys ...</p><!-- /.blog-one__text -->
+                                    <a href="#" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
+                                </div><!-- /.blog-one__content -->
+                            </div><!-- /.blog-one__single -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.blog-one -->
+            <section class="cta-one">
+                <div class="container">
+                    <h2 class="cta-one__title">Join creatic team now. Are you ready to <br>
+                        change the game?</h2><!-- /.cta-one__title -->
+                    <div class="cta-one__button-block">
+                        <a href="#" class="thm-btn">Join Now</a><!-- /.thm-btn -->
+                    </div><!-- /.cta-one__button-block -->
+                </div><!-- /.container -->
+            </section><!-- /.cta-one -->
+            <section class="map-one">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
+                    class="google-map__contact" allowfullscreen></iframe>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="map-one__single wow fadeInUp " data-wow-duration="1500ms">
+                                <h3 class="map-one__title">United Kingdom</h3><!-- /.map-one__title -->
+                                <ul class="map-one__list list-unstyled">
+                                    <li><i class="fa fa-map-marker"></i> 35 Street, Deerfield Valdosta Road, <br> United
+                                        Kingdom
+                                    </li>
+                                    <li><i class="fa fa-envelope"></i>Inquiry@creatic.com </li>
+                                    <li><i class="fa fa-phone"></i>2800 256 508 </li>
+                                </ul><!-- /.map-one__list -->
+                            </div><!-- /.map-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="map-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <h3 class="map-one__title">Australia</h3><!-- /.map-one__title -->
+                                <ul class="map-one__list list-unstyled">
+                                    <li><i class="fa fa-map-marker"></i> 35 Street, Deerfield Valdosta Road, <br> United
+                                        Kingdom
+                                    </li>
+                                    <li><i class="fa fa-envelope"></i>Inquiry@creatic.com </li>
+                                    <li><i class="fa fa-phone"></i>2800 256 508 </li>
+                                </ul><!-- /.map-one__list -->
+                            </div><!-- /.map-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                        <div class="col-lg-4">
+                            <div class="map-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                <h3 class="map-one__title">United State</h3><!-- /.map-one__title -->
+                                <ul class="map-one__list list-unstyled">
+                                    <li><i class="fa fa-map-marker"></i> 35 Street, Deerfield Valdosta Road, <br> United
+                                        Kingdom
+                                    </li>
+                                    <li><i class="fa fa-envelope"></i>Inquiry@creatic.com </li>
+                                    <li><i class="fa fa-phone"></i>2800 256 508 </li>
+                                </ul><!-- /.map-one__list -->
+                            </div><!-- /.map-one__single -->
+                        </div><!-- /.col-lg-4 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </section><!-- /.map-one -->
+            <section class="contact-one" id="contact">
+                <div class="container">
+                    <div class="block-title text-center">
+                        <h2 class="block-title__title">Have any question?</h2><!-- /.block-title__title -->
+                        <span class="block-title__line"></span><!-- /.block-title__line -->
+                        <p class="block-title__text">Thank you for your interest in our website & our services. If you have
+                            <br> any
+                            questions, please write us a message now!</p><!-- /.block-title__text -->
+                    </div><!-- /.block-title -->
+
+                    <form action="inc/sendemail.php" class="contact-one__form contact-form-validated row">
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="First name" name="fname">
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Last name" name="lname">
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Email address" name="email">
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <input type="text" placeholder="Phone number" name="phone">
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-lg-12">
+                            <textarea name="message" placeholder="Write message"></textarea>
+                            <div class="text-center">
+                                <button type="submit" class="thm-btn contact-one__btn">Submit Now</button>
+                            </div><!-- /.text-center -->
+                        </div><!-- /.col-lg-12 -->
+                    </form><!-- /.contact-one__form -->
+                    <div class="result"></div><!-- /.result -->
+                </div><!-- /.container -->
+            </section><!-- /.contact-one -->
+            {{ content_for_layout }}
+
+        {% section 'footer' %}        
+
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+        <script src="{{ jquery.min.js | asset_url }}"></script>
+        <script src="{{ bootstrap.bundle.min.js | asset_url }}"></script>
+        <script src="{{ TweenMax.min.js | asset_url }}"></script>
+        <script src="{{ owl.carousel.min.js | asset_url }}"></script>
+        <script src="{{ jquery.easing.min.js | asset_url }}"></script>
+        <script src="{{ wow.js | asset_url }}"></script>
+        <script src="{{ waypoints.min.js | asset_url }}"></script>
+        <script src="{{ jquery.counterup.min.js | asset_url }}"></script>
+        <script src="{{ progressbar.min.js | asset_url }}"></script>
+        <script src="{{ jquery.mCustomScrollbar.concat.min.js | asset_url }}"></script>
+        <script src="{{ typed.min.js | asset_url }}"></script>
+        <script src="{{ jquery.validate.min.js | asset_url }}"></script>
+        <script src="{{ theme.js | asset_url }}"></script>
+    </body>
+</html>
