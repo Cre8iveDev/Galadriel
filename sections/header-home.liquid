@@ -16,7 +16,7 @@
                     {% for link in section.settings.menu.links %}
                         {% if link.links != blank %}
                             <li class="scrollToLink">
-                                <a href="{{ link.url }}">{{ link.title }}</a>
+                                <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                                 </ul><!-- /.sub-menu -->
