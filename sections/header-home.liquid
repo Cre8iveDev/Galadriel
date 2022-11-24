@@ -13,6 +13,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
+                    {% for link in section.settings.menu.links %}
+
+                    {% endfor %}
+
+                {% comment %}
                     <li class="current scrollToLink">
                         <a href="#home">Home</a>
                         <ul class="sub-menu">
@@ -46,6 +51,7 @@
                     <li class="scrollToLink">
                         <a href="#contact">Contact</a>
                     </li>
+                {% endcomment %}
                 </ul>
             </div><!-- /.navbar-collapse -->
             <div class="right-side-box">
@@ -83,6 +89,12 @@
             "unit": "px",
             "label": "Logo width",
             "default": 164
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "default": "main-menu",
+            "label": "Heading Nav Menu"
         }
     ]
 }
