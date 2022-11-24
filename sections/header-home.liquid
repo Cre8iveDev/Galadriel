@@ -14,7 +14,18 @@
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
                     {% for link in section.settings.menu.links %}
-
+                        {% if link.links != blank %}
+                            <li class="scrollToLink">
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                </ul><!-- /.sub-menu -->
+                            </li>
+                        {% else %}
+                            <li class="scrollToLink">
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                        {% endif %}
                     {% endfor %}
 
                 {% comment %}
