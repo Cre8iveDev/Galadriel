@@ -43,7 +43,10 @@
             {% section 'gmap' %}
             {% section 'contact' %}
             {% section 'footer' %}   
-            {%comment%}{{ content_for_layout }}{%endcomment%}
+            {%comment%}
+                NOTE: Activating this content call will add another Header Home section in the Customizer
+                {{ content_for_layout }}
+            {%endcomment%}
         </main><!-- /.page-wrapper -->
 
         {% section 'popups' %}      
