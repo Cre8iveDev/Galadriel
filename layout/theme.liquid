@@ -27,8 +27,8 @@
         <div class="preloader"></div><!-- /.preloader -->
         <main class="page-wrapper">
             
-            {%comment%}{% section 'header-home' %}{%endcomment%}
-            {% section 'hero-home' %}
+            {% section 'header-home' %}
+            {% section 'hero' %}
             {% section 'about' %}
             {% section 'services' %}
             {% section 'testimonials' %}
@@ -42,7 +42,7 @@
             {% section 'cta' %}
             {% section 'gmap' %}
             {% section 'contact' %}
-            {{ content_for_layout }}
+            {%comment%}{{ content_for_layout }}{%endcomment%}
 
         </main><!-- /.page-wrapper -->
 
