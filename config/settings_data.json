@@ -137,10 +137,26 @@
               "block_text": "Replace this text from inside the Customizer > Testimonials",
               "block_reviewer": "Wayne Robinson"
             }
+          },
+          "670dc0d5-4b29-42ce-ae78-64a5fcf576ec": {
+            "type": "testimonials",
+            "settings": {
+              "block_text": "Replace this text from inside the Customizer > Testimonials",
+              "block_reviewer": "Taylor Swift"
+            }
+          },
+          "f6c45a15-de95-4db6-b081-2304d0399232": {
+            "type": "testimonials",
+            "settings": {
+              "block_text": "Replace this text from inside the Customizer > Testimonials",
+              "block_reviewer": "Nora Kelter"
+            }
           }
         },
         "block_order": [
-          "983bc26b-eeb1-4f1b-bf24-08991e90965c"
+          "983bc26b-eeb1-4f1b-bf24-08991e90965c",
+          "670dc0d5-4b29-42ce-ae78-64a5fcf576ec",
+          "f6c45a15-de95-4db6-b081-2304d0399232"
         ],
         "settings": {
         }
