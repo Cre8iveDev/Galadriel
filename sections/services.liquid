@@ -9,17 +9,18 @@
 
             </p><!-- /.block-title__text -->
         </div><!-- /.block-title -->
-        <div class="service-one__carousel owl-carousel owl-theme">
-            <div class="item">
-                <div class="service-one__single">
-                    <img src="{{ 'icon-1-1.png' | asset_url }}" alt="">
-                    <h2 class="service-one__title"><a href="#">Creatic across all
-                            devices</a></h2><!-- /.service-one__title -->
-                    <p class="service-one__text">There are many variations of passages of lorem Ipsum available
-                        but the
-                        majority have suffered.</p><!-- /.service-one__text -->
-                </div><!-- /.service-one__single -->
-            </div><!-- /.item -->
+        <div class="service-one__carousel owl-carousel owl-theme">            
+            {% for block in section.blocks %}
+                <div class="item">
+                    <div class="service-one__single">
+                        <img src="{{ block.settings.block_icon | img_url: 'large' | image_tag: alt: string }}">
+                        <h2 class="service-one__title"><a href="#">{{ block.settings.block_heading }}</a></h2><!-- /.service-one__title -->
+                        <p class="service-one__text">{{ block.settings.block_description }}</p><!-- /.service-one__text -->
+                    </div><!-- /.service-one__single -->
+                </div><!-- /.item -->
+            {% endfor %}
+
+            {% comment %}
             <div class="item">
                 <div class="service-one__single">
                     <img src="{{ 'icon-1-2.png' | asset_url }}" alt="">
@@ -91,7 +92,6 @@
                 </div><!-- /.service-one__single -->
             </div><!-- /.item -->
             <div class="item">
-
                 <div class="service-one__single">
                     <img src="{{ 'icon-1-2.png' | asset_url }}" alt="">
                     <h2 class="service-one__title"><a href="#">Endless design
@@ -102,6 +102,52 @@
                 </div><!-- /.service-one__single -->
 
             </div><!-- /.item -->
+            {% endcomment %}
         </div><!-- /.service-one__carousel owl-carousel owl-theme -->
     </div><!-- /.container -->
 </section><!-- /.service-one -->
+
+{% schema %}
+{
+    "name": "Services Section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "Services we offer"
+        },
+        {
+            "type": "textarea",
+            "id": "section_description",
+            "label": "Section description",
+            "default": "Replace this text from inside the Customizer > Services"
+        }
+    ]
+    "max_blocks": 10,
+    "blocks": [
+        {
+            "type": "about",
+            "name": "About block",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "block_icon",
+                    "label": "Upload an icon"
+                },
+                {
+                    "type": "text",
+                    "id": "block_heading",
+                    "label": "Block heading",
+                    "default": "Replace this text from inside the Customizer > Services"
+                },
+                {
+                    "type": "textarea",
+                    "id": "block_description",
+                    "label": "Replace this text from inside the Customizer > Services"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

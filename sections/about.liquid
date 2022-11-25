@@ -10,7 +10,7 @@
                 <div class="col-lg-6">
                     <div class="service-two__single">
                         <div class="service-two__img">
-                            <img src="{{ block.settings.block_image | img_url: 'large' }}" alt="{{ block.settings.block_image.alt }}">
+                            <img src="{{ block.settings.block_image | img_url: 'large' | image_tag: alt: string }}">
                         </div><!-- /.service-two__img -->
                         <div class="service-two__content">
                             <h2 class="service-two__title"><a href="{{ block.settings.block_link }}">{{ block.settings.block_heading }}</a></h2><!-- /.service-two__title -->
