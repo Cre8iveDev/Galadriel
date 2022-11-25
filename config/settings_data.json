@@ -163,6 +163,17 @@
       },
       "progress": {
         "type": "progress",
+        "blocks": {
+          "81f24449-8ccd-4863-b269-e268312a373c": {
+            "type": "expertise",
+            "settings": {
+              "block_text": "Quality Services"
+            }
+          }
+        },
+        "block_order": [
+          "81f24449-8ccd-4863-b269-e268312a373c"
+        ],
         "settings": {
           "section_image": "shopify:\/\/shop_images\/video-1-1.jpg",
           "section_heading": "Replace this text from inside the Customizer > Progress",
