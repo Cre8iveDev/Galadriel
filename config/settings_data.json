@@ -45,7 +45,31 @@
       },
       "about": {
         "type": "about",
+        "blocks": {
+          "2c230ec3-7302-426b-bbe8-3ec7d001e89d": {
+            "type": "about",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/service-1-2.jpg",
+              "block_heading": "Replace this text from inside the Customizer > About",
+              "block_link": "https:\/\/www.arnuld.net"
+            }
+          },
+          "29647b65-88a8-4dd8-8280-424e5a593f37": {
+            "type": "about",
+            "settings": {
+              "block_image": "shopify:\/\/shop_images\/service-1-1.jpg",
+              "block_heading": "Replace this text from inside the Customizer > About",
+              "block_link": "https:\/\/www.arnuld.net"
+            }
+          }
+        },
+        "block_order": [
+          "2c230ec3-7302-426b-bbe8-3ec7d001e89d",
+          "29647b65-88a8-4dd8-8280-424e5a593f37"
+        ],
         "settings": {
+          "section_heading": "Discover Shopify Stores 2.0",
+          "section_description": "Replace this text from inside the Customizer > About"
         }
       },
       "services": {
