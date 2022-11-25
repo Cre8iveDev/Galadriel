@@ -17,7 +17,7 @@
             "type": "slider-image",
             "settings": {
               "slider_image": "shopify:\/\/shop_images\/slider-1-1.jpg",
-              "slide_headline": "We build<br>Shopify 2.0 stores",
+              "slide_headline": "We build<br>Shopify 2.0 Stores",
               "slide_description": "We'll help you build your Shopify store using the latest Online Store 2.0, the latest Liquid codes and integrated with your Github account.",
               "show_btn": false,
               "btn_text": "Discover More",
