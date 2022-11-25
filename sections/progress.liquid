@@ -14,7 +14,7 @@
                         <div class="col-md-6">
                             <div class="progress-one__single">
                                 <div class="progress-one__top">
-                                    <div class="circular-progress" data-color="#ed2c41" id="progress-1"
+                                    <div class="circular-progress" data-color="#ed2c41" id="progress-{{ forloop.index }}"
                                         data-progress-count="{{ block.settings.block_range | remove_first: 0 }}">
                                         <!-- {{ block.settings.block_range }} -->
                                         <div class="other-ball" id="progress-{{ forloop.index }}-other-ball"></div>
