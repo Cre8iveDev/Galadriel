@@ -15,13 +15,37 @@
                             <div class="progress-one__single">
                                 <div class="progress-one__top">
                                     <div class="circular-progress" data-color="#ed2c41" id="progress-1"
-                                        data-progress-count=".90">
-                                        <div class="other-ball" id="progress-1-other-ball"></div>
+                                        data-progress-count="{{ block.settings.block_range }}">
+                                        <div class="other-ball" id="progress-{{ forloop.index }}-other-ball"></div>
                                         <!-- /.other-ball -->
                                     </div><!-- /.circular-progress -->
-                                    <div class="progress-one__text-box">90%</div><!-- /.progress-one__text-box -->
+                                    <div class="progress-one__text-box">
+                                        {% assign range_val = block.settings.block_range %}
+                                        {% case range_val %}
+                                            {% when range_val == 0.1 %}
+                                                10%
+                                            {% when range_val == 0.2 %}
+                                                20%
+                                            {% when range_val == 0.3 %}
+                                                30%
+                                            {% when range_val == 0.4 %}
+                                                40%
+                                            {% when range_val == 0.5 %}
+                                                50%
+                                            {% when range_val == 0.6 %}
+                                                60%
+                                            {% when range_val == 0.7 %}
+                                                70%
+                                            {% when range_val == 0.8 %}
+                                                80%
+                                            {% when range_val == 0.9 %}
+                                                90%
+                                            {% when range_val == 1 %}
+                                                100%
+                                        {% endcase %}
+                                    </div><!-- /.progress-one__text-box -->
                                 </div><!-- /.progress-one__top -->
-                                <h3 class="progress-one__title">{{ block.settings. }}</h3>
+                                <h3 class="progress-one__title">{{ block.settings.block_text }}</h3>
                             </div><!-- /.progress-one__single -->
                         </div><!-- /.col-md-6 -->
                     {% endfor %}
