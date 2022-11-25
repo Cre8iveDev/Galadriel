@@ -4,73 +4,50 @@
             <div class="col-xl-6 col-lg-12">
                 <div class="progress-one__content">
                     <div class="block-title text-left">
-                        <h2 class="block-title__title">{{ section.settings.section_heading }}</h2><!-- /.block-title__title -->
+                        <h2 class="block-title__title">We are the stand out <br>
+                            experts in business</h2><!-- /.block-title__title -->
                         <span class="block-title__line"></span><!-- /.block-title__line -->
-                        <p class="block-title__text">{{ section.settings.section_description }}</p><!-- /.block-title__text -->
+                        <p class="block-title__text">We believe that success is achieved through a highly
+                            collaborative
+                            interaction, so that we can work together to identify and evaluate opportunities
+                            beyond your
+                            current operations. </p><!-- /.block-title__text -->
                     </div><!-- /.block-title -->
                 </div><!-- /.progress-one__content -->
                 <div class="row">
-                    {% for block in section.blocks %}
-                        <div class="col-md-6">
-                            <div class="progress-one__single">
-                                <div class="progress-one__top">
-                                    <div class="circular-progress" data-color="#ed2c41" id="progress-1"
-                                        data-progress-count="{{ block.settings.block_range }}">
-                                        <div class="other-ball" id="progress-{{ forloop.index }}-other-ball"></div>
-                                        <!-- /.other-ball -->
-                                    </div><!-- /.circular-progress -->
-                                    <div class="progress-one__text-box">
-                                        {% assign range_val = block.settings.block_range %}
-                                        {% case range_val %}
-                                            {% when range_val == 0.1 %}
-                                                10%
-                                            {% when range_val == 0.2 %}
-                                                20%
-                                            {% when range_val == 0.3 %}
-                                                30%
-                                            {% when range_val == 0.4 %}
-                                                40%
-                                            {% when range_val == 0.5 %}
-                                                50%
-                                            {% when range_val == 0.6 %}
-                                                60%
-                                            {% when range_val == 0.7 %}
-                                                70%
-                                            {% when range_val == 0.8 %}
-                                                80%
-                                            {% when range_val == 0.9 %}
-                                                90%
-                                            {% when range_val == 1 %}
-                                                100%
-                                        {% endcase %}
-                                    </div><!-- /.progress-one__text-box -->
-                                </div><!-- /.progress-one__top -->
-                                <h3 class="progress-one__title">{{ block.settings.block_text }}</h3>
-                            </div><!-- /.progress-one__single -->
-                        </div><!-- /.col-md-6 -->
-                    {% endfor %}
-
-                    {% comment %}
-                        <div class="col-md-6">
-                            <div class="progress-one__single">
-                                <div class="progress-one__top">
-                                    <div class="circular-progress" data-color="#ed2c41" id="progress-2"
-                                        data-progress-count=".50">
-                                        <div class="other-ball" id="progress-2-other-ball"></div>
-                                        <!-- /.other-ball -->
-                                    </div><!-- /.circular-progress -->
-                                    <div class="progress-one__text-box">50%</div><!-- /.progress-one__text-box -->
-                                </div><!-- /.progress-one__top -->
-                                <h3 class="progress-one__title">Skilled <br>
-                                    Employee</h3>
-                            </div><!-- /.progress-one__single -->
-                        </div><!-- /.col-md-6 -->
-                    {% endcomment %}
+                    <div class="col-md-6">
+                        <div class="progress-one__single">
+                            <div class="progress-one__top">
+                                <div class="circular-progress" data-color="#ed2c41" id="progress-1"
+                                    data-progress-count=".90">
+                                    <div class="other-ball" id="progress-1-other-ball"></div>
+                                    <!-- /.other-ball -->
+                                </div><!-- /.circular-progress -->
+                                <div class="progress-one__text-box">90%</div><!-- /.progress-one__text-box -->
+                            </div><!-- /.progress-one__top -->
+                            <h3 class="progress-one__title">Quality <br>
+                                Services</h3>
+                        </div><!-- /.progress-one__single -->
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="progress-one__single">
+                            <div class="progress-one__top">
+                                <div class="circular-progress" data-color="#ed2c41" id="progress-2"
+                                    data-progress-count=".50">
+                                    <div class="other-ball" id="progress-2-other-ball"></div>
+                                    <!-- /.other-ball -->
+                                </div><!-- /.circular-progress -->
+                                <div class="progress-one__text-box">50%</div><!-- /.progress-one__text-box -->
+                            </div><!-- /.progress-one__top -->
+                            <h3 class="progress-one__title">Skilled <br>
+                                Employee</h3>
+                        </div><!-- /.progress-one__single -->
+                    </div><!-- /.col-md-6 -->
                 </div><!-- /.row -->
             </div><!-- /.col-lg-6 -->
             <div class="col-xl-6 col-lg-12 d-flex justify-content-xl-end">
                 <div class="video-one wow fadeInRight" data-wow-duration="1500ms">
-                    <img src="{{ section.settings.section_image }}" alt="{{ section.settings.section_heading | downcase }}">
+                    <img src="{{ 'video-1-1.jpg' | asset_url }}" alt="">
                     <a href="#" class="video-one__play"><i class="fa fa-play"></i><!-- /.fa fa-play --></a>
                     <!-- /.video-one__play -->
                 </div><!-- /.video-one -->
@@ -81,8 +58,7 @@
 
 {% schema %}
 {
-    "type": "progress",
-    "name": "Progress Section",
+    "name": "Progress section",
     "settings": [
         {
             "type": "image_picker",
@@ -100,27 +76,6 @@
             "id": "section_description",
             "label": "Description",
             "default": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations."
-        }
-    ],
-    "blocks": [
-        {
-            "type": "expertise",
-            "name": "Expertise",
-            "settings": [
-                {
-                    "type": "range",
-                    "id": "block_range",
-                    "min": 0.1,
-                    "max": 1,
-                    "step": 0.1,
-                    "label": "Progress range slider"
-                },
-                {
-                    "type": "text",
-                    "id": "block_text",
-                    "label": "Image description"
-                }
-            ]
         }
     ]
 }
