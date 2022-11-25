@@ -8,7 +8,7 @@
     {% for block in section.blocks %}
         {% if forloop.length > 1 %}
             <div class="item">       
-            {% assign cycle_array = one,two,three,four,five,six,seven,eight,nine,ten | split: ',' %}     
+            {% assign cycle_array = 'one,two,three,four,five,six,seven,eight,nine,ten' | split: ',' %}     
                 <!-- {{ cycle_array }} -->
                     <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ block.settings.slider_image }});">
                         <div class="container">
