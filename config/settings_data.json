@@ -74,7 +74,22 @@
       },
       "services": {
         "type": "services",
+        "blocks": {
+          "233e54e4-5957-41e4-8e31-225077cc9c05": {
+            "type": "services",
+            "settings": {
+              "block_icon": "shopify:\/\/shop_images\/icon-1-1.png",
+              "block_heading": "Premium quality services",
+              "block_description": "There are many variations of passages of lorem Ipsum available but the majority have suffered."
+            }
+          }
+        },
+        "block_order": [
+          "233e54e4-5957-41e4-8e31-225077cc9c05"
+        ],
         "settings": {
+          "section_heading": "Services we offer",
+          "section_description": "Replace this text from inside the Customizer > Services"
         }
       },
       "testimonials": {
