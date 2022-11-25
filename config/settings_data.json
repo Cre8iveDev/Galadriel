@@ -80,12 +80,21 @@
             "settings": {
               "block_icon": "shopify:\/\/shop_images\/icon-1-1.png",
               "block_heading": "Premium quality services",
-              "block_description": "There are many variations of passages of lorem Ipsum available but the majority have suffered."
+              "block_description": "1st icon: There are many variations of passages of lorem Ipsum available but the majority have suffered."
+            }
+          },
+          "4f9ae681-3612-4363-b59d-e5d0b3898435": {
+            "type": "services",
+            "settings": {
+              "block_icon": "shopify:\/\/shop_images\/icon-1-2.png",
+              "block_heading": "Endless design possibilities",
+              "block_description": "2nd Icon: Replace this text from inside the Customizer > Services"
             }
           }
         },
         "block_order": [
-          "233e54e4-5957-41e4-8e31-225077cc9c05"
+          "233e54e4-5957-41e4-8e31-225077cc9c05",
+          "4f9ae681-3612-4363-b59d-e5d0b3898435"
         ],
         "settings": {
           "section_heading": "Services we offer",
