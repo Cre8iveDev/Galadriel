@@ -174,7 +174,7 @@
           "1fd193a4-04bc-4004-bedd-89b8cc1c78e8": {
             "type": "expertise",
             "settings": {
-              "progress_range": 0.8,
+              "progress_range": 1,
               "block_text": "Liquid<br>Expert"
             }
           }
