@@ -47,34 +47,18 @@
 {% schema %}
 {
     "name": "Hero Section",
+    "max_blocks": 8,
     "blocks": [
         {
-            "type": "image_picker",
+            "type": "slider-image",
             "name": "Slider image",
-            "limit": 1
-        },
-        {
-            "type": "text",
-            "label": "Alt text",
-            "default": "Awesome slider image"
-        },
-        {
-            "type": "header",
-            "label": "Slide headline",
-            "default": "Awesome slider headline"
-        },
-        {
-            "type": "text",
-            "label": "Description",
-            "default": "Awesome slider description"
-        },
-        {
-            "type": "checkbox",
-            "label": "Show slider button"
-        },
-        {
-            "type": "url",
-            "label": "Button URL"
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "slider_image",
+                    "label": "Upload a slider image"
+                }
+            ]
         }
     ]
 }
