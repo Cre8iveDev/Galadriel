@@ -1,9 +1,10 @@
 <section class="testimonials-one">
     <div class="container">
-        <div class="testimonials-one__carousel owl-carousel owl-theme">
+        <div class="testimonials-one__carousel owl-carousel owl-theme">                  
+            {% for block in section.blocks %}
             <div class="item">
                 <div class="testimonials-one__single">
-                    <img src="{{ 'testi-qoute-1-1.png' | asset_url }}" alt="">
+                    <img src="{{ block.settings.block_icon }}">
                     <p class="testimonials-one__text">This is due to their excellent service, competitive
                         pricing and
                         customer support. It’s throughly refresing to get such a personal touch.
@@ -11,6 +12,9 @@
                     <h3 class="testimonials-one__name">Jacob Holmes</h3><!-- /.testimonials-one__name -->
                 </div><!-- /.testimonials-one__single -->
             </div><!-- /.item -->
+            {% endfor %}
+
+            {% comment %}
             <div class="item">
                 <div class="testimonials-one__single">
                     <img src="{{ 'testi-qoute-1-1.png' | asset_url }}" alt="">
@@ -41,6 +45,39 @@
                     <h3 class="testimonials-one__name">Nora Keller</h3><!-- /.testimonials-one__name -->
                 </div><!-- /.testimonials-one__single -->
             </div><!-- /.item -->
+        {% endcomment %}
         </div><!-- /.testimonials-one__carousel -->
     </div><!-- /.container -->
 </section><!-- /.testimonials-one -->
+
+{% schema %}
+{
+    "name": "Testimonial Section",
+    "max_blocks": 5,
+    "blocks": [
+        {
+            "type": "testimonials",
+            "name": "Testimonial",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "block_icon",
+                    "label": "Upload an icon",
+                    "default": "{{ 'testi-qoute-1-1.png' | asset_url }}"
+                },
+                {
+                    "type": "textarea",
+                    "id": "block_text",
+                    "label": "Testimonial",
+                    "default": "Replace this text from inside the Customizer > Testimonials"
+                },
+                {
+                    "type": "text",
+                    "id": "block_reviewer",
+                    "label": "Reviewer"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
