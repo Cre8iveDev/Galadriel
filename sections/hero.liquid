@@ -6,7 +6,7 @@
     </div><!-- /.banner-one__nav -->
     <section class="banner-one banner-carousel__one owl-theme owl-carousel">
     {% for block in section.blocks %}
-        {% if forloop.length == 1 %}
+        {% if forloop.length > 0 %}
             <div class="item">
                 <div class="banner-one__slide  banner-one__slide-{% cycle = 'one','two','three','four','five','six','seven','eight','nine','ten' %}"
                     style="background-image: url({{ block.settings.slider_image }});">
