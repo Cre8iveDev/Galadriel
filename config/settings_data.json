@@ -164,6 +164,9 @@
       "progress": {
         "type": "progress",
         "settings": {
+          "section_image": "shopify:\/\/shop_images\/video-1-1.jpg",
+          "section_heading": "Replace this text from inside the Customizer > Progress",
+          "section_description": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations."
         }
       },
       "portfolio": {
