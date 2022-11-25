@@ -4,12 +4,13 @@
             {% for block in section.blocks %}
             <div class="item">
                 <div class="testimonials-one__single">
-                    <img src="{{ block.settings.block_icon }}">
-                    <p class="testimonials-one__text">This is due to their excellent service, competitive
-                        pricing and
-                        customer support. It’s throughly refresing to get such a personal touch.
-                    </p><!-- /.testimonials-one__text -->
-                    <h3 class="testimonials-one__name">Jacob Holmes</h3><!-- /.testimonials-one__name -->
+                    {% if block.settings.block_icon != blank %}
+                        <img src="{{ block.settings.block_icon }}">
+                    {% else %}
+                        <img src="{{ 'testi-qoute-1-1.png' | asset_url }}">
+                    {% endif %}
+                    <p class="testimonials-one__text">{{ block.settings.block_text }}</p><!-- /.testimonials-one__text -->
+                    <h3 class="testimonials-one__name">{{ block.settings.block_reviewer }}</h3><!-- /.testimonials-one__name -->
                 </div><!-- /.testimonials-one__single -->
             </div><!-- /.item -->
             {% endfor %}
