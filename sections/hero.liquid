@@ -5,24 +5,32 @@
             <!-- /.fa fa-angle-right --></a>
     </div><!-- /.banner-one__nav -->
     <section class="banner-one banner-carousel__one owl-theme owl-carousel">
-        <div class="item">
-            <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ 'slider-1-2.jpg' | asset_url }});">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 text-center">
-                            <h3 class="banner-one__title banner-one__light-color">Introducing <br>
-                                Creatic Template</h3>
-                            <p class="banner-one__text banner-one__light-color">Excepteur sint occaecat
-                                cupidatat non
-                                proident sunt in culpa qui officia <br> deserunt mollit anim id est laborum.</p>
-                            <div class="banner-one__btn-block">
-                                <a href="#" class="thm-btn banner-one__btn">Discover More</a>
-                            </div><!-- /.btn-block -->
-                        </div><!-- /.col-lg-12 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-            </div><!-- /.banner-one__slide -->
-        </div><!-- /.item -->
+    {% for block in section.blocks %}
+        {% if forloop.length > 0 %}
+            {% cycle "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" %}
+            <!-- {% cycle %} -->
+            <div class="item">
+                <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ 'slider-1-2.jpg' | asset_url }});">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 text-center">
+                                <h3 class="banner-one__title banner-one__light-color">Introducing <br>
+                                    Creatic Template</h3>
+                                <p class="banner-one__text banner-one__light-color">Excepteur sint occaecat
+                                    cupidatat non
+                                    proident sunt in culpa qui officia <br> deserunt mollit anim id est laborum.</p>
+                                <div class="banner-one__btn-block">
+                                    <a href="#" class="thm-btn banner-one__btn">Discover More</a>
+                                </div><!-- /.btn-block -->
+                            </div><!-- /.col-lg-12 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container -->
+                </div><!-- /.banner-one__slide -->
+            </div><!-- /.item -->
+        {% endif %}
+    {% endfor %}
+
+        {% comment %}
         <div class="item">
             <div class="banner-one__slide  banner-one__slide-two"
                 style="background-image: url({{ 'slider-1-1.jpg' | asset_url }});">
@@ -41,6 +49,7 @@
                 </div><!-- /.container -->
             </div><!-- /.banner-one__slide -->
         </div><!-- /.item -->
+        {% endcomment %}
     </section><!-- /.banner-one -->
 </div><!-- /.banner-wrapper -->
 
