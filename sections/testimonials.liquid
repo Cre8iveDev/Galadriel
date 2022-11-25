@@ -5,7 +5,7 @@
             <div class="item">
                 <div class="testimonials-one__single">
                     {% if block.settings.block_icon != blank %}
-                        <img src="{{ block.settings.block_icon }}">
+                        <img src="{{ block.settings.block_icon | img_url: 'large' }}">
                     {% else %}
                         <img src="{{ 'testi-qoute-1-1.png' | asset_url }}">
                     {% endif %}
