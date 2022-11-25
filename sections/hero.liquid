@@ -9,16 +9,18 @@
         {% if forloop.length > 1 %}
             <div class="item">       
             {% assign cycle_array = one,two,three,four,five,six,seven,eight,nine,ten | split: ',' %}     
-                <!-- {{ cycle }} -->
+                <!-- {{ cycle_array }} -->
                     <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ block.settings.slider_image }});">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12 text-center">
                                     <h3 class="banner-one__title banner-one__light-color">{{ block.settings.slide_headline }}</h3>
                                     <p class="banner-one__text banner-one__light-color">{{ block.settings.slide_description }}</p>
-                                    <div class="banner-one__btn-block">
-                                        <a href="#" class="thm-btn banner-one__btn">{{ block.settings.btn_text }}</a>
-                                    </div><!-- /.btn-block -->
+                                    {% if block.settings.checkbox %}
+                                        <div class="banner-one__btn-block">
+                                            <a href="#" class="thm-btn banner-one__btn">{{ block.settings.btn_text }}</a>
+                                        </div><!-- /.btn-block -->
+                                    {% endif %}
                                 </div><!-- /.col-lg-12 -->
                             </div><!-- /.row -->
                         </div><!-- /.container -->
