@@ -19,7 +19,13 @@
                                         <div class="other-ball" id="progress-{{ forloop.index }}-other-ball"></div>
                                         <!-- /.other-ball -->
                                     </div><!-- /.circular-progress -->
-                                    <div class="progress-one__text-box">90%</div><!-- /.progress-one__text-box -->
+                                    <div class="progress-one__text-box">
+                                        {% assign progress = block.settings.progress_range %}
+                                        {% case progress %}
+                                            {% when 1 %}
+                                                100%
+                                        {% endcase %}
+                                    </div><!-- /.progress-one__text-box -->
                                 </div><!-- /.progress-one__top -->
                                 <h3 class="progress-one__title">{{ block.settings.block_text }}</h3>
                             </div><!-- /.progress-one__single -->
