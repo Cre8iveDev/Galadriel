@@ -167,7 +167,7 @@
           "81f24449-8ccd-4863-b269-e268312a373c": {
             "type": "expertise",
             "settings": {
-              "progress_range": 0.3,
+              "progress_range": 0.9,
               "block_text": "Quality<br>Services"
             }
           },
