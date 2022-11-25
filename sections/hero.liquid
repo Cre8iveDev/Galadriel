@@ -6,24 +6,41 @@
     </div><!-- /.banner-one__nav -->
     <section class="banner-one banner-carousel__one owl-theme owl-carousel">
     {% for block in section.blocks %}
-        <div class="item">
-        {% if forloop.length > 0 %}            
-            <!-- {% cycle "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" %} -->
-                <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ block.settings.slider_image }});">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12 text-center">
-                                <h3 class="banner-one__title banner-one__light-color">{{ block.settings.slide_headline }}</h3>
-                                <p class="banner-one__text banner-one__light-color">{{ block.settings.slide_description }}</p>
-                                <div class="banner-one__btn-block">
-                                    <a href="#" class="thm-btn banner-one__btn">{{ block.settings.btn_text }}</a>
-                                </div><!-- /.btn-block -->
-                            </div><!-- /.col-lg-12 -->
-                        </div><!-- /.row -->
-                    </div><!-- /.container -->
-                </div><!-- /.banner-one__slide -->
+        {% if forloop.length > 1 %}
+            <div class="item">       
+            {% assign cycle_array = one,two,three,four,five,six,seven,eight,nine,ten | split: ',' %}     
+                <!-- {{ cycle }} -->
+                    <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ block.settings.slider_image }});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <h3 class="banner-one__title banner-one__light-color">{{ block.settings.slide_headline }}</h3>
+                                    <p class="banner-one__text banner-one__light-color">{{ block.settings.slide_description }}</p>
+                                    <div class="banner-one__btn-block">
+                                        <a href="#" class="thm-btn banner-one__btn">{{ block.settings.btn_text }}</a>
+                                    </div><!-- /.btn-block -->
+                                </div><!-- /.col-lg-12 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </div><!-- /.banner-one__slide -->
+            </div><!-- /.item -->
+        {% else %}
+            <div class="item">            
+                    <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ block.settings.slider_image }});">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12 text-center">
+                                    <h3 class="banner-one__title banner-one__light-color">{{ block.settings.slide_headline }}</h3>
+                                    <p class="banner-one__text banner-one__light-color">{{ block.settings.slide_description }}</p>
+                                    <div class="banner-one__btn-block">
+                                        <a href="#" class="thm-btn banner-one__btn">{{ block.settings.btn_text }}</a>
+                                    </div><!-- /.btn-block -->
+                                </div><!-- /.col-lg-12 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </div><!-- /.banner-one__slide -->
+            </div><!-- /.item -->
         {% endif %}
-        </div><!-- /.item -->
     {% endfor %}
 
         {% comment %}
