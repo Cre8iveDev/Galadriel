@@ -7,12 +7,17 @@
     <section class="banner-one banner-carousel__one owl-theme owl-carousel">
     {% for block in section.blocks %}
         {% if forloop.length > 1 %}
-            <!-- {{ forloop.index }} -->
             {% case forloop.index %}
                 {% when 1 %}
                     {% assign loop_index = "one" %}
                 {% when 2 %}
                     {% assign loop_index = "two" %}
+                {% when 3 %}
+                    {% assign loop_index = "three" %}
+                {% when 4 %}
+                    {% assign loop_index = "four" %}
+                {% when 5 %}
+                    {% assign loop_index = "five" %}
             {% endcase %}
             <div class="item">
                 <div class="banner-one__slide  banner-one__slide-{{ loop_index }}"
