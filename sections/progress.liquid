@@ -26,6 +26,22 @@
                                                 100%
                                             {% when 0.90 %}
                                                 90%
+                                            {% when 0.80 %}
+                                                80%
+                                            {% when 0.70 %}
+                                                70%
+                                            {% when 0.60 %}
+                                                60%
+                                            {% when 0.50 %}
+                                                50%
+                                            {% when 0.40 %}
+                                                40%
+                                            {% when 0.30 %}
+                                                30%
+                                            {% when 0.20 %}
+                                                20%
+                                            {% when 0.10 %}
+                                                10%
                                         {% endcase %}
                                     </div><!-- /.progress-one__text-box -->
                                 </div><!-- /.progress-one__top -->
@@ -38,7 +54,7 @@
             <div class="col-xl-6 col-lg-12 d-flex justify-content-xl-end">
                 <div class="video-one wow fadeInRight" data-wow-duration="1500ms">
                     <img src="{{ section.settings.section_image | img_url: 'master' }}" alt="{{ section.settings.section_heading | downcase }}">
-                    <a href="#" class="video-one__play"><i class="fa fa-play"></i><!-- /.fa fa-play --></a>
+                    <a href="{{ section.settings.link_url | downcase }}" class="video-one__play"><i class="fa fa-play"></i><!-- /.fa fa-play --></a>
                     <!-- /.video-one__play -->
                 </div><!-- /.video-one -->
             </div><!-- /.col-lg-6 -->
