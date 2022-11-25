@@ -21,7 +21,7 @@
             {% endcase %}
             <div class="item">
                 <div class="banner-one__slide  banner-one__slide-{{ loop_index }}"
-                    style="background-image: url('{{ block.settings.slider_image }}');">
+                    style="background-image: url('{{ block.settings.slider_image | img_url: 'large' }}');">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 text-center">
