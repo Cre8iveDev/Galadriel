@@ -9,7 +9,7 @@
         {% if forloop.length > 1 %}
             <div class="item">
                 <div class="banner-one__slide  banner-one__slide-one"
-                    style="background-image: url(images/slider-1-2.jpg);">
+                    style="background-image: url({{ block.settings.slider_image }});">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 text-center">
@@ -48,7 +48,7 @@
                 </div><!-- /.banner-one__slide -->
             </div><!-- /.item -->
         {% endcomment %}
-        
+
         {% endif %}
     {% endfor %}
 
