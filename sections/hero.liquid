@@ -6,11 +6,17 @@
     </div><!-- /.banner-one__nav -->
     <section class="banner-one banner-carousel__one owl-theme owl-carousel">
     {% for block in section.blocks %}
-        {% if forloop.length > 0 %}
+        {% if forloop.length > 1 %}
+            {% assign loop_index = forloop.index %}
+            {% case 1 %}
+                {% when 1 %}
+                    {% assign loop_index = "one" %}
+                {% when 2 %}
+                    {% assign loop_index = "two" %}
+            {% endcase %}
             <div class="item">
-                <div class="banner-one__slide  banner-one__slide-{% cycle = 'one','two','three','four','five','six','seven','eight','nine','ten' %}"
+                <div class="banner-one__slide  banner-one__slide-{{ loop_index }}"
                     style="background-image: url('{{ block.settings.slider_image }}');">
-        <!-- {{ cycle }} -->
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 text-center">
