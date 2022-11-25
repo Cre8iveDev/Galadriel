@@ -4,7 +4,7 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="logo-box clearfix">
                 <a class="navbar-brand" href="index.html">
-                    <img src="{{ section.settings.logo_img | img_url: 'master' }}" class="main-logo" width="164" alt="{{ section.settings.alt_text }}" />
+                    <img src="{{ section.settings.logo_img | img_url: 'master' }}" class="main-logo" width="{{ section.settings.img_width_range }}" alt="{{ section.settings.alt_text }}" />
                 </a>
                 <button class="menu-toggler" data-target=".main-navigation">
                     <span class="creatic-menu"></span>
