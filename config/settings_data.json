@@ -16,7 +16,12 @@
           "13de633d-ae4c-44ed-874a-a3f987db750b": {
             "type": "slider-image",
             "settings": {
-              "slider_image": "shopify:\/\/shop_images\/slider-1-1.jpg"
+              "slider_image": "shopify:\/\/shop_images\/slider-1-1.jpg",
+              "img_alt_text": "Awesome slider image",
+              "slide_headline": "We build Shopify stores",
+              "slide_description": "We'll help you build your Shopify store using the latest Online Store 2.0, the latest Liquid codes and integrated with your Github account.",
+              "show_btn": false,
+              "btn_link": ""
             }
           }
         },
