@@ -167,6 +167,7 @@
           "81f24449-8ccd-4863-b269-e268312a373c": {
             "type": "expertise",
             "settings": {
+              "progress_range": 0.9,
               "block_text": "Quality Services"
             }
           }
@@ -176,9 +177,8 @@
         ],
         "settings": {
           "section_image": "shopify:\/\/shop_images\/video-1-1.jpg",
-          "section_heading": "Replace this text from inside the Customizer > Progress",
-          "section_description": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations.",
-          "link": "https:\/\/www.arnuld.net"
+          "section_heading": "We are the standout experts in Shopify",
+          "section_description": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations."
         }
       },
       "portfolio": {
