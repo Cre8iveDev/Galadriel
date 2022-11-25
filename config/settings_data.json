@@ -17,16 +17,28 @@
             "type": "slider-image",
             "settings": {
               "slider_image": "shopify:\/\/shop_images\/slider-1-1.jpg",
-              "img_alt_text": "Awesome slider image",
-              "slide_headline": "We build Shopify stores",
+              "slide_headline": "We build<br>Shopify 2.0stores",
               "slide_description": "We'll help you build your Shopify store using the latest Online Store 2.0, the latest Liquid codes and integrated with your Github account.",
               "show_btn": false,
+              "btn_text": "Discover More",
+              "btn_link": "https:\/\/www.arnuld.net"
+            }
+          },
+          "938a678b-0601-4de5-9a1b-eb056cf104ec": {
+            "type": "slider-image",
+            "settings": {
+              "slider_image": "shopify:\/\/shop_images\/slider-1-2.jpg",
+              "slide_headline": "We develop<br>WordPress Themes",
+              "slide_description": "We can also build your WordPress themes using best practices in manual coding. This ensures a faster loading and search engine-friendly site.",
+              "show_btn": true,
+              "btn_text": "Discover More +",
               "btn_link": "https:\/\/www.arnuld.net"
             }
           }
         },
         "block_order": [
-          "13de633d-ae4c-44ed-874a-a3f987db750b"
+          "13de633d-ae4c-44ed-874a-a3f987db750b",
+          "938a678b-0601-4de5-9a1b-eb056cf104ec"
         ],
         "settings": {
         }
