@@ -130,6 +130,18 @@
       },
       "testimonials": {
         "type": "testimonials",
+        "blocks": {
+          "983bc26b-eeb1-4f1b-bf24-08991e90965c": {
+            "type": "testimonials",
+            "settings": {
+              "block_text": "Replace this text from inside the Customizer > Testimonials",
+              "block_reviewer": "Wayne Robinson"
+            }
+          }
+        },
+        "block_order": [
+          "983bc26b-eeb1-4f1b-bf24-08991e90965c"
+        ],
         "settings": {
         }
       },
