@@ -6,9 +6,9 @@
     </div><!-- /.banner-one__nav -->
     <section class="banner-one banner-carousel__one owl-theme owl-carousel">
     {% for block in section.blocks %}
+        <div class="item">
         {% if forloop.length > 0 %}            
             <!-- {% cycle "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten" %} -->
-            <div class="item">
                 <div class="banner-one__slide  banner-one__slide-one" style="background-image: url({{ block.settings.slider_image }});">
                     <div class="container">
                         <div class="row">
@@ -22,8 +22,8 @@
                         </div><!-- /.row -->
                     </div><!-- /.container -->
                 </div><!-- /.banner-one__slide -->
-            </div><!-- /.item -->
         {% endif %}
+        </div><!-- /.item -->
     {% endfor %}
 
         {% comment %}
