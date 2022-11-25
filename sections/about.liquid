@@ -24,7 +24,7 @@
             <div class="col-lg-6">
                 <div class="service-two__single">
                     <div class="service-two__img">
-                        <img src="{{  'service-1-1.jpg' | asset_url }}" alt="">
+                        <img src="{{ 'service-1-1.jpg' | asset_url }}" alt="">
                     </div><!-- /.service-two__img -->
                     <div class="service-two__content">
                         <h2 class="service-two__title"><a href="#">An All-in-One Web
@@ -38,3 +38,48 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.service-two -->
+
+{% schema %}
+{
+    "name": "About Section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "Discover Shopify Stores 2.0"
+        },
+        {
+            "type": "textarea",
+            "id": "section_description",
+            "label": "Section description",
+            "default": "Replace this text from inside the Customizer > About"
+        }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+        {
+            "type": "about",
+            "name": "About",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "block_image",
+                    "label": "Upload an image"
+                },
+                {
+                    "type": "text",
+                    "id": "block_heading",
+                    "label": "Block heading",
+                    "default": "Replace this text from inside the Customizer > About"
+                },
+                {
+                    "type": "textarea",
+                    "id": "block_link",
+                    "label": "Link URL"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
