@@ -167,18 +167,26 @@
           "81f24449-8ccd-4863-b269-e268312a373c": {
             "type": "expertise",
             "settings": {
-              "block_text": "Quality Services"
+              "progress_range": 0.9,
+              "block_text": "Quality<br>Services"
+            }
+          },
+          "1fd193a4-04bc-4004-bedd-89b8cc1c78e8": {
+            "type": "expertise",
+            "settings": {
+              "progress_range": 0.9,
+              "block_text": "Liquid<br>Expert"
             }
           }
         },
         "block_order": [
-          "81f24449-8ccd-4863-b269-e268312a373c"
+          "81f24449-8ccd-4863-b269-e268312a373c",
+          "1fd193a4-04bc-4004-bedd-89b8cc1c78e8"
         ],
         "settings": {
           "section_image": "shopify:\/\/shop_images\/video-1-1.jpg",
-          "section_heading": "Replace this text from inside the Customizer > Progress",
-          "section_description": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations.",
-          "link": "https:\/\/www.arnuld.net"
+          "section_heading": "We are the standout experts in Shopify",
+          "section_description": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations."
         }
       },
       "portfolio": {
