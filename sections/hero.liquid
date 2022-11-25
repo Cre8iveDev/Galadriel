@@ -8,6 +8,7 @@
     {% for block in section.blocks %}
         {% if forloop.length > 1 %}
             {% assign loop_index = forloop.index %}
+            <!-- {{ forloop.index }} -->
             {% case 1 %}
                 {% when 1 %}
                     {% assign loop_index = "one" %}
