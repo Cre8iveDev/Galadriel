@@ -13,7 +13,7 @@
             {% for block in section.blocks %}
                 <div class="item">
                     <div class="service-one__single">
-                        <img src="{{ block.settings.block_icon | img_url: 'large' | image_tag: alt: string }}">
+                        <img src="{{ block.settings.block_icon | img_url: 'large' | image_tag: alt }}">
                         <h2 class="service-one__title"><a href="#">{{ block.settings.block_heading }}</a></h2><!-- /.service-one__title -->
                         <p class="service-one__text">{{ block.settings.block_description }}</p><!-- /.service-one__text -->
                     </div><!-- /.service-one__single -->
