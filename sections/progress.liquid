@@ -55,3 +55,41 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.progress-one -->
+
+{% schema %}
+{
+    "type": "progress",
+    "name": "Progress Section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "section_image",
+            "label": "Upload an image"
+        },
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Heading",
+            "default": "Replace this text from inside the Customizer > Progress"
+        },
+        {
+            "type": "textarea",
+            "id": "section_description",
+            "label": "Description",
+            "default": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations."
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image_picker",
+            "id": "block_image",
+            "label": "Upload an image"
+        },
+        {
+            "type": "text",
+            "id": "block_text",
+            "label": "Image description"
+        }
+    ]
+}
+{% endschema %}
