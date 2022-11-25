@@ -6,11 +6,11 @@
     </div><!-- /.banner-one__nav -->
     <section class="banner-one banner-carousel__one owl-theme owl-carousel">
     {% for block in section.blocks %}
-        <!-- {{ forloop.index }} -->
         {% if forloop.length > 1 %}
             <div class="item">
                 <div class="banner-one__slide  banner-one__slide-{% cycle = 'one','two','three','four','five','six','seven','eight','nine','ten' %}"
                     style="background-image: url({{ block.settings.slider_image }});">
+        <!-- {% capture cycle %}{% endcapture %}{{ cycle }} -->
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 text-center">
@@ -26,6 +26,27 @@
             </div><!-- /.item -->
         {% endif %}
     {% endfor %}
+
+        {% comment %}
+        <div class="item">
+            <div class="banner-one__slide  banner-one__slide-two"
+                style="background-image: url({{ 'slider-1-1.jpg' | asset_url }});">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <h3 class="banner-one__title banner-one__light-color">Shopify <br>
+                                Online Store 2.0</h3>
+                            <p class="banner-one__text banner-one__light-color">Lorem ipsum dolor sit 
+                            amet, consectetur adipiscing elit. Vestibulum fringilla <br>  a leo bibendum facilisis.</p>
+                            <div class="banner-one__btn-block">
+                                <a href="#" class="thm-btn banner-one__btn">Discover More</a>
+                            </div><!-- /.btn-block -->
+                        </div><!-- /.col-lg-12 -->
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.banner-one__slide -->
+        </div><!-- /.item -->
+        {% endcomment %}
     </section><!-- /.banner-one -->
 </div><!-- /.banner-wrapper -->
 
