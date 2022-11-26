@@ -1,9 +1,34 @@
 <section class="cta-one">
     <div class="container">
-        <h2 class="cta-one__title">Join creatic team now. Are you ready to <br>
-            change the game?</h2><!-- /.cta-one__title -->
+        <h2 class="cta-one__title">{{ section.settings.section_heading }}</h2><!-- /.cta-one__title -->
         <div class="cta-one__button-block">
-            <a href="#" class="thm-btn">Join Now</a><!-- /.thm-btn -->
+            <a href="{{ section.settings.btn_link }}" class="thm-btn">{{ section.settings.btn_text }}</a><!-- /.thm-btn -->
         </div><!-- /.cta-one__button-block -->
     </div><!-- /.container -->
 </section><!-- /.cta-one -->
+
+{% schema %}
+{
+    "name": "CTA",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "Join us today. Are you ready for a game changer?"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button text",
+            "default": "Join now"
+        },
+        {
+            "type": "textarea",
+            "id": "btn_link",
+            "label": "Button link",
+            "default": "https://www.arnuld.net"
+        }
+    ]
+}
+{% endschema %}
