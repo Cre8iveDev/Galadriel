@@ -25,7 +25,7 @@
 </section><!-- /.funfact-one -->
 
 {% style %}
-    .funfact-one { background-image: url({{  }}); }
+    .funfact-one { background-image: url({{ section.settings.section_bg_image | img_url: 'master' }}); }
     .funfact-one__single-inner { background-color: {{ section.blocks.block_bgcolor }}; }
     .funfact-one__single-inner:hover { background-color: {{ section.blocks.block_bgcolor_hover }}; }
 {% endstyle %}
