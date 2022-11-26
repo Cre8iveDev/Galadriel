@@ -1,13 +1,45 @@
 <section class="contact-one" id="contact">
     <div class="container">
         <div class="block-title text-center">
-            <h2 class="block-title__title">Have any question?</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title">{{ section.settings.section_heading }}</h2><!-- /.block-title__title -->
             <span class="block-title__line"></span><!-- /.block-title__line -->
-            <p class="block-title__text">Thank you for your interest in our website & our services. If you have
-                <br> any
-                questions, please write us a message now!</p><!-- /.block-title__text -->
+            <p class="block-title__text">{{ section.settings.section_description }}</p><!-- /.block-title__text -->
         </div><!-- /.block-title -->
 
+        {% form 'contact' %}
+            {{ form.errors | default_errors }}
+
+            <div class="first-name">
+                <label for="first-name">First name</label>
+                <input type="text" name="contact[first_name]" id="first-name" />
+            </div>
+
+            <div class="last-name">
+                <label for="last-name">Last name</label>
+                <input type="text" name="contact[last_name]" id="last-name" />
+            </div>
+
+            <div class="phone">
+                <label for="phone">Phone</label>
+                <input type="tel" name="contact[phone]" id="phone" />
+            </div>
+
+            <div class="email">
+                <label for="email">Email</label>
+                <input type="email" name="contact[email]" id="email" />
+            </div>
+
+            <div class="message">
+                <label for="message">Message</label>
+                <textarea name="contact[body]" id="message"></textarea>
+            </div>
+
+            <div class="submit">
+                <input type="submit" value="Create" />
+            </div>
+        {% endform %}
+
+        {% comment %}
         <form action="/" class="contact-one__form contact-form-validated row">
             <div class="col-lg-6">
                 <input type="text" placeholder="First name" name="fname">
@@ -28,6 +60,29 @@
                 </div><!-- /.text-center -->
             </div><!-- /.col-lg-12 -->
         </form><!-- /.contact-one__form -->
+        {% endcomment %}
+
         <div class="result"></div><!-- /.result -->
     </div><!-- /.container -->
 </section><!-- /.contact-one -->
+
+{% schema %}
+{
+    "name": "Contact",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "Have any questions?"
+        },
+        {
+            "type": "textarea",
+            "id": "section_description",
+            "label": "Section description",
+            "default": "Thank you for your interest in our website & our services. If you have
+            any questions, please write us a message now!"
+        }
+    ]
+}
+{% endschema %}
