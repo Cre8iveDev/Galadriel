@@ -10,7 +10,7 @@
                 <div class="col-lg-4">
                     <div class="team-one__single wow fadeInUp" data-wow-duration="1500ms">
                         <div class="team-one__img">
-                            <img src="{{ block.settings.profile }}" alt="{{ block.settings.team_member | downcase }}">
+                            <img src="{{ block.settings.profile | img_url: 'master' }}" alt="{{ block.settings.team_member | downcase }}">
                         </div><!-- /.team-one__img -->
                         <div class="team-one__content">
                             <h2 class="team-one__name">{{ block.settings.team_member }}</h2><!-- /.team-one__name -->
