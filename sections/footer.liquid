@@ -3,10 +3,9 @@
         <p class="site-footer__copy">{{ section.settings.copyright }}</a></p>
         <!-- /.site-footer__copy -->
         <div class="site-footer__social">
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-pinterest"></i></a>
-            <a href="#"><i class="fa fa-facebook-f"></i></a>
-            <a href="#"><i class="fa fa-youtube-play"></i></a>
+            {% for block in section.blocks %}
+                <a href="{{ block.settings.social_link }}"><i class="{{ block.settings.fa_class }}"></i></a>
+            {% endfor %}
         </div><!-- /.site-footer__social -->
     </div><!-- /.container -->
 </footer><!-- /.site-footer -->
@@ -20,6 +19,25 @@
             "id": "copyright",
             "label": "Copyright",
             "default": "© 2022 All rights reserved."
+        }
+    ],
+    "max_blocks": 8,
+    "blocks": [
+        {
+            "type": "social",
+            "name": "Social Account",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "fa_class",
+                    "label": "Fontawesome social media icon class"
+                },
+                {
+                    "type": "text",
+                    "id": "social_link",
+                    "label": "Your social media URL"
+                }
+            ]
         }
     ]
 }
