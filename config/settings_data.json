@@ -196,7 +196,7 @@
           "a6fa21ee-e294-4746-bf6c-1245e5d297cd": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_hover_color": "#ed2c41",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Shopify",
@@ -205,10 +205,24 @@
               "link_url2": "https:\/\/www.arnuld.net\/wordpress",
               "block_image": "shopify:\/\/shop_images\/gallery-1-1.jpg"
             }
+          },
+          "8e81cd9d-eb16-4460-b8a4-6b76bf8bda23": {
+            "type": "portfolio",
+            "settings": {
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_dev": "Arnuld",
+              "block_dev_url": "https:\/\/www.arnuld.net\/about",
+              "block_specialization1": "Vue JS",
+              "link_url1": "https:\/\/www.arnuld.net\/vue",
+              "block_specialization2": "",
+              "link_url2": "",
+              "block_image": "shopify:\/\/shop_images\/gallery-1-2.jpg"
+            }
           }
         },
         "block_order": [
-          "a6fa21ee-e294-4746-bf6c-1245e5d297cd"
+          "a6fa21ee-e294-4746-bf6c-1245e5d297cd",
+          "8e81cd9d-eb16-4460-b8a4-6b76bf8bda23"
         ],
         "settings": {
           "section_heading": "Our latest projects",
