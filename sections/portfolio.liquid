@@ -1,9 +1,9 @@
 <section class="portfolio-one thm-gray-bg" id="portfolio">
     <div class="container">
         <div class="block-title text-center">
-            <h2 class="block-title__title">{{ section.section_heading }}</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title">{{ section.settings.section_heading }}</h2><!-- /.block-title__title -->
             <span class="block-title__line"></span><!-- /.block-title__line -->
-            <p class="block-title__text">{{ section.section_description }}</p><!-- /.block-title__text -->
+            <p class="block-title__text">{{ section.settings.section_description }}</p><!-- /.block-title__text -->
         </div><!-- /.block-title -->
         <div class="row">
             {% for block in section.blocks %}
