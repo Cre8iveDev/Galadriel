@@ -34,6 +34,9 @@
                                 {% if block.settings.social_li != "" %}
                                     <a href="{{ block.settings.social_li }}"><i class="fa fa-linkedin-in"></i><!-- /.fa fa-linkedin --></a>
                                 {% endif %}
+                                {% if block.settings.social_tw != "" %}
+                                    <a href="{{ block.settings.social_tw }}"><i class="fa fa-twitter"></i><!-- /.fa fa-twitter --></a>
+                                {% endif %}
                                 {% if block.settings.social_email != "" %}
                                     <a href="{{ block.settings.social_email }}"><i class="fa fa-envelope"></i><!-- /.fa fa-envelope --></a>
                                 {% endif %}
@@ -118,7 +121,7 @@
                 {
                     "type": "text",
                     "id": "social_li",
-                    "label": "socialedIn URL"
+                    "label": "LinkedIn URL"
                 },
                 {
                     "type": "text",
