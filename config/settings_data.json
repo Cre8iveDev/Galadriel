@@ -202,7 +202,8 @@
               "block_specialization1": "Shopify",
               "link_url1": "https:\/\/www.arnuld.net\/shopify",
               "block_specialization2": "WordPress",
-              "link_url2": "https:\/\/www.arnuld.net\/wordpress"
+              "link_url2": "https:\/\/www.arnuld.net\/wordpress",
+              "block_image": "shopify:\/\/shop_images\/gallery-1-1.jpg"
             }
           }
         },
