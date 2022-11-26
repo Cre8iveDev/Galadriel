@@ -16,7 +16,7 @@
                             <h2 class="portfolio-one__title"><a href="{{ block.settings.block_dev_url }}">{{ block.settings.block_dev }}</a></h2>
                             <!-- /.portfolio-one__title -->
                             <p class="portfolio-one__category"><a href="{{ block.settings.link_url1 }}">{{ block.settings.block_specialization1 }}</a>
-                            {% if block.settings.specialization2 != blank %}
+                            {% if block.settings.specialization2 != nil %}
                                 <span>,</span> <a href="{{ block.settings.link_url2 }}">{{ block.settings.block_specialization2 }}</a>
                             {% endif %}
                             </p>
