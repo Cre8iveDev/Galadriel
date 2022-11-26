@@ -102,14 +102,67 @@
     </div><!-- /.container -->
 </section><!-- /.portfolio-one -->
 
+{% style %}
+    .portfolio-one__content { background-color: "{{ section.blocks.block_hover_color }}" }
+{% endstyle %}
+
 {% schema %}
 {
     "name": "Portfolio section",
     "settings": [
         {
-            "type": "header",
-            "id": "portfolio_header",
+            "type": "text",
+            "id": "section_heading",
             "label": "Section heading"
+        },
+        {
+            "type": "textarea",
+            "id": "section_description",
+            "label": "Section description"
+        }
+    ],
+    "max_blocks": 6,
+    "blocks": [
+        {
+            "type": "color",
+            "id": "block_hover_color",
+            "label": "Block hover color",
+            "default": "#ed2c41b3"
+        },
+        {
+            "type": "text",
+            "id": "block_dev",
+            "label": "Developer",
+            "default": "Arnuld"
+        },
+        {
+            "type": "text",
+            "id": "block_specialization1",
+            "label": "Specialization 1",
+            "default": "Shopify"
+        },
+        {
+            "type": "text",
+            "id": "link_url1",
+            "label": "Link URL 1",
+            "default": "https://www.arnuld.net/shopify"
+        },
+        {
+            "type": "text",
+            "id": "block_specialization2",
+            "label": "Specialization 2",
+            "default": "WordPress"
+        },
+        {
+            "type": "text",
+            "id": "link_url2",
+            "label": "Link URL 2",
+            "default": "https://www.arnuld.net/wordpress"
+        },
+        {
+            "type": "image_picker",
+            "id": "block_image",
+            "label": "Upload an image"
         }
     ]
 }
