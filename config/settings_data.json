@@ -364,7 +364,7 @@
               "animation_delay": 1000,
               "subscription": "Per Project",
               "subscription_level": "Starter",
-              "subscription_amount": "12",
+              "subscription_amount": 12,
               "benefits": "",
               "block_cta": "Click to Get Started",
               "btn_link": "https:\/\/www.arnuld.net\/pricing"

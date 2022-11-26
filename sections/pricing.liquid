@@ -13,7 +13,7 @@
                         <div class="pricing-one__inner">
                             <span class="pricing-one__period">{{ block.settings.subscription }}</span><!-- /.pricing-one__period -->
                             <h3 class="pricing-one__title">{{ block.settings.subscription_level }}</h3><!-- /.pricing-one__title -->
-                            <p class="pricing-one__amount"><span>{{ cart.currency.symbol }}</span> {{ block.settings.subscription_amount | money_without_currency  }}</p><!-- /.pricing-one__amount -->
+                            <p class="pricing-one__amount"><span>{{ cart.currency.symbol }}</span> {{ block.settings.subscription_amount | times: 100 | money_without_currency  }}</p><!-- /.pricing-one__amount -->
                             <span class="pricing-one__line"></span><!-- /.pricing-one__line -->
                             <ul class="list-unstyled pricing-one__list">
                                 {% assign list_items = block.settings.benefits | newline_to_br | split: '<br />' %}
