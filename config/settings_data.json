@@ -193,6 +193,8 @@
       "portfolio": {
         "type": "portfolio",
         "settings": {
+          "section_heading": "Our latest projects",
+          "section_description": "Over half of the fortune 100. Arnuld's design is used by busy people from amazing companies all over the world."
         }
       },
       "team": {
