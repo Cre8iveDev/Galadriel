@@ -18,18 +18,24 @@
                             <div class="team-one__social">
                                 {% if block.settings.social_fb != "" %}
                                     <a href="{{ block.settings.social_fb }}"><i class="fa fa-facebook-f"></i><!-- /.fa fa-facebook --></a>
-                                {% elsif block.settings.social_yt != "" %}
+                                {% endif %}
+                                {% if block.settings.social_yt != "" %}
                                     <a href="{{ block.settings.social_yt }}"><i class="fa fa-youtube"></i><!-- /.fa fa-youtube --></a>
-                                {% elsif block.settings.social_wa != "" %}
+                                {% endif %}
+                                {% if block.settings.social_wa != "" %}
                                     <a href="{{ block.settings.social_wa }}"><i class="fa fa-whatsapp"></i><!-- /.fa fa-whatsapp --></a>
-                                {% elsif block.settings.social_ig != "" %}
+                                {% endif %}
+                                {% if block.settings.social_ig != "" %}
                                     <a href="{{ block.settings.social_ig }}"><i class="fa fa-instagram"></i><!-- /.fa fa-instagram --></a>
-                                {% elsif block.settings.social_pin != "" %}
+                                {% endif %}
+                                {% if block.settings.social_pin != "" %}
                                     <a href="{{ block.settings.social_pin }}"><i class="fa fa-pinterest-p"></i><!-- /.fa fa-pinterest --></a>
-                                {% elsif block.settings.social_li != "" %}
+                                {% endif %}
+                                {% if block.settings.social_li != "" %}
                                     <a href="{{ block.settings.social_li }}"><i class="fa fa-linkedin-in"></i><!-- /.fa fa-linkedin --></a>
-                                {% else %}
-                                    <a href="{{ block.settings.social_fb }}"><i class="fa fa-envelope"></i><!-- /.fa fa-envelope --></a>
+                                {% endif %}
+                                {% if block.settings.social_email != "" %}
+                                    <a href="{{ block.settings.social_email }}"><i class="fa fa-envelope"></i><!-- /.fa fa-envelope --></a>
                                 {% endif %}
                             </div><!-- /.team-one__social -->
                         </div><!-- /.team-one__content -->
