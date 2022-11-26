@@ -9,7 +9,7 @@
         <div class="brand-one__carousel owl-carousel owl-theme">
             {% for block in section.blocks %}
                 <div class="item">
-                    <img src="{{ block.settings.client_logo | img_url: 'master' }}" alt="{{ block.settings.client_logo.alt }}">
+                    <img src="{{ block.settings.client_logo | img_url: 'master' }}" alt="{{ block.settings.client_logo.alt | downcase }}">
                 </div><!-- /.item -->
             {% endfor %}
         </div><!-- /.brand-one__carousel -->
