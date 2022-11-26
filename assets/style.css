@@ -3100,7 +3100,7 @@ a:visited {
 */
 .funfact-one {
   background-color: #1b181a;
-  background-image: url({{"fun-fact-bg-1-1.jpg"|asset_url}});
+  /*background-image: url({{"fun-fact-bg-1-1.jpg"|asset_url}});*/
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

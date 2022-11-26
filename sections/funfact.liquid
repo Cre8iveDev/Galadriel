@@ -25,6 +25,7 @@
 </section><!-- /.funfact-one -->
 
 {% style %}
+    .funfact-one { background-image: url({{  }}); }
     .funfact-one__single-inner { background-color: {{ section.blocks.block_bgcolor }}; }
     .funfact-one__single-inner:hover { background-color: {{ section.blocks.block_bgcolor_hover }}; }
 {% endstyle %}
@@ -43,6 +44,11 @@
             "type": "textarea",
             "id": "section_description",
             "label": "Section description"
+        },
+        {
+            "type": "image_picker",
+            "id": "section_bg_image",
+            "label": "Background image"
         }
     ],
     "max_blocks": 3,
