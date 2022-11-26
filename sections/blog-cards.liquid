@@ -13,7 +13,7 @@
                             <img src="{{ block.settings.post_tn | img_url: 'master' }}" alt="{{ block.settings.post_tn.alt | downcase }}">
                         </div><!-- /.blog-one__image -->
                         <div class="blog-one__content">
-                            <h3 class="blog-one__title"><a href="blog-details.html">{{ block.settings.block_heading }}</a></h3><!-- /.blog-one__title -->
+                            <h3 class="blog-one__title"><a href="{{ block.settings.btn_link }}">{{ block.settings.block_heading }}</a></h3><!-- /.blog-one__title -->
                             <div class="blog-one__meta">
                                 <a href="#" class="blog-one__meta-link"><i class="{{ block.settings.block_author_icon }}"></i>{{ block.settings.block_author }}</a>
                                 <!-- /.blog-one__meta-link -->
@@ -93,7 +93,7 @@
                     "id": "date_picker",
                     "label": "Choose a post date",
                     "default": "November 26, 2022",
-                    "info": "e.g. %M %d, %Y"
+                    "info": "e.g. %b %d, %Y"
                 },
                 {
                     "type": "text",
