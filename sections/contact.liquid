@@ -10,32 +10,29 @@
             {{ form.errors | default_errors }}
 
             <div class="first-name col-lg-6">
-                <label for="first-name">First name</label>
                 <input type="text" name="contact[first_name]" id="first-name" placeholder="First name" />
             </div>
 
             <div class="last-name col-lg-6">
-                <label for="last-name">Last name</label>
                 <input type="text" name="contact[last_name]" id="last-name" placeholder="Last name" />
             </div>
 
             <div class="phone col-lg-6">
-                <label for="phone">Phone</label>
                 <input type="tel" name="contact[phone]" id="phone" placeholder="Phone number" />
             </div>
 
             <div class="email col-lg-6">
-                <label for="email">Email</label>
                 <input type="email" name="contact[email]" id="email" placeholder="Email address" />
             </div>
 
             <div class="message col-lg-12">
-                <label for="message">Message</label>
                 <textarea name="contact[body]" id="message" placeholder="Write message"></textarea>
             </div>
 
-            <div class="submit text-center">
-                <input type="submit" value="Submit Now" class="thm-btn contact-one__btn" />
+            <div class="submit col-lg-12">
+                <div class="text-center">
+                    <input type="submit" value="Submit Now" class="thm-btn contact-one__btn" />
+                </div>
             </div>
         {% endform %}
 
