@@ -441,7 +441,7 @@
             "settings": {
               "block_bgcolor": "#f2f2f2",
               "post_tn": "shopify:\/\/shop_images\/blog-1.jpg",
-              "block_heading": "Post heading goes here",
+              "block_heading": "Post #1 heading goes here",
               "block_excerpt": "Post excerpt with maximum of 4 lines can be added here",
               "block_author": "by Admin",
               "block_author_icon": "fa fa-user",
@@ -450,10 +450,26 @@
               "btn_text": "Read More",
               "btn_link": "https:\/\/www.arnuld.net\/blog"
             }
+          },
+          "5b79558e-1437-4092-a7c9-d15f900cf2e1": {
+            "type": "cards",
+            "settings": {
+              "block_bgcolor": "#f2f2f2",
+              "post_tn": "shopify:\/\/shop_images\/blog-2.jpg",
+              "block_heading": "Post #2 heading goes here",
+              "block_excerpt": "Post excerpt with maximum of 4 lines can be added here",
+              "block_author": "by Admin",
+              "block_author_icon": "fa fa-user",
+              "date_picker": "December 25, 2022",
+              "block_date_icon": "fa fa-clock-o",
+              "btn_text": "Read More",
+              "btn_link": "https:\/\/www.arnuld.net\/blog"
+            }
           }
         },
         "block_order": [
-          "0070fa04-edba-4c6b-a0ba-2c0f948bbc1c"
+          "0070fa04-edba-4c6b-a0ba-2c0f948bbc1c",
+          "5b79558e-1437-4092-a7c9-d15f900cf2e1"
         ],
         "settings": {
           "section_heading": "Check out our latest blog",
