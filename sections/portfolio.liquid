@@ -15,13 +15,8 @@
                         <div class="portfolio-one__content" style="background-color: {{ block.settings.block_hover_color }};">
                             <h2 class="portfolio-one__title"><a href="{{ block.settings.block_dev_url }}">{{ block.settings.block_dev }}</a></h2>
                             <!-- /.portfolio-one__title -->
-                            <p class="portfolio-one__category">
-                                {% if block.settings.specialization1 != blank %}
-                                    <a href="{{ block.settings.link_url1 }}">{{ block.settings.block_specialization1 }}</a>
-                                {% endif %}
-                                {% if block.settings.specialization2 != blank %}
-                                    <span>,</span> <a href="{{ block.settings.link_url2 }}">{{ block.settings.block_specialization2 }}</a>
-                                {% endif %}
+                            <p class="portfolio-one__category"><a href="{{ block.settings.link_url1 }}">{{ block.settings.block_specialization1 }}</a>{% if block.settings.specialization2 != blank %}<span>,</span> <a
+                                    href="{{ block.settings.link_url2 }}">{{ block.settings.block_specialization2 }}</a>{% endif %}
                             </p>
                             <!-- /.portfolio-one__category -->
                         </div><!-- /.portfolio-one__content -->
