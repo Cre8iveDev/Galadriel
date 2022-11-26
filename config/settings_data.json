@@ -435,7 +435,29 @@
       },
       "blog-cards": {
         "type": "blog-cards",
+        "blocks": {
+          "0070fa04-edba-4c6b-a0ba-2c0f948bbc1c": {
+            "type": "cards",
+            "settings": {
+              "block_bgcolor": "#f2f2f2",
+              "post_tn": "shopify:\/\/shop_images\/blog-1.jpg",
+              "block_heading": "Post heading goes here",
+              "block_excerpt": "Post excerpt with maximum of 4 lines can be added here",
+              "block_author": "by Admin",
+              "block_author_icon": "fa fa-user",
+              "date_picker": "November 26, 2022",
+              "block_date_icon": "fa fa-clock-o",
+              "btn_text": "Read More",
+              "btn_link": "https:\/\/www.arnuld.net\/blog"
+            }
+          }
+        },
+        "block_order": [
+          "0070fa04-edba-4c6b-a0ba-2c0f948bbc1c"
+        ],
         "settings": {
+          "section_heading": "Check out our latest blog",
+          "section_description": "Our recent blog posts, news, media assets and latest updates about us - all available only in one place"
         }
       },
       "cta": {
