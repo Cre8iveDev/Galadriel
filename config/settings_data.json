@@ -500,6 +500,50 @@
       },
       "footer": {
         "type": "footer",
+        "blocks": {
+          "7526624e-421d-46db-8359-5fa905c65f30": {
+            "type": "social",
+            "settings": {
+              "fa_class": "fa fa-twitter",
+              "social_link": "https:\/\/twitter.com\/arnuld.net"
+            }
+          },
+          "ebae240c-a56d-42ce-9689-40eac71b02dc": {
+            "type": "social",
+            "settings": {
+              "fa_class": "fa fa-pinterest",
+              "social_link": "https:\/\/www.pinterest.com\/arnuld.net"
+            }
+          },
+          "44dab8e6-0603-4828-b72b-1987d5a56d09": {
+            "type": "social",
+            "settings": {
+              "fa_class": "fa fa-facebook",
+              "social_link": "https:\/\/www.facebook.com\/arnuld.net"
+            }
+          },
+          "2d113ebe-bdce-40f6-8277-c24768525bde": {
+            "type": "social",
+            "settings": {
+              "fa_class": "fa fa-youtube-play",
+              "social_link": "https:\/\/www.youtube.com\/arnuld.net"
+            }
+          },
+          "407984d9-f84a-4ed9-83bb-99a03e817964": {
+            "type": "social",
+            "settings": {
+              "fa_class": "fa fa-envelope",
+              "social_link": "mailto:webmaster@arnuld.net"
+            }
+          }
+        },
+        "block_order": [
+          "7526624e-421d-46db-8359-5fa905c65f30",
+          "ebae240c-a56d-42ce-9689-40eac71b02dc",
+          "44dab8e6-0603-4828-b72b-1987d5a56d09",
+          "2d113ebe-bdce-40f6-8277-c24768525bde",
+          "407984d9-f84a-4ed9-83bb-99a03e817964"
+        ],
         "settings": {
           "copyright": "© All 2019 All rights reserved. <a href=\"https:\/\/www.arnuld.net\">Designed by Arnuld.<\/a>"
         }
