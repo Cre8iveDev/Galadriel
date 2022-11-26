@@ -196,7 +196,7 @@
           "a6fa21ee-e294-4746-bf6c-1245e5d297cd": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "#ed2c41",
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Shopify",
