@@ -410,7 +410,20 @@
       },
       "clients": {
         "type": "clients",
+        "blocks": {
+          "1bfb2d1a-8231-4bd2-9cb7-ee6db0732433": {
+            "type": "clients",
+            "settings": {
+              "client_logo": "shopify:\/\/shop_images\/brand-1-1.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1bfb2d1a-8231-4bd2-9cb7-ee6db0732433"
+        ],
         "settings": {
+          "section_heading": "Clients who trusted us",
+          "section_description": "Over half of the fortune 100. Arnuld's designs are used by busy people from amazing companies all over the world."
         }
       },
       "blog-cards": {
