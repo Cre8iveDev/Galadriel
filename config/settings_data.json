@@ -257,6 +257,19 @@
               "link_url2": "https:\/\/www.arnuld.net\/css",
               "block_image": "shopify:\/\/shop_images\/gallery-1-5.jpg"
             }
+          },
+          "89b23e5b-6fd1-43b4-92e7-52b65fcbb4dd": {
+            "type": "portfolio",
+            "settings": {
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_dev": "Arnuld",
+              "block_dev_url": "https:\/\/www.arnuld.net\/about",
+              "block_specialization1": "Zapier",
+              "link_url1": "https:\/\/www.arnuld.net\/automation\/zapier",
+              "block_specialization2": "",
+              "link_url2": "",
+              "block_image": "shopify:\/\/shop_images\/gallery-1-6.jpg"
+            }
           }
         },
         "block_order": [
@@ -264,7 +277,8 @@
           "8e81cd9d-eb16-4460-b8a4-6b76bf8bda23",
           "e5f3469a-1fb2-41f8-965e-7f339e6ef686",
           "ca42e5d7-75ec-44f8-b452-6ca62b17b786",
-          "38af42e5-e990-4314-996a-11e65eecd51f"
+          "38af42e5-e990-4314-996a-11e65eecd51f",
+          "89b23e5b-6fd1-43b4-92e7-52b65fcbb4dd"
         ],
         "settings": {
           "section_heading": "Our latest projects",
