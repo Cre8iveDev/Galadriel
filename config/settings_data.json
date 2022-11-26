@@ -363,10 +363,11 @@
             "settings": {
               "animation_delay": 1000,
               "bg_image": "shopify:\/\/shop_images\/pricing-1-1.jpg",
-              "subscription": "Per Project",
+              "subscription": "Per Hour",
               "subscription_level": "Starter",
               "subscription_amount": 12,
               "benefits": "Minimum of 10 tasks per day\nUnlimited revisions\nGithub to Shopify 2.0 Integration\nFull End-of-Day report\nTime tracker supported",
+              "btn_text": "Click to Get Started",
               "btn_link": "https:\/\/www.arnuld.net\/pricing"
             }
           }
