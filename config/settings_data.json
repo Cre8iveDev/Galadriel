@@ -357,7 +357,26 @@
       },
       "pricing": {
         "type": "pricing",
+        "blocks": {
+          "cc17dff0-40f6-4f07-bb67-7f41c24045a2": {
+            "type": "pricing",
+            "settings": {
+              "animation_delay": 1000,
+              "subscription": "Per Project",
+              "subscription_level": "Starter",
+              "subscription_amount": "12",
+              "benefits": "",
+              "block_cta": "Click to Get Started",
+              "btn_link": "https:\/\/www.arnuld.net\/pricing"
+            }
+          }
+        },
+        "block_order": [
+          "cc17dff0-40f6-4f07-bb67-7f41c24045a2"
+        ],
         "settings": {
+          "section_heading": "Select the right plan for you",
+          "section_description": "Choose the right subscription for your business. You can also cancel your subscription at any time, no worries."
         }
       },
       "clients": {
