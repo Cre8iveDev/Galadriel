@@ -99,17 +99,18 @@
     "max_blocks": 3,
     "blocks": [
         {
+            "type": "pricing",
             "name": "Price block",
             "settings": [
                 {
                     "type": "range",
                     "id": "animation_delay",
                     "min": 0,
-                    "max": 10000,
+                    "max": 9500,
                     "step": 500,
                     "label": "Animation delay",
                     "unit": "ms",
-                    "default": "1000"
+                    "default": 1000
                 },
                 {
                     "type": "image_picker",
@@ -129,11 +130,8 @@
                     "default": "Premium"
                 },
                 {
-                    "type": "range",
+                    "type": "text",
                     "id": "subscription_amount",
-                    "min": 10,
-                    "max": 3000,
-                    "step": 5,
                     "label": "Subscription amount",
                     "default": "12"
                 },
