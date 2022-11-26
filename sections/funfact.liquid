@@ -18,12 +18,16 @@
                             text.</p><!-- /.block-title__text -->
                     </div><!-- /.block-title -->
                     <div class="funfact-one__wrap">
-                        <div class="funfact-one__single text-center">
-                            <div class="funfact-one__single-inner">
-                                <h2 class="funfact-one__number counter">875</h2><!-- /.funfact-one__number -->
-                                <p class="funfact-one__text">Projects Completed</p><!-- /.funfact-one__text -->
-                            </div><!-- /.funfact-one__single-inner -->
-                        </div><!-- /.funfact-one__single -->
+                        {% for block in section.blocks %}
+                            <div class="funfact-one__single text-center">
+                                <div class="funfact-one__single-inner">
+                                    <h2 class="funfact-one__number counter">875</h2><!-- /.funfact-one__number -->
+                                    <p class="funfact-one__text">Projects Completed</p><!-- /.funfact-one__text -->
+                                </div><!-- /.funfact-one__single-inner -->
+                            </div><!-- /.funfact-one__single -->
+                        {% endfor %}
+
+                        {% comment %}
                         <div class="funfact-one__single text-center">
                             <div class="funfact-one__single-inner">
                                 <h2 class="funfact-one__number counter">303
@@ -38,9 +42,61 @@
                                 <p class="funfact-one__text">Cups of Coffee</p><!-- /.funfact-one__text -->
                             </div><!-- /.funfact-one__single-inner -->
                         </div><!-- /.funfact-one__single -->
+                        {% endcomment %}
                     </div><!-- /.funfact-one__wrap -->
                 </div><!-- /.funfact-one__content -->
             </div><!-- /.col-lg-8 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.funfact-one -->
+
+{% style %}
+    .funfact-one__single-inner { background-color: {{ section.blocks.block_bgcolor }}; }
+    .funfact-one__single-inner:hover { background-color: {{ section.blocks.block_bgcolor_hover }}; }
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "Funfact",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "We Word Hard: We Don't Waste Time"
+        },
+        {
+            "type": "textarea",
+            "id": "section_description",
+            "label": "Section description"
+        }
+    ],
+    "max_blocks": 3,
+    "blocks": [
+        {
+            "type": "color",
+            "id": "block_bgcolor",
+            "label": "Background color",
+            "default": "#2d2a2c"
+        },
+        {
+            "type": "color",
+            "id": "block_bgcolor_hover",
+            "label": "Background color hover",
+            "default": "#ed2c41"
+        },
+        {
+            "type": "text",
+            "id": "block_heading",
+            "label": "Block heading",
+            "default": "100"
+        },
+        {
+            "type": "text",
+            "id": "block_text",
+            "label": "Block text",
+            "default": "Change me"
+        }
+    ]
+}
+{% endschema %}
