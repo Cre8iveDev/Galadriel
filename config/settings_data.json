@@ -196,7 +196,7 @@
           "a6fa21ee-e294-4746-bf6c-1245e5d297cd": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_hover_color": "#ed2c41",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Shopify",
@@ -209,7 +209,7 @@
           "8e81cd9d-eb16-4460-b8a4-6b76bf8bda23": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_hover_color": "#ed2c41",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Vue JS",
@@ -222,7 +222,7 @@
           "e5f3469a-1fb2-41f8-965e-7f339e6ef686": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_hover_color": "#ed2c41",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Tailwind CSS",
@@ -235,7 +235,7 @@
           "ca42e5d7-75ec-44f8-b452-6ca62b17b786": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_hover_color": "#ed2c41",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "WooCommerce",
@@ -248,7 +248,7 @@
           "38af42e5-e990-4314-996a-11e65eecd51f": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_hover_color": "#ed2c41",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "PageFly",
@@ -261,7 +261,7 @@
           "89b23e5b-6fd1-43b4-92e7-52b65fcbb4dd": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "rgba(237, 44, 65, 0.7)",
+              "block_hover_color": "#ed2c41",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Zapier",
@@ -287,7 +287,30 @@
       },
       "team": {
         "type": "team",
+        "blocks": {
+          "e2a7e943-a5b9-4eda-9e3f-7f37eabad799": {
+            "type": "team",
+            "settings": {
+              "profile": "shopify:\/\/shop_images\/team-1-1.jpg",
+              "team_member": "Susie Black",
+              "team_position": "Co-Founder",
+              "social_email": "susie@arnuld.net",
+              "social_fb": "https:\/\/www.facebook.com\/susie_arnuldnet",
+              "social_yt": "",
+              "social_wa": "",
+              "social_ig": "",
+              "social_pin": "",
+              "social_li": "",
+              "social_tw": "https:\/\/twitter.com\/susie_arnuldnet"
+            }
+          }
+        },
+        "block_order": [
+          "e2a7e943-a5b9-4eda-9e3f-7f37eabad799"
+        ],
         "settings": {
+          "team_heading": "Meet the Shopify expert",
+          "team_description": "We have assembled an outstanding team, who are skilled in the business and corporate fields."
         }
       },
       "funfact": {
