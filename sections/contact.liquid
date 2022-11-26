@@ -6,7 +6,7 @@
             <p class="block-title__text">{{ section.settings.section_description }}</p><!-- /.block-title__text -->
         </div><!-- /.block-title -->
 
-        {% form 'contact' %}
+        {% form 'contact', class: 'contact-one__form contact-form-validated row' %}
             {{ form.errors | default_errors }}
 
             <div class="first-name col-lg-6">
