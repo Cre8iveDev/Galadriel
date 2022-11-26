@@ -416,10 +416,17 @@
             "settings": {
               "client_logo": "shopify:\/\/shop_images\/brand-1-1.jpg"
             }
+          },
+          "1498fb2f-eb77-4e47-a2c2-6d56dae15fa6": {
+            "type": "clients",
+            "settings": {
+              "client_logo": "shopify:\/\/shop_images\/brand-1-4.jpg"
+            }
           }
         },
         "block_order": [
-          "1bfb2d1a-8231-4bd2-9cb7-ee6db0732433"
+          "1bfb2d1a-8231-4bd2-9cb7-ee6db0732433",
+          "1498fb2f-eb77-4e47-a2c2-6d56dae15fa6"
         ],
         "settings": {
           "section_heading": "Clients who trusted us",
