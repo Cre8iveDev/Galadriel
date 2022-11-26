@@ -10,7 +10,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="portfolio-one__single wow fadeInUp" data-wow-duration="1500ms">
                         <img src="{{ block.settings.block_image | img_url: 'master' }}" alt="{{ block.settings.block_dev_url | concat: forloop.index | downcase }}">
-                        <a href="#" class="portfolio-one__zoom"><i class="fa fa-search"></i>
+                        <a href="{{ block.settings.block_dev_url }}" class="portfolio-one__zoom"><i class="fa fa-search"></i>
                             <!-- /.fa fa-search --></a>
                         <div class="portfolio-one__content">
                             <h2 class="portfolio-one__title"><a href="{{ block.settings.block_dev_url }}">{{ block.settings.block_dev }}</a></h2>
