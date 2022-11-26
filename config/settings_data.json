@@ -330,7 +330,7 @@
             "settings": {
               "block_bgcolor": "#2d2a2c",
               "block_bgcolor_hover": "#ed2c41",
-              "block_heading": "32",
+              "block_heading": "17",
               "block_text": "Total Clients"
             }
           },
