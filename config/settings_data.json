@@ -315,6 +315,40 @@
       },
       "funfact": {
         "type": "funfact",
+        "blocks": {
+          "a5815c6a-f00c-42bb-9ac5-701bd2c97b0d": {
+            "type": "funfact",
+            "settings": {
+              "block_bgcolor": "#2d2a2c",
+              "block_bgcolor_hover": "#ed2c41",
+              "block_heading": "415",
+              "block_text": "Projects Completed"
+            }
+          },
+          "ba5eecd8-3c09-452d-add9-436dc4f414c1": {
+            "type": "funfact",
+            "settings": {
+              "block_bgcolor": "#2d2a2c",
+              "block_bgcolor_hover": "#ed2c41",
+              "block_heading": "32",
+              "block_text": "Total Clients"
+            }
+          },
+          "82fbdbee-e03f-4865-acc4-0fb7ac8c439d": {
+            "type": "funfact",
+            "settings": {
+              "block_bgcolor": "#2d2a2c",
+              "block_bgcolor_hover": "#ed2c41",
+              "block_heading": "157",
+              "block_text": "Cups of Coffee"
+            }
+          }
+        },
+        "block_order": [
+          "a5815c6a-f00c-42bb-9ac5-701bd2c97b0d",
+          "ba5eecd8-3c09-452d-add9-436dc4f414c1",
+          "82fbdbee-e03f-4865-acc4-0fb7ac8c439d"
+        ],
         "settings": {
           "section_heading": "We Word Hard: We Don't Waste Time",
           "section_description": "There are many variations of passages of Lorem Ipsum available, but the majority is have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a lorem passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text."
