@@ -1,36 +1,33 @@
 <section class="blog-one blog-one__home-one" id="blog">
     <div class="container">
         <div class="block-title text-center">
-            <h2 class="block-title__title">Check out our latest news</h2><!-- /.block-title__title -->
+            <h2 class="block-title__title">{{ section.settings.section_heading }}</h2><!-- /.block-title__title -->
             <span class="block-title__line"></span><!-- /.block-title__line -->
-            <p class="block-title__text">Our recent blog posts, news, media assets and latest updates about <br>
-                creatic
-                - all available only in one place</p><!-- /.block-title__text -->
+            <p class="block-title__text">{{ section.settings.section_description }}</p><!-- /.block-title__text -->
         </div><!-- /.block-title -->
         <div class="row">
-            <div class="col-lg-6">
-                <div class="blog-one__single">
-                    <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
-                        <img src="{{ 'blog-1.jpg' | asset_url }}" alt="">
-                    </div><!-- /.blog-one__image -->
-                    <div class="blog-one__content">
-                        <h3 class="blog-one__title"><a href="blog-details.html">Learn basic rules of new
-                                corporate
-                                business</a></h3><!-- /.blog-one__title -->
-                        <div class="blog-one__meta">
-                            <a href="#" class="blog-one__meta-link"><i class="fa fa-user"></i>By admin</a>
-                            <!-- /.blog-one__meta-link -->
-                            <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>March 5th,
-                                2018</a>
-                            <!-- /.blog-one__meta-link -->
-                        </div><!-- /.blog-one__meta -->
-                        <p class="blog-one__text">Lorem Ipsum is simply dummy text of the new design printng and
-                            type
-                            setting Ipsum has been the is industrys ...</p><!-- /.blog-one__text -->
-                        <a href="#" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
-                    </div><!-- /.blog-one__content -->
-                </div><!-- /.blog-one__single -->
-            </div><!-- /.col-lg-6 -->
+            {% for block in section.blocks %}
+                <div class="col-lg-6">
+                    <div class="blog-one__single">
+                        <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
+                            <img src="{{ block.settings.post_tn | img_url: 'master' }}" alt="{{ block.settings.post_tn.alt } downcase }}">
+                        </div><!-- /.blog-one__image -->
+                        <div class="blog-one__content">
+                            <h3 class="blog-one__title"><a href="blog-details.html">{{ block.settings.block_heading }}</a></h3><!-- /.blog-one__title -->
+                            <div class="blog-one__meta">
+                                <a href="#" class="blog-one__meta-link"><i class="{{ block.settings.block_author_icon }}"></i>{{ block.settings.block_author }}</a>
+                                <!-- /.blog-one__meta-link -->
+                                <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ block.settings.date_picker | date: "%F %j, %Y" }}</a>
+                                <!-- /.blog-one__meta-link -->
+                            </div><!-- /.blog-one__meta -->
+                            <p class="blog-one__text">{{ block.settings.block_excerpt }}</p><!-- /.blog-one__text -->
+                            <a href="{{ block.settings.btn_link }}" class="blog-one__link">{{ block.settings.btn_text }}</a><!-- /.blog-one__link -->
+                        </div><!-- /.blog-one__content -->
+                    </div><!-- /.blog-one__single -->
+                </div><!-- /.col-lg-6 -->
+            {% endfor %}
+
+            {% comment %}
             <div class="col-lg-6">
                 <div class="blog-one__single">
                     <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
@@ -56,6 +53,96 @@
                     </div><!-- /.blog-one__content -->
                 </div><!-- /.blog-one__single -->
             </div><!-- /.col-lg-6 -->
+            {% endcomment %}
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.blog-one -->
+
+{% schema %}
+{
+    "name": "Blog Cards",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "Check out our latest blog"
+        },
+        {
+            "type": "textarea",
+            "id": "section_description",
+            "label": "Section description",
+            "default": "Our recent blog posts, news, media assets and latest updates about us - all available only in one place"
+        }
+    ],
+    "max_blocks": 2,
+    "blocks": [
+        {
+            "type": "cards",
+            "name": "Block",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "block_bgcolor",
+                    "label": "Background color",
+                    "default": "#f2f2f2"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "post_tn",
+                    "label": "Upload a post thumbnail"
+                },
+                {
+                    "type": "text",
+                    "id": "block_heading",
+                    "label": "Post heading",
+                    "default": "Post heading goes here"
+                },
+                {
+                    "type": "textarea",
+                    "id": "block_excerpt",
+                    "label": "Post excerpt",
+                    "default": "Post excerpt with maximum of 4 lines can be added here"
+                },
+                {
+                    "type": "text",
+                    "id": "block_author",
+                    "label": "Author's name",
+                    "default": "by Admin"
+                },
+                {
+                    "type": "text",
+                    "id": "block_author_icon",
+                    "label": "Author's Fontawesome icon",
+                    "default": "fa fa-user"
+                },
+                {
+                    "type": "text",
+                    "id": "date_picker",
+                    "label": "Choose a post date",
+                    "default": "November 26, 2022",
+                    "info": "e.g. F j, Y"
+                },
+                {
+                    "type": "text",
+                    "id": "block_date_icon",
+                    "label": "Date Fontawesome icon",
+                    "default": "fa fa-clock-o"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_text",
+                    "label": "Button text",
+                    "default": "Read More"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_link",
+                    "label": "Button link",
+                    "default": "https://www.arnuld.net/blog"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
