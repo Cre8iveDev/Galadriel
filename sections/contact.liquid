@@ -36,17 +36,22 @@
             </div>
         {% endform %}
 
-        <div class="result"></div><!-- /.result -->
+        <div class="result col-lg-7 py-2 px-4"></div><!-- /.result -->
     </div><!-- /.container -->
 </section><!-- /.contact-one -->
 
 {% style %}
+    .result.show {
+        background-color: var(--success);
+        color: #ffffff;
+    }
+
     .thm-btn.contact-one__btn {
         display: inline-block !important;
         background-color: #ed2c41 !important;
         border: none !important;
         border-radius: 50px;
-        color: #fff !important;
+        color: #ffffff !important;
         font-size: 16px !important;
         font-weight: bold;
         height: 60px !important;
@@ -63,6 +68,19 @@
         color: #fff;
     }
 {% endstyle %}
+
+{% script %}
+    // capture url params
+    var params = new window.URLSearchParams(window.location.search);
+    var email_sent = params.get('contact_posted');
+
+    if ( email_sent == true ) {
+        $('result').addClass('show');
+        $('.result').text("Email was successfully sent");
+    } else {
+        $('result').removeClass('show');
+    }
+{% endscript %}
 
 {% schema %}
 {
