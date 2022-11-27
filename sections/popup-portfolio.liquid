@@ -12,24 +12,20 @@
                 <div class="row">
                     <div class="col-lg-8 d-flex">
                         <div class="portfolio-popup__content my-auto">
-                            <h2 class="portfolio-popup__title blog-details__title"><a href="#">Mokeh nehyt new
-                                    desktop
-                                    free mockup </a></h2>
+                            <h2 class="portfolio-popup__title blog-details__title"><a href="{{ section.settings.heading_link }}">{{ section.settings.section_heading}}</a></h2>
                             <!-- /.portfolio-popup__title -->
                             <div class="blog-one__meta">
-                                <a href="#" class="blog-one__meta-link"><i class="fa fa-user"></i>By admin</a>
-                                <!-- /.blog-one__meta-link -->
-                                <a href="#" class="blog-one__meta-link"><i class="fa fa-comments"></i>2 Comments</a>
-                                <!-- /.blog-one__meta-link -->
-                                <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>March 5th,
-                                    2018</a>
+                                {% for block in section.blocks %}
+                                    <a href="{{ block.settings.meta_link }}" class="blog-one__meta-link"><i class="{{ block.settings.fa_icon }}"></i>{{ block.settings.meta_text }}</a>
+                                    <!-- /.blog-one__meta-link -->
+                                {% endfor %}
                                 <!-- /.blog-one__meta-link -->
                             </div><!-- /.blog-one__meta -->
                         </div><!-- /.portfolio-popup__content -->
                     </div><!-- /.col-lg-8 -->
                     <div class="col-lg-4">
                         <div class="portfolio__popup-btn">
-                            <a href="#" class="thm-btn">View Website</a>
+                            <a href="{{ section.settings.cta_link }}" class="thm-btn">{{ section.settings.cta_text }}</a>
                         </div><!-- /.portfolio__popup-btn -->
                     </div><!-- /.col-lg-4 -->
                 </div><!-- /.row -->
@@ -37,3 +33,62 @@
         </div><!-- /.container -->
     </div><!-- /.portfolio-popup__inner -->
 </div><!-- /.portfolio-popup -->  
+
+{% schema %}
+{
+    "name": "Popup Portfolio",
+    "settings": [
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "Change me"
+        },
+        {
+            "type": "text",
+            "id": "heading_link",
+            "label": "Heading link",
+            "default": "https://www.arnuld.net"
+        },
+        {
+            "type": "text",
+            "id": "cta_text",
+            "label": "CTA text",
+            "default": "View Website"
+        },
+        {
+            "type": "text",
+            "id": "cta_link",
+            "label": "CTA link",
+            "default": "https://www.arnuld.net"
+        }
+    ],
+    "max_blocks": 3,
+    "blocks": [
+        {
+            "type": "block",
+            "name": "Meta",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "fa_icon",
+                    "label": "FontAwesome icon class",
+                    "info": "fa fa-user"
+                },
+                {
+                    "type": "text",
+                    "id": "meta_text",
+                    "label": "Meta text",
+                    "default": ""
+                },
+                {
+                    "type": "text",
+                    "id": "meta_link",
+                    "label": "Meta link",
+                    "default": "https://www.arnuld.net"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
