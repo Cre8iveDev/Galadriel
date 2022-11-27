@@ -1,10 +1,10 @@
 {
+  "name": "Error 404",
+  "layout": "error-404",
+  "wrapper": "div#error_404.class-404[attr-404=hello]",
   "sections": {
-    "main": {
-      "type": "main-404"
-    }
-  },
-  "order": [
-    "main"
-  ]
+    "error-404": {
+          "type": "error-404"
+   },
+   "order": ["error-404"]
 }
