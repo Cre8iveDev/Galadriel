@@ -4,23 +4,24 @@
         <div class="cursor-follower"></div>
     </div><!-- /.side-menu__block-overlay -->
     <div class="side-menu__block-inner ">
-        <a href="index.html"><img src="{{ 'logo-dark.png' | asset_url }}" width="196" alt="Awesome Image" /></a>
+        <a href="index.html"><img src="{{ section.settings.logo_dark | img_url: 'master' }}" width="196" alt="{{ section.settings.logo_dark.alt | downcase }}" /></a>
         <div class="side-menu__block-about">
-            <h3 class="side-menu__block__title">About Us</h3><!-- /.side-menu__block__title -->
-            <p class="side-menu__block-about__text">We must explain to you how all seds this mistakens idea off
-                denouncing pleasures and praising pain was born and I will give you a completed accounts off the
-                system
-                and </p><!-- /.side-menu__block-about__text -->
-            <a href="#" class="thm-btn side-menu__block-about__btn">Get Consulation</a>
+            <h3 class="side-menu__block__title">{{ section.settings.section_heading }}</h3><!-- /.side-menu__block__title -->
+            <p class="side-menu__block-about__text">{{ section.settings.section_text }}</p><!-- /.side-menu__block-about__text -->
+            <a href="{{ section.settings.btn_link }}" class="thm-btn side-menu__block-about__btn">{{ section.settings.btn_text }}</a>
         </div><!-- /.side-menu__block-about -->
         <hr class="side-menu__block-line" />
         <div class="side-menu__block-contact">
             <h3 class="side-menu__block__title">Contact Us</h3><!-- /.side-menu__block__title -->
             <ul class="side-menu__block-contact__list">
+                {% for block in section.blocks %}
                 <li class="side-menu__block-contact__list-item">
-                    <i class="fa fa-map-marker"></i>
-                    Rock St 12, Newyork City, USA
+                    <i class="{{ block.settings.contact_icon | downcase }}"></i>
+                    {{ block.settings.contact_details }}
                 </li><!-- /.side-menu__block-contact__list-item -->
+                {% endfor %}
+
+                {%comment%}
                 <li class="side-menu__block-contact__list-item">
                     <i class="fa fa-phone"></i>
                     (000) 111-222-4444
@@ -33,10 +34,85 @@
                     <i class="fa fa-clock-o"></i>
                     Week Days: 09.00 to 18.00 Sunday: Closed
                 </li><!-- /.side-menu__block-contact__list-item -->
+                {%endcomment%}
+
             </ul><!-- /.side-menu__block-contact__list -->
         </div><!-- /.side-menu__block-contact -->
-        <p class="side-menu__block__text site-footer__copy-text"><a href="#">creatic</a> <i
-                class="fa fa-copyright"></i>
-            2019 All Right Reserved</p>
+        <p class="side-menu__block__text site-footer__copy-text"><a href="{{ section.settings.domain_link }}">{{ section.settings.domain_text }}</a> <i class="fa fa-copyright"></i> {{ section.settings.copyright }}</p>
     </div><!-- /.side-menu__block-inner -->
 </div><!-- /.side-menu__block -->
+
+{% schema %}
+{
+    "name": "Side menu popup",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo_dark",
+            "label": "Upload your logo"
+        },
+        {
+            "type": "text",
+            "id": "section_heading",
+            "label": "Section heading",
+            "default": "About Us"
+        },
+        {
+            "type": "text",
+            "id": "section_text",
+            "label": "Section text",
+            "default": "Change me from Popup Sidemenu > About"
+        },
+        {
+            "type": "text",
+            "id": "btn_text",
+            "label": "Button text",
+            "default": "Get Consultation"
+        },
+        {
+            "type": "text",
+            "id": "btn_link",
+            "label": "Button link",
+            "default": "https://www.arnuld.net"
+        },
+        {
+            "type": "text",
+            "id": "domain_text",
+            "label": "Domain text",
+            "default": "Arnuld.net"
+        },
+        {
+            "type": "text",
+            "id": "domain_link",
+            "label": "Domain link",
+            "default": "https://www.arnuld.net"
+        },
+        {
+            "type": "text",
+            "id": "copyright",
+            "label": "Copyright text",
+            "default": "Change me from Popup Sidemenu > About"
+        }
+    ],
+    "max_blocks": 4,
+    "blocks": [
+        {
+            "type": "contact",
+            "name": "Contact",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "contact_icon",
+                    "label": "FontAwesome icon class"
+                },
+                {
+                    "type": "text",
+                    "id": "contact_details",
+                    "label": "Contact details",
+                    "default": "Change me"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
