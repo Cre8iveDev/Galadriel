@@ -6,7 +6,7 @@
     <div class="portfolio-popup__inner">
         <div class="container">
             <div class="portfolio-popup__image">
-                <img src="{{ 'portfolio-d-1-1.jpg' | asset_img_url }}" alt="">
+                <img src="{{ section.settings.popup_image | img_url: 'master' }}" alt="{{ section.settings.popup_image.alt }}">
             </div><!-- /.portfolio-popup__image -->
             <div class="portfolio-popup__bottom">
                 <div class="row">
