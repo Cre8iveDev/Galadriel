@@ -1,6 +1,12 @@
 <h1>{{ section.settings.title }}</h1>
 <p>{{ section.settings.subtext }}</p>
 
+{% style %}
+    .shopify-section {
+        height: calc(100vh - 60px);
+    }
+{% endstyle %}
+
 {% schema %}
 {
     "name": "Template 404",
