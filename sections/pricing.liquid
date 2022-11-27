@@ -7,7 +7,7 @@
         </div><!-- /.block-title -->
         <div class="row">
             {% for block in section.blocks %}
-                <div class="col-lg-4 wow fadeInUp" data-wow-delay="{{ block.settings.animation_delay }}">
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="{{ block.settings.animation_delay }}ms">
                     <div class="pricing-one__single text-center"
                         style="background-image: url({{ block.settings.bg_image | img_url: 'master' }});">
                         <div class="pricing-one__inner">
