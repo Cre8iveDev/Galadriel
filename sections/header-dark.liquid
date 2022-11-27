@@ -1,0 +1,86 @@
+<header class="site-header site-header__header-one ">
+    <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+        <div class="container clearfix">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logo-box clearfix">
+                <a class="navbar-brand" href="index.html">
+                    <img src="{{ section.settings.logo_img | img_url: 'master' }}" class="main-logo" width="{{ section.settings.img_width_range }}" alt="{{ section.settings.alt_text }}" />
+                </a>
+                <button class="menu-toggler" data-target=".main-navigation">
+                    <span class="creatic-menu"></span>
+                </button>
+            </div><!-- /.logo-box -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="main-navigation">
+                <ul class=" navigation-box one-page-scroll-menu ">
+                    {% for link in section.settings.menu.links %}
+                        {% if link.links != blank %}
+                            <li class="scrollToLink">
+                                <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>
+                                <ul class="sub-menu">
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                </ul><!-- /.sub-menu -->
+                            </li>
+                        {% else %}
+                            <li class="scrollToLink">
+                                <a href="{{ link.url }}">{{ link.title }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div><!-- /.navbar-collapse -->
+            <div class="right-side-box">
+                <a href="#" class="search-popup__toggler"><i class="creatic-search"></i>
+                    <!-- /.creatic-search --></a>
+                <a href="#" class="sidemenu__toggler side-menu__toggler"><i class="creatic-menu"></i>
+                    <!-- /.creatic-menu --></a>
+            </div><!-- /.right-side-box -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</header><!-- /.site-header -->
+
+{% style %}
+    .navigation-box li svg {
+        margin-left: 10px;
+        width: 20px;
+    }
+    .header-navigation ul.navigation-box > li {
+        padding: 18px 0;
+    }
+{% endstyle %}
+
+{% schema %}
+{
+    "name": "Header Home",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo_img",
+            "label": "Upload your logo"
+        },
+        {
+            "type": "text",
+            "id": "alt_text",
+            "default": "Awesome image",
+            "label": "Alt text"
+        },
+        {
+            "type": "range",
+            "id": "img_width_range",
+            "min": 100,
+            "max": 170,
+            "step": 2,
+            "unit": "px",
+            "label": "Logo width",
+            "default": 164
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "default": "main-menu",
+            "label": "Heading Nav Menu"
+        }
+    ]
+}
+{% endschema %}
