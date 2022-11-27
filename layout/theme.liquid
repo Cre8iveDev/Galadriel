@@ -65,5 +65,18 @@
         {{ 'typed.min.js' | asset_url | script_tag }}
         {{ 'jquery.validate.min.js' | asset_url | script_tag }}
         {{ 'theme.js' | asset_url | script_tag }}
+
+        <script>
+            // capture url params
+            var params = new window.URLSearchParams(window.location.search);
+            var email_sent = params.get('contact_posted');
+        
+            if ( email_sent == true ) {
+                $('result').addClass('show');
+                $('.result').text("Email was successfully sent");
+            } else {
+                $('result').removeClass('show');
+            }
+        </script>
     </body>
 </html>

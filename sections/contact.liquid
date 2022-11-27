@@ -69,19 +69,6 @@
     }
 {% endstyle %}
 
-<script>
-    // capture url params
-    var params = new window.URLSearchParams(window.location.search);
-    var email_sent = params.get('contact_posted');
-
-    if ( email_sent == true ) {
-        $('result').addClass('show');
-        $('.result').text("Email was successfully sent");
-    } else {
-        $('result').removeClass('show');
-    }
-</script>
-
 {% schema %}
 {
     "name": "Contact",
