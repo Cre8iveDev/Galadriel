@@ -67,18 +67,13 @@
         {{ 'theme.js' | asset_url | script_tag }}
 
         <script data-shopify>
-            $(document).ready(function() {
-                // capture url params
-                var params = new window.URLSearchParams(window.location.search);
-                var email_sent = params.get('contact_posted');
-            
-                if ( email_sent == true ) {
-                    $('.result').addClass('show');
-                    $('.result').text("Email was successfully sent");
-                } else {
-                    $('result').removeClass('show');
-                }
-            });
+            const queryString = window.location.search;
+            const params = new URLSearchParams(queryString);
+            const email_sent = params.get('contact_posted');
+
+            if ( email_sent == true ) {
+                console.log(email_sent);
+            }
         </script>
     </body>
 </html>
