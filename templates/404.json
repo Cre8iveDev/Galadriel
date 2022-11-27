@@ -1,14 +1,11 @@
 {
   "layout": "error_404",
-  "wrapper": "div#404_template.custom-class[custom-attribute=hello]",
+  "wrapper": "div#404_template.error-404-class[data-template=error-404]",
   "sections": {
     "template-404": {
       "type": "error-404",
-      "settings": {
-      }
+      "settings": {}
     }
   },
-  "order": [
-    "template-404"
-  ]
+  "order": ["template-404"]
 }
