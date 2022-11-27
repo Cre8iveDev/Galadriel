@@ -1,4 +1,5 @@
 {
+  "name": "Error 404",
   "layout": "error_404",
   "wrapper": "div#404_template.error-404-class[data-template=error-404]",
   "sections": {

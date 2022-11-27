@@ -1,0 +1,22 @@
+<h1>{{ 'section.settings.title' }}</h1>
+<p>{{ 'section.settings.subtext_html' | t }}</p>
+
+{% schema %}
+{
+    "name": "Template 404",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "404",
+            "label": "Error 404"
+        },
+        {
+            "type": "text",
+            "id": "subtext_title",
+            "default": "The page you're looking for is not found",
+            "label": "404 Subtext title"
+        }
+    ]
+}
+{% endschema %}
