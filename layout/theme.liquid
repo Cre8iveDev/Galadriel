@@ -52,7 +52,8 @@
         {% section 'popups' %}      
 
         <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
-        {{ 'jquery.min.js' | asset_url | script_tag }}
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        {% comment %}{{ 'jquery.min.js' | asset_url | script_tag }}{% endcomment %}
         {{ 'bootstrap.bundle.min.js' | asset_url | script_tag }}
         {{ 'TweenMax.min.js' | asset_url | script_tag }}
         {{ 'owl.carousel.min.js' | asset_url | script_tag }}
