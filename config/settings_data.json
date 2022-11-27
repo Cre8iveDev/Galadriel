@@ -196,7 +196,7 @@
           "a6fa21ee-e294-4746-bf6c-1245e5d297cd": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "#ed2c41",
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Shopify",
@@ -209,7 +209,7 @@
           "8e81cd9d-eb16-4460-b8a4-6b76bf8bda23": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "#ed2c41",
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Vue JS",
@@ -222,7 +222,7 @@
           "e5f3469a-1fb2-41f8-965e-7f339e6ef686": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "#ed2c41",
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Tailwind CSS",
@@ -235,7 +235,7 @@
           "ca42e5d7-75ec-44f8-b452-6ca62b17b786": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "#ed2c41",
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "WooCommerce",
@@ -248,7 +248,7 @@
           "38af42e5-e990-4314-996a-11e65eecd51f": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "#ed2c41",
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "PageFly",
@@ -261,7 +261,7 @@
           "89b23e5b-6fd1-43b4-92e7-52b65fcbb4dd": {
             "type": "portfolio",
             "settings": {
-              "block_hover_color": "#ed2c41",
+              "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Zapier",
@@ -548,9 +548,99 @@
           "copyright": "© All 2019 All rights reserved. <a href=\"https:\/\/www.arnuld.net\">Designed by Arnuld.<\/a>"
         }
       },
-      "popups": {
-        "type": "popups",
+      "popup-search": {
+        "type": "popup-search",
         "settings": {
+        }
+      },
+      "popup-side-menu": {
+        "type": "popup-side-menu",
+        "blocks": {
+          "371fe7b4-12a9-4429-a8fa-df9768c4da5d": {
+            "type": "contact",
+            "settings": {
+              "contact_icon": "fa fa-map-marker",
+              "contact_details": "City of Antipolo, PH 1870"
+            }
+          },
+          "1c9b41ef-bfaf-4266-9636-1c3c48cc1bd0": {
+            "type": "contact",
+            "settings": {
+              "contact_icon": "fa fa-phone",
+              "contact_details": "(+63) 960-250-9876"
+            }
+          },
+          "0412c844-b60f-4922-9c99-3f136214b00c": {
+            "type": "contact",
+            "settings": {
+              "contact_icon": "fa fa-envelope",
+              "contact_details": "webmaster@arnuld.net"
+            }
+          },
+          "97101936-3629-4361-a353-ec6af963499c": {
+            "type": "contact",
+            "settings": {
+              "contact_icon": "fa fa-clock-o",
+              "contact_details": "Week Days: 08.00 to 16.00 Saturdays & Sundays: Closed"
+            }
+          }
+        },
+        "block_order": [
+          "371fe7b4-12a9-4429-a8fa-df9768c4da5d",
+          "1c9b41ef-bfaf-4266-9636-1c3c48cc1bd0",
+          "0412c844-b60f-4922-9c99-3f136214b00c",
+          "97101936-3629-4361-a353-ec6af963499c"
+        ],
+        "settings": {
+          "logo_dark": "shopify:\/\/shop_images\/logo-dark.png",
+          "section_heading": "About Us",
+          "section_text": "Change me from Popup Sidemenu > About",
+          "btn_text": "Get Consultation",
+          "btn_link": "https:\/\/www.arnuld.net",
+          "domain_text": "Arnuld.net",
+          "domain_link": "https:\/\/www.arnuld.net",
+          "copyright": "2022 All Right Reserved."
+        }
+      },
+      "popup-portfolio": {
+        "type": "popup-portfolio",
+        "blocks": {
+          "ce7cd933-982b-4eb5-a2a9-e71a13954d45": {
+            "type": "block",
+            "settings": {
+              "fa_icon": "fa fa-user",
+              "meta_text": "By admin",
+              "meta_link": "https:\/\/www.arnuld.net"
+            }
+          },
+          "f68eaf95-cf79-471c-bace-4e7da2f835ab": {
+            "type": "block",
+            "settings": {
+              "fa_icon": "a fa-comments",
+              "meta_text": "2 Comments",
+              "meta_link": "https:\/\/www.arnuld.net"
+            }
+          },
+          "6ecef636-7762-4663-a763-a96ceb5ea35a": {
+            "type": "block",
+            "settings": {
+              "fa_icon": "fa fa-clock-o",
+              "meta_text": "March 5, 2018",
+              "meta_link": "https:\/\/www.arnuld.net"
+            }
+          }
+        },
+        "block_order": [
+          "ce7cd933-982b-4eb5-a2a9-e71a13954d45",
+          "f68eaf95-cf79-471c-bace-4e7da2f835ab",
+          "6ecef636-7762-4663-a763-a96ceb5ea35a"
+        ],
+        "settings": {
+          "popup_image": "shopify:\/\/shop_images\/portfolio-d-1-1.jpg",
+          "section_heading": "New desktop free mockup",
+          "heading_link": "https:\/\/www.arnuld.net",
+          "cta_text": "View Website",
+          "cta_link": "https:\/\/www.arnuld.net"
         }
       }
     },
