@@ -2,7 +2,8 @@
 <p>{{ section.settings.subtext }}</p>
 
 {% style %}
-    .shopify-section {
+    [id^="shopify-section-template--"],
+    [id*="shopify-section-template--"] {
         height: calc(100vh - 60px);
     }
 {% endstyle %}
@@ -11,7 +12,7 @@
 {
     "name": "Template 404",
     "tag": "section",
-    "class": "flex items-center justify-center text-center py-7 min-h-screen",
+    "class": "flex items-center justify-center text-center py-7",
     "settings": [
         {
             "type": "text",
