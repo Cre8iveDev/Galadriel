@@ -69,7 +69,7 @@
     }
 {% endstyle %}
 
-{% script %}
+<script>
     // capture url params
     var params = new window.URLSearchParams(window.location.search);
     var email_sent = params.get('contact_posted');
@@ -80,7 +80,7 @@
     } else {
         $('result').removeClass('show');
     }
-{% endscript %}
+</script>
 
 {% schema %}
 {
