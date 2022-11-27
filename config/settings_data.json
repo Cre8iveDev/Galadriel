@@ -1,15 +1,6 @@
 {
   "current": {
     "sections": {
-      "header-home": {
-        "type": "header-home",
-        "settings": {
-          "logo_img": "shopify:\/\/shop_images\/logo-light.png",
-          "alt_text": "Awesome logo",
-          "img_width_range": 164,
-          "menu": "main-menu"
-        }
-      },
       "hero": {
         "type": "hero",
         "blocks": {
@@ -641,6 +632,15 @@
           "heading_link": "https:\/\/www.arnuld.net",
           "cta_text": "View Website",
           "cta_link": "https:\/\/www.arnuld.net"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_img": "shopify:\/\/shop_images\/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
+          "alt_text": "Awesome image",
+          "img_width_range": 164,
+          "menu": "main-menu"
         }
       }
     },
