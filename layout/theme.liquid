@@ -72,7 +72,8 @@
             const email_sent = params.get('contact_posted');
 
             if ( email_sent == 'true' ) {
-                console.log(email_sent);
+                let result = document.getElementById('result');
+                result.innerHTML += 'Email sent successfully!';
             }
         </script>
     </body>
