@@ -5,8 +5,8 @@
     "template-404": {
       "type": "error-404",
       "settings": {
-        "title": "Page not found",
-        "subtext": "404"
+        "title": "Error 404",
+        "subtext": "This is embarassing... the page you're looking for cannot be found!"
       }
     }
   },
