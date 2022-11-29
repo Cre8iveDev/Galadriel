@@ -1,10 +1,8 @@
 {
-  "layout": "blog",
-  "wrapper": "div#blog_template",
   "sections": {
-    "template-blog": {
-      "type": "blog"
+    "template": {
+      "type": "template-blog"
     }
   },
-  "order": ["template-blog"]
+  "order": ["template"]
 }
