@@ -1,0 +1,10 @@
+{
+  "layout": "blog",
+  "wrapper": "div#blog_template",
+  "sections": {
+    "template-blog": {
+      "type": "blog"
+    }
+  },
+  "order": ["template-blog"]
+}
