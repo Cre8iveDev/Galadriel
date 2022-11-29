@@ -1,0 +1,9 @@
+{% paginate blog.articles by 10 %}
+    {% for article in blog.articles %}
+        <div>
+            {% if article.image %}
+                <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.img.alt | downcase }}">
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endpaginate %}
