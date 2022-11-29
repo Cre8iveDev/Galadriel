@@ -34,8 +34,8 @@
 [id="404_template"] {
   height: calc(100vh - 60px);
 }
-[id^="shopify-section-template--"],
-[id*="shopify-section-template--"] {
+[id^="__template-404"],
+[id*="__template-404"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

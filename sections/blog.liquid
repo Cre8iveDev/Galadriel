@@ -1,2 +1,24 @@
 <h1>This is the default blog page</h1>
 <p>This is the default blog description</p>
+
+{% schema %}
+{
+    "name": "Blog",
+    "tag": "section",
+    "class": "blog-default",
+    "settings": [
+        {
+            "type": "text",
+            "id": "blog_title",
+            "default": "Blog heading",
+            "label": "Blog Heading"
+        },
+        {
+            "type": "text",
+            "id": "blog_subtext",
+            "default": "Default blog's subtext... change me",
+            "label": "Blog Subtext"
+        }
+    ]
+}
+{% endschema %}
