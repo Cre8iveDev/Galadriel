@@ -1,7 +1,7 @@
-<div class="container flex flex-column py-3 py-md-4 py-lg-5">
+<div class="container article flex flex-column py-3 py-md-4 py-lg-5">
     <div class="flex flex-column">
-        <h1 class="font-weight-bold mb-3">{{ article.title }}</h1>
-        <div class="meta">
+        <h1 class="font-weight-bold mb-3 mb-md-2 mb-lg-1">{{ article.title }}</h1>
+        <div class="meta mb-3">
             {% if section.settings.enable_author %}
                 <small>{{ article.author }}</small>
             {% endif %}
@@ -10,10 +10,25 @@
                 <time datetime="{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</time>
             {% endif %}
         </div>
-        <img src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
+        <img class="mb-3" src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
     </div>
     <div class="">{{ article.content }}</div>
 </div>
+
+<style>
+    .container.article > .flex {
+        overflow-x: hidden;
+    }
+
+    @media only screen and (min-width: 300px) {
+        blockquote {
+            border-left: 5px solid #ed2c41;
+            max-width: 85%;
+            margin: 0 auto 2%;
+            padding-left: 30px;
+        }
+    }
+</style>
 
 {% schema %}
 {
