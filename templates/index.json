@@ -4,5 +4,5 @@
       "type": "header-home"
     }
   },
-  "order": ["header-home"]
+  "order": ["header-home", "hero"]
 }
