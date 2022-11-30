@@ -1,6 +1,6 @@
 {
   "sections": {
-    "template-header": {
+    "header": {
       "type": "header-dark",
       "settings": {}
     },
@@ -9,5 +9,5 @@
       "settings": {}
     }
   },
-  "order": ["template-header"]
+  "order": ["header", "hero"]
 }
