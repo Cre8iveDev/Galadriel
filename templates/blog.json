@@ -2,6 +2,9 @@
   "sections": {
     "template-header": {
       "type": "header"
+    },
+    "hero": {
+      "type": "hero"
     }
   },
   "order": ["template-header"]
