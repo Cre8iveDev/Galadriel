@@ -10,7 +10,7 @@
                 <time datetime="{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</time>
             {% endif %}
         </div>
-        <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.image.alt }}">
+        <img src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
     </div>
     <div class="">{{ article.content }}</div>
 </div>
