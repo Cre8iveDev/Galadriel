@@ -9,5 +9,5 @@
       "settings": {}
     }
   },
-  "order": ["header-dark", "template-article"]
+  "order": ["header", "template-article"]
 }
