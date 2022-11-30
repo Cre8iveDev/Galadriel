@@ -9,5 +9,5 @@
       "settings": {}
     }
   },
-  "order": ["header", "template-article"]
+  "order": ["header", "article"]
 }
