@@ -7,5 +7,5 @@
       "type": "template-article"
     }
   },
-  "order": ["header-dark", "template"]
+  "order": ["header-dark", "template-article"]
 }
