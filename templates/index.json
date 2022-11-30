@@ -1,16 +1,17 @@
 {
   "sections": {
-    "template": {
+    "template-header": {
       "type": "header",
       "settings": {
-        "logo_img": "shopify:\/\/shop_images\/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
+        "logo_img": "shopify://shop_images/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
         "alt_text": "Awesome image",
         "img_width_range": 164,
         "menu": "main-menu"
       }
+    },
+    "hero": {
+      "type": "hero"
     }
   },
-  "order": [
-    "template"
-  ]
+  "order": ["template-header", "hero"]
 }
