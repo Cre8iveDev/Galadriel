@@ -2,12 +2,17 @@
   "sections": {
     "header": {
       "type": "header-dark",
-      "settings": {}
+      "settings": {
+      }
     },
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+      }
     }
   },
-  "order": ["header", "hero"]
+  "order": [
+    "header",
+    "hero"
+  ]
 }
