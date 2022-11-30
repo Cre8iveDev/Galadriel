@@ -25,6 +25,17 @@
             "name": "Link",
             "settings": [
                 {
+                    "type": "image_picker",
+                    "id": "bg_image",
+                    "label": "Upload a background image"
+                },
+                {
+                    "type": "color",
+                    "id": "bg_color",
+                    "label": "Background color",
+                    "default": "#1b181a"
+                },
+                {
                     "type": "text",
                     "id": "link_text",
                     "label": "Link text",
@@ -35,6 +46,12 @@
                     "id": "link_url",
                     "label": "Link URL",
                     "info": "http://"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_bg_image",
+                    "label": "Show background image",
+                    "default": true
                 }
             ]
         }
