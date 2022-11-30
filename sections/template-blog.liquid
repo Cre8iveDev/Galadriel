@@ -16,3 +16,10 @@
         <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
     {% endif %}
 {% endpaginate %}
+
+{% schema %}
+{
+    "name": "Template Blog",
+    "settings": []
+}
+{% endschema %}
