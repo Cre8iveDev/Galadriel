@@ -1,10 +1,12 @@
 {
   "sections": {
     "template-header": {
-      "type": "header"
+      "type": "header-dark",
+      "settings": {}
     },
     "hero": {
-      "type": "hero"
+      "type": "hero",
+      "settings": {}
     }
   },
   "order": ["template-header"]
