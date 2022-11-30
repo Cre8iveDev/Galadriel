@@ -1,21 +1,23 @@
-{% paginate blog.articles by 10 %}
-    {% for article in blog.articles %}
-        <div>
-            {% if article.image %}
-                <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.img.alt | downcase }}">
-            {% else %}
-                {{ 'image' | placeholder_svg_tag: 'w-20' }}
-            {% endif %}
-        </div>
-    {% endfor %}
-    <h1>{{ article.title }}</h1>
+<div class="container">
+    {% paginate blog.articles by 10 %}
+        {% for article in blog.articles %}
+            <div>
+                {% if article.image %}
+                    <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.img.alt | downcase }}">
+                {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'w-20' }}
+                {% endif %}
+            </div>
+        {% endfor %}
+        <h1>{{ article.title }}</h1>
 
-    {% if article.excerpt.size > 0 %}
+        {% if article.excerpt.size > 0 %}
 
-    {% else %}
-        <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
-    {% endif %}
-{% endpaginate %}
+        {% else %}
+            <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
+        {% endif %}
+    {% endpaginate %}
+</div>
 
 {% schema %}
 {
