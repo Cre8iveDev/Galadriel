@@ -10,6 +10,26 @@
     },
     "hero-banner": {
       "type": "hero-banner",
+      "blocks": {
+        "0a3eb457-2921-4ab2-aa04-740f87cc3860": {
+          "type": "link",
+          "settings": {
+            "block_text": "Home",
+            "link_url": "\/"
+          }
+        },
+        "30c48fb9-efad-4392-ae70-5d9442cc98d8": {
+          "type": "link",
+          "settings": {
+            "block_text": "Blog One",
+            "link_url": "https:\/\/cre8ive-dev.myshopify.com\/blog\/news\/#"
+          }
+        }
+      },
+      "block_order": [
+        "0a3eb457-2921-4ab2-aa04-740f87cc3860",
+        "30c48fb9-efad-4392-ae70-5d9442cc98d8"
+      ],
       "settings": {
         "banner_heading": "Banner heading",
         "bg_image": "shopify:\/\/shop_images\/camera.jpg",
