@@ -17,25 +17,30 @@
             "id": "banner_heading",
             "label": "Banner heading",
             "default": "Banner heading"
-        }
+        },
+        {
+            "type": "image_picker",
+            "id": "bg_image",
+            "label": "Upload a background image"
+        },
+        {
+            "type": "color",
+            "id": "bg_color",
+            "label": "Background color",
+            "default": "#1b181a"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_bg_image",
+            "label": "Show background image",
+            "default": true
+        }        
     ],
     "blocks": [
         {
             "type": "link",
             "name": "Link",
-            "settings": [
-                {
-                    "type": "image_picker",
-                    "id": "bg_image",
-                    "label": "Upload a background image"
-                },
-                {
-                    "type": "color",
-                    "id": "bg_color",
-                    "label": "Background color",
-                    "default": "#1b181a"
-                },
-                {
+            "settings": [{
                     "type": "text",
                     "id": "link_text",
                     "label": "Link text",
