@@ -1,11 +1,11 @@
 {
   "sections": {
-    "header": {
-      "type": "header"
+    "header-dark": {
+      "type": "header-dark"
     },
     "article": {
       "type": "template-article"
     }
   },
-  "order": ["header", "template"]
+  "order": ["header-dark", "template"]
 }
