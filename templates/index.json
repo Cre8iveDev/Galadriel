@@ -1,8 +1,8 @@
 {
   "sections": {
-    "header": {
-      "type": "header"
+    "template": {
+      "type": "template-home"
     }
   },
-  "order": ["header", "hero"]
+  "order": ["template"]
 }
