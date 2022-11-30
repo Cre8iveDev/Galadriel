@@ -2,11 +2,18 @@
     <div class="container">
         <h2 class="inner-banner-one__title">{{ section.settings.banner_heading }}</h2><!-- /.inner-banner-one__title -->
         <ul class="list-unstyled thm-breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li class="active"><a href="blog.html">Blog One</a></li>
+            {% for block in section.blocks %}
+                <li><a href="{{ block.settings.link_url }}">{{ block.settings.block_text }}</a></li>
+            {% endfor %}
         </ul><!-- /.list-unstyled thm-breadcrumb -->
     </div><!-- /.container -->
 </div><!-- /.inner-banner-one -->
+
+{% style %}
+    .inner-banner-one {
+        background-image: url({{ section.settings.bg_image | img_url: 'large' }});
+    }
+{% endstyle %}
 
 {% schema %}
 {
@@ -42,7 +49,7 @@
             "name": "Link",
             "settings": [{
                     "type": "text",
-                    "id": "link_text",
+                    "id": "block_text",
                     "label": "Link text",
                     "info": "Change me"
                 },
