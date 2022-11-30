@@ -1,0 +1,43 @@
+<div class="inner-banner-one">
+    <div class="container">
+        <h2 class="inner-banner-one__title">{{ section.settings.banner_heading }}</h2><!-- /.inner-banner-one__title -->
+        <ul class="list-unstyled thm-breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="blog.html">Blog One</a></li>
+        </ul><!-- /.list-unstyled thm-breadcrumb -->
+    </div><!-- /.container -->
+</div><!-- /.inner-banner-one -->
+
+{% schema %}
+{
+    "name": "Hero Banner",
+    "settings": [
+        {
+            "type": "text",
+            "id": "banner_heading",
+            "label": "Banner heading",
+            "default": "Banner heading"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "link",
+            "name": "Link",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "link_text",
+                    "label": "Link text",
+                    "info": "Change me"
+                },
+                {
+                    "type": "text",
+                    "id": "link_url",
+                    "label": "Link URL",
+                    "info": "http://"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

@@ -4,10 +4,14 @@
       "type": "header-dark",
       "settings": {}
     },
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {}
+    },
     "article": {
       "type": "template-article",
       "settings": {}
     }
   },
-  "order": ["header", "article"]
+  "order": ["header", "hero-banner", "article"]
 }
