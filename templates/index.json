@@ -1,7 +1,7 @@
 {
   "sections": {
     "template": {
-      "type": "template-home"
+      "type": "header"
     }
   },
   "order": ["template"]
