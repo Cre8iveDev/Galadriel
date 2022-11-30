@@ -3,7 +3,7 @@
         <h2 class="inner-banner-one__title">{{ section.settings.banner_heading }}</h2><!-- /.inner-banner-one__title -->
         <ul class="list-unstyled thm-breadcrumb">
             {% for block in section.blocks %}
-                <li{% if block.section.active_link %} class="active"{% endif %}><a href="{{ block.settings.link_url }}">{{ block.settings.block_text }}</a></li>
+                <li{% if block.settings.active_link %} class="active"{% endif %}><a href="{{ block.settings.link_url }}">{{ block.settings.block_text }}</a></li>
             {% endfor %}
         </ul><!-- /.list-unstyled thm-breadcrumb -->
     </div><!-- /.container -->
