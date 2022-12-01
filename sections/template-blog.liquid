@@ -17,7 +17,7 @@
                                 {% if article.excerpt.size > 0 %}
                                     <p class="blog-one__text">{{ article.content | strip_html | truncatewords: 15 }}</p><!-- /.blog-one__text -->
                                 {% endif %}
-                                <a href="#" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
+                                <a href="{{ article.url }}" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->
                     </div><!-- /.col-lg-6 -->
