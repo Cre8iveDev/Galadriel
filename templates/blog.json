@@ -8,14 +8,17 @@
         "menu": "main-menu"
       }
     },
-    "hero-banner": {
+    "31223083-cf43-45ae-bb5b-334980076c87": {
       "type": "hero-banner",
       "settings": {
+        "banner_heading": "Banner heading",
+        "bg_color": "#1b181a",
+        "show_bg_image": true
       }
     }
   },
   "order": [
     "header",
-    "hero-banner"
+    "31223083-cf43-45ae-bb5b-334980076c87"
   ]
 }
