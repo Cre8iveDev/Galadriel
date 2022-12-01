@@ -164,6 +164,316 @@
         "section_description": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations.",
         "link_url": "https:\/\/www.arnuld.net"
       }
+    },
+    "e31fbd39-03a4-44b1-849f-58bc7d13e500": {
+      "type": "portfolio",
+      "blocks": {
+        "c171d556-617e-48d3-94c3-a5cebbb0f114": {
+          "type": "portfolio",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/gallery-1-1.jpg",
+            "block_hover_color": "#ed2c41",
+            "block_dev": "Arnuld",
+            "block_dev_url": "https:\/\/www.arnuld.net\/about",
+            "block_specialization1": "Shopify",
+            "link_url1": "https:\/\/www.arnuld.net\/shopify",
+            "block_specialization2": "Liquid",
+            "link_url2": "https:\/\/www.arnuld.net\/liquid"
+          }
+        },
+        "c2f6d505-45c2-48e5-a639-971e988c0c24": {
+          "type": "portfolio",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/gallery-1-2.jpg",
+            "block_hover_color": "#ed2c41",
+            "block_dev": "Arnuld",
+            "block_dev_url": "https:\/\/www.arnuld.net\/about",
+            "block_specialization1": "Bubble.io",
+            "link_url1": "https:\/\/www.arnuld.net\/bubble-io",
+            "block_specialization2": "",
+            "link_url2": ""
+          }
+        },
+        "39e57a48-836e-4f27-8159-329e8801f77e": {
+          "type": "portfolio",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/gallery-1-3.jpg",
+            "block_hover_color": "#ed2c41",
+            "block_dev": "Arnuld",
+            "block_dev_url": "https:\/\/www.arnuld.net\/about",
+            "block_specialization1": "Webflow",
+            "link_url1": "https:\/\/www.arnuld.net\/webflow",
+            "block_specialization2": "",
+            "link_url2": ""
+          }
+        },
+        "3896be89-5ce6-494d-af56-657dc9ba22b1": {
+          "type": "portfolio",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/gallery-1-4.jpg",
+            "block_hover_color": "#ed2c41",
+            "block_dev": "Arnuld",
+            "block_dev_url": "https:\/\/www.arnuld.net\/about",
+            "block_specialization1": "Tailwind CSS",
+            "link_url1": "https:\/\/www.arnuld.net\/tailwindcss",
+            "block_specialization2": "Bootstrap",
+            "link_url2": "https:\/\/www.arnuld.net\/bootstrap"
+          }
+        },
+        "2d795ccc-33d0-4b09-9671-ac0cc6a1875e": {
+          "type": "portfolio",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/gallery-1-5.jpg",
+            "block_hover_color": "#ed2c41",
+            "block_dev": "Arnuld",
+            "block_dev_url": "https:\/\/www.arnuld.net\/about",
+            "block_specialization1": "Vanilla Javascript\/jQuery",
+            "link_url1": "https:\/\/www.arnuld.net\/javascript",
+            "block_specialization2": "Vue JS",
+            "link_url2": "https:\/\/www.arnuld.net\/vue-js"
+          }
+        },
+        "df991c48-65e9-4da6-8750-7bc07b8bec40": {
+          "type": "portfolio",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/gallery-1-6.jpg",
+            "block_hover_color": "#ed2c41",
+            "block_dev": "Arnuld",
+            "block_dev_url": "https:\/\/www.arnuld.net\/about",
+            "block_specialization1": "CSS & JS Animation",
+            "link_url1": "https:\/\/www.arnuld.net\/css-js-animation",
+            "block_specialization2": "",
+            "link_url2": ""
+          }
+        }
+      },
+      "block_order": [
+        "c171d556-617e-48d3-94c3-a5cebbb0f114",
+        "c2f6d505-45c2-48e5-a639-971e988c0c24",
+        "39e57a48-836e-4f27-8159-329e8801f77e",
+        "3896be89-5ce6-494d-af56-657dc9ba22b1",
+        "2d795ccc-33d0-4b09-9671-ac0cc6a1875e",
+        "df991c48-65e9-4da6-8750-7bc07b8bec40"
+      ],
+      "settings": {
+        "section_heading": "Our latest projects",
+        "section_description": "Over half of the fortune 100. Arnuld's designs were used by busy people from amazing companies all over the world."
+      }
+    },
+    "f82f6437-aa8b-4ce6-ae68-d04b678c7021": {
+      "type": "team",
+      "blocks": {
+        "1c99c81d-703e-4f1c-95fe-48af77187b06": {
+          "type": "team",
+          "settings": {
+            "profile": "shopify:\/\/shop_images\/team-1-2.jpg",
+            "team_member": "Arnuld I.",
+            "team_position": "Senior Web Developer",
+            "social_email": "mailto:arnuld@arnuld.net",
+            "social_fb": "https:\/\/www.facebook.com\/#",
+            "social_yt": "",
+            "social_wa": "",
+            "social_ig": "",
+            "social_pin": "",
+            "social_li": "",
+            "social_tw": ""
+          }
+        }
+      },
+      "block_order": [
+        "1c99c81d-703e-4f1c-95fe-48af77187b06"
+      ],
+      "settings": {
+        "team_heading": "Meet the Shopify expert",
+        "team_description": "We have assembled an outstanding team, who are skilled in the business and corporate fields."
+      }
+    },
+    "dc0483be-0e98-4490-a045-e39117f72830": {
+      "type": "funfact",
+      "blocks": {
+        "08cd1793-a21d-46bb-95f5-9d51a046ccfb": {
+          "type": "funfact",
+          "settings": {
+            "block_bgcolor": "#2d2a2c",
+            "block_bgcolor_hover": "#ed2c41",
+            "block_heading": "241",
+            "block_text": "Total Projects"
+          }
+        },
+        "2f7b5b71-73fe-4126-8e3b-a8ef7a9f7c97": {
+          "type": "funfact",
+          "settings": {
+            "block_bgcolor": "#2d2a2c",
+            "block_bgcolor_hover": "#ed2c41",
+            "block_heading": "13",
+            "block_text": "Total Clients"
+          }
+        },
+        "13907f12-6050-40cd-9b46-4e5c05531b54": {
+          "type": "funfact",
+          "settings": {
+            "block_bgcolor": "#2d2a2c",
+            "block_bgcolor_hover": "#ed2c41",
+            "block_heading": "175",
+            "block_text": "Cups of Coffee"
+          }
+        }
+      },
+      "block_order": [
+        "08cd1793-a21d-46bb-95f5-9d51a046ccfb",
+        "2f7b5b71-73fe-4126-8e3b-a8ef7a9f7c97",
+        "13907f12-6050-40cd-9b46-4e5c05531b54"
+      ],
+      "settings": {
+        "section_heading": "We Word Hard: We Don't Waste Time",
+        "section_description": "Maximum of 5 lines. Nullam in faucibus leo. Mauris imperdiet tempor risus et accumsan. Proin lorem ante, iaculis sed finibus vel, pharetra at turpis. Maecenas in rhoncus lectus. Vestibulum ut sem eu magna accumsan tristique a vitae nisl. Morbi mattis ante urna, id condimentum magna rhoncus quis. Nullam non tempor est, at ultrices mi.",
+        "section_bg_image": "shopify:\/\/shop_images\/fun-fact-bg-1-1.jpg"
+      }
+    },
+    "c801cb73-b557-4e64-b6cb-bef38d00dc35": {
+      "type": "pricing",
+      "blocks": {
+        "81ff5d4b-c42e-48ee-8348-40b146b5421e": {
+          "type": "pricing",
+          "settings": {
+            "animation_delay": 1000,
+            "bg_image": "shopify:\/\/shop_images\/pricing-1-1.jpg",
+            "subscription": "Per Hour",
+            "subscription_level": "Starter",
+            "subscription_amount": 12,
+            "benefits": "10 Revisions per day\nDesign \/ Development only\nNo Integrations to other services\nTime Tracker supported\nDaily work report",
+            "btn_text": "Click to Get Started",
+            "btn_link": "https:\/\/www.arnuld.net\/pricing\/starter"
+          }
+        },
+        "c591d7c7-7458-41ac-85d5-51ea7526e640": {
+          "type": "pricing",
+          "settings": {
+            "animation_delay": 1000,
+            "bg_image": "shopify:\/\/shop_images\/pricing-1-3.jpg",
+            "subscription": "Per Project",
+            "subscription_level": "Professional",
+            "subscription_amount": 600,
+            "benefits": "Unlimited Revisions\nDesign & Development\n3 Integrations to External Services\nTime Tracker supported\nDaily work report",
+            "btn_text": "Click to Get Started",
+            "btn_link": "https:\/\/www.arnuld.net\/pricing\/pro"
+          }
+        },
+        "aa599c2a-0c0d-4b3f-a0f4-d13888583bdf": {
+          "type": "pricing",
+          "settings": {
+            "animation_delay": 1000,
+            "bg_image": "shopify:\/\/shop_images\/pricing-1-2.jpg",
+            "subscription": "Monthly",
+            "subscription_level": "Premium",
+            "subscription_amount": 1500,
+            "benefits": "Unlimited Revisions\nDesign & Development\nUnlimited Integrations\nTime Tracker supported\nDaily work report",
+            "btn_text": "Click to Get Started",
+            "btn_link": "https:\/\/www.arnuld.net\/pricing\/premium"
+          }
+        }
+      },
+      "block_order": [
+        "81ff5d4b-c42e-48ee-8348-40b146b5421e",
+        "c591d7c7-7458-41ac-85d5-51ea7526e640",
+        "aa599c2a-0c0d-4b3f-a0f4-d13888583bdf"
+      ],
+      "settings": {
+        "section_heading": "Select the right plan for you",
+        "section_description": "Choose the right subscription for your business. You can also cancel your subscription at any time, no worries."
+      }
+    },
+    "fe8744a6-4743-4b3f-abfa-886445a86b27": {
+      "type": "clients",
+      "blocks": {
+        "23f2deb4-2aca-4e3d-a679-38179f0c90d5": {
+          "type": "clients",
+          "settings": {
+            "client_logo": "shopify:\/\/shop_images\/brand-1-4.jpg"
+          }
+        },
+        "a9b1c369-744b-41d3-b2ad-8f9120c60757": {
+          "type": "clients",
+          "settings": {
+            "client_logo": "shopify:\/\/shop_images\/client_google.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "23f2deb4-2aca-4e3d-a679-38179f0c90d5",
+        "a9b1c369-744b-41d3-b2ad-8f9120c60757"
+      ],
+      "settings": {
+        "section_heading": "Clients who trusted us",
+        "section_description": "Over half of the fortune 100. Arnuld's designs are used by busy people from amazing companies all over the world."
+      }
+    },
+    "78552fd8-7e16-4f55-86bb-40243f1f0ca4": {
+      "type": "blog-cards",
+      "blocks": {
+        "30a6c4c6-6e08-4c11-aab6-2aa68b445a89": {
+          "type": "cards",
+          "settings": {
+            "block_bgcolor": "#f2f2f2",
+            "post_tn": "shopify:\/\/shop_images\/blog-1.jpg",
+            "block_heading": "Post #1 heading goes here",
+            "block_excerpt": "Post excerpt with maximum of 4 lines can be added here",
+            "block_author": "by Admin",
+            "block_author_icon": "fa fa-user",
+            "date_picker": "November 26, 2022",
+            "block_date_icon": "fa fa-clock-o",
+            "btn_text": "Read More",
+            "btn_link": "https:\/\/www.arnuld.net\/blog"
+          }
+        },
+        "2882d461-63e0-4e0e-a4be-c79857985ba8": {
+          "type": "cards",
+          "settings": {
+            "block_bgcolor": "#f2f2f2",
+            "post_tn": "shopify:\/\/shop_images\/blog-2.jpg",
+            "block_heading": "Post #2 heading goes here",
+            "block_excerpt": "Post excerpt with maximum of 4 lines can be added here",
+            "block_author": "by Admin",
+            "block_author_icon": "fa fa-user",
+            "date_picker": "November 26, 2022",
+            "block_date_icon": "fa fa-clock-o",
+            "btn_text": "Read More",
+            "btn_link": "https:\/\/www.arnuld.net\/blog"
+          }
+        }
+      },
+      "block_order": [
+        "30a6c4c6-6e08-4c11-aab6-2aa68b445a89",
+        "2882d461-63e0-4e0e-a4be-c79857985ba8"
+      ],
+      "settings": {
+        "section_heading": "Check out our latest blog",
+        "section_description": "Our recent blog posts, news, media assets and latest updates about us - all available only in one place"
+      }
+    },
+    "6c087ca4-748c-44fe-af6e-a3b577ef0a1d": {
+      "type": "cta",
+      "settings": {
+        "section_bg_img": "shopify:\/\/shop_images\/cta-1-1.jpg",
+        "position_top": 100,
+        "section_bgcolor": "#ed2c41",
+        "section_heading": "Join us today. Are you ready for a game changer?",
+        "btn_text": "Join now",
+        "btn_link": "https:\/\/www.arnuld.net"
+      }
+    },
+    "359764ad-80e8-4f23-a927-eb1fec8666bf": {
+      "type": "gmap",
+      "settings": {
+        "gmap_url": "https:\/\/www.google.com\/maps\/embed?pb=!1m23!1m12!1m3!1d15442.372025470006!2d121.11375384855704!3d14.622245798769683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x3397b8536ab7e985%3A0xed6824a2ff085b58!2sJ4J9%2B668%20Antipolo%20City%20Hall%20Annex%2C%20Marikina%2C%201800%20Metro%20Manila!3m2!1d14.630536099999999!2d121.1180914!5e0!3m2!1sen!2sph!4v1669466658978!5m2!1sen!2sph"
+      }
+    },
+    "cecf66aa-ce09-490c-a42c-636dfd27a4bc": {
+      "type": "contact",
+      "settings": {
+        "section_heading": "Have any questions?",
+        "section_description": "Thank you for your interest in our website & our services. If you have any questions, please write us a message now!"
+      }
     }
   },
   "order": [
@@ -172,6 +482,15 @@
     "fe41eb09-4862-4a41-b73d-46570b251ec2",
     "f6df1bef-bfb2-4e83-b8cc-c2d98f7c6815",
     "3d77d22c-4b4c-46c2-9b9f-5b316307366e",
-    "74df261a-9b65-42f0-bbae-c8afb32f9f18"
+    "74df261a-9b65-42f0-bbae-c8afb32f9f18",
+    "e31fbd39-03a4-44b1-849f-58bc7d13e500",
+    "f82f6437-aa8b-4ce6-ae68-d04b678c7021",
+    "dc0483be-0e98-4490-a045-e39117f72830",
+    "c801cb73-b557-4e64-b6cb-bef38d00dc35",
+    "fe8744a6-4743-4b3f-abfa-886445a86b27",
+    "78552fd8-7e16-4f55-86bb-40243f1f0ca4",
+    "6c087ca4-748c-44fe-af6e-a3b577ef0a1d",
+    "359764ad-80e8-4f23-a927-eb1fec8666bf",
+    "cecf66aa-ce09-490c-a42c-636dfd27a4bc"
   ]
 }
