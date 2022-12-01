@@ -15,7 +15,7 @@
         "255a0a80-e4d9-4b8a-8670-6988ef9e86e1": {
           "type": "slider-image",
           "settings": {
-            "slider_image": "shopify:\/\/shop_images\/slider-1-1_97fbab90-8125-4863-8433-d9fdad36498d.jpg",
+            "slider_image": "shopify:\/\/shop_images\/slider-1-1.jpg",
             "slide_headline": "We Build Amazing Shopify Themes",
             "slide_description": "Converting your designs into the modern Shopify 2.0 store takes only as short as a couple of days to a max of 2 weeks.",
             "show_btn": true,
@@ -26,7 +26,7 @@
         "bba6e396-fede-4fc2-ad49-ad6c5f825088": {
           "type": "slider-image",
           "settings": {
-            "slider_image": "shopify:\/\/shop_images\/slider-1-2_34f137bc-f07c-48ee-b15d-b352d66bc897.jpg",
+            "slider_image": "shopify:\/\/shop_images\/slider-1-2.jpg",
             "slide_headline": "Breathe fresh tech to your Online Stores",
             "slide_description": "We can convert your ageing stores into the new Online Store 2.0 along with the latest Vue JS to breath fresh life in your pages.",
             "show_btn": true,
@@ -41,10 +41,137 @@
       ],
       "settings": {
       }
+    },
+    "fe41eb09-4862-4a41-b73d-46570b251ec2": {
+      "type": "about",
+      "blocks": {
+        "63c63456-ef14-4737-a04f-8c75c3a2bc94": {
+          "type": "about",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/service-1-2.jpg",
+            "block_heading": "The Best Shopify Theme You'll Ever Need",
+            "block_link": ""
+          }
+        },
+        "72679f2c-e7b0-4996-aa30-d195fe375e97": {
+          "type": "about",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/service-1-1.jpg",
+            "block_heading": "An All-in-One Web Solution for Your Business",
+            "block_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "63c63456-ef14-4737-a04f-8c75c3a2bc94",
+        "72679f2c-e7b0-4996-aa30-d195fe375e97"
+      ],
+      "settings": {
+        "section_heading": "Discover Shopify Stores 2.0",
+        "section_description": "Replace this text from inside the Customizer > About"
+      }
+    },
+    "f6df1bef-bfb2-4e83-b8cc-c2d98f7c6815": {
+      "type": "services",
+      "blocks": {
+        "01c031c7-9ead-45e0-befd-45b2ed6f7d60": {
+          "type": "services",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-1-1.png",
+            "block_heading": "Scales across all devices",
+            "block_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante nisi, aliquam id ultrices sed, finibus ut orci."
+          }
+        },
+        "aa057152-1e19-4ed0-bda5-44bc5e24a78e": {
+          "type": "services",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-1-2.png",
+            "block_heading": "Endless design possibilities",
+            "block_description": "Cras nec nibh efficitur, sodales nibh sit amet, aliquam magna. Quisque quis leo ipsum. Aliquam semper urna quam, a efficitur turpis accumsan et."
+          }
+        },
+        "dee2a3df-8367-434a-ae2e-0e1af9010df3": {
+          "type": "services",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-1-3.png",
+            "block_heading": "Customer direct approach",
+            "block_description": "Sed ut nisi enim. Suspendisse ligula magna, elementum sit amet interdum sit amet, placerat vel nulla.  Pellentesque posuere metus et sem."
+          }
+        },
+        "8e67c1c5-f6fc-4efb-9d79-01ef4556c3e2": {
+          "type": "services",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-1-4.png",
+            "block_heading": "Premium quality services",
+            "block_description": "Donec sem ante, ornare sed ipsum ut, interdum ultrices mi. Nulla a nisi vitae ipsum efficitur placerat eget non nibh. Pellentesque id posuere velit.."
+          }
+        }
+      },
+      "block_order": [
+        "01c031c7-9ead-45e0-befd-45b2ed6f7d60",
+        "aa057152-1e19-4ed0-bda5-44bc5e24a78e",
+        "dee2a3df-8367-434a-ae2e-0e1af9010df3",
+        "8e67c1c5-f6fc-4efb-9d79-01ef4556c3e2"
+      ],
+      "settings": {
+        "section_heading": "Services we offer",
+        "section_description": "Over a hundred clients so far. Our designs are used by busy people from amazing companies all over the world."
+      }
+    },
+    "3d77d22c-4b4c-46c2-9b9f-5b316307366e": {
+      "type": "testimonials",
+      "blocks": {
+        "bf7ad46a-0d06-4c4d-93cd-8f5e49266962": {
+          "type": "testimonials",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/testi-qoute-1-1.png",
+            "block_text": "Replace this text from inside the Customizer > Testimonials",
+            "block_reviewer": "Jacob Holmes"
+          }
+        }
+      },
+      "block_order": [
+        "bf7ad46a-0d06-4c4d-93cd-8f5e49266962"
+      ],
+      "settings": {
+      }
+    },
+    "74df261a-9b65-42f0-bbae-c8afb32f9f18": {
+      "type": "progress",
+      "blocks": {
+        "1090e8e0-e923-4e40-a147-be66cd13b9c9": {
+          "type": "expertise",
+          "settings": {
+            "progress_range": 0.9,
+            "block_text": "Quality<br>Services"
+          }
+        },
+        "6c4c15b5-deef-47d8-b8b0-d2479a3c7f2d": {
+          "type": "expertise",
+          "settings": {
+            "progress_range": 1,
+            "block_text": "Skilled<br>Employee"
+          }
+        }
+      },
+      "block_order": [
+        "1090e8e0-e923-4e40-a147-be66cd13b9c9",
+        "6c4c15b5-deef-47d8-b8b0-d2479a3c7f2d"
+      ],
+      "settings": {
+        "section_image": "shopify:\/\/shop_images\/video-1-1.jpg",
+        "section_heading": "We are the stand out experts in Shopify",
+        "section_description": "We believe that success is achieved through a highly collaborative interaction, so that we can work together to identify and evaluate opportunities beyond your current operations.",
+        "link_url": "https:\/\/www.arnuld.net"
+      }
     }
   },
   "order": [
     "template-header",
-    "c906591f-9920-455d-be4e-1adef5ec6b7c"
+    "c906591f-9920-455d-be4e-1adef5ec6b7c",
+    "fe41eb09-4862-4a41-b73d-46570b251ec2",
+    "f6df1bef-bfb2-4e83-b8cc-c2d98f7c6815",
+    "3d77d22c-4b4c-46c2-9b9f-5b316307366e",
+    "74df261a-9b65-42f0-bbae-c8afb32f9f18"
   ]
 }
