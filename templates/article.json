@@ -38,6 +38,5 @@
         "enable_published_date": true
       }
     }
-  },
-  "order": ["hero-banner", "article"]
+  }
 }
