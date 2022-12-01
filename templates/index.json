@@ -15,7 +15,7 @@
         "255a0a80-e4d9-4b8a-8670-6988ef9e86e1": {
           "type": "slider-image",
           "settings": {
-            "slider_image": "shopify:\/\/shop_images\/slider-1-1_97fbab90-8125-4863-8433-d9fdad36498d.jpg",
+            "slider_image": "shopify:\/\/shop_images\/slider-1-1.jpg",
             "slide_headline": "We Build Amazing Shopify Themes",
             "slide_description": "Converting your designs into the modern Shopify 2.0 store takes only as short as a couple of days to a max of 2 weeks.",
             "show_btn": true,
@@ -26,7 +26,7 @@
         "bba6e396-fede-4fc2-ad49-ad6c5f825088": {
           "type": "slider-image",
           "settings": {
-            "slider_image": "shopify:\/\/shop_images\/slider-1-2_34f137bc-f07c-48ee-b15d-b352d66bc897.jpg",
+            "slider_image": "shopify:\/\/shop_images\/slider-1-2.jpg",
             "slide_headline": "Breathe fresh tech to your Online Stores",
             "slide_description": "We can convert your ageing stores into the new Online Store 2.0 along with the latest Vue JS to breath fresh life in your pages.",
             "show_btn": true,
@@ -48,7 +48,7 @@
         "63c63456-ef14-4737-a04f-8c75c3a2bc94": {
           "type": "about",
           "settings": {
-            "block_image": "shopify:\/\/shop_images\/service-1-2_58b5a59a-6a7b-417e-a85b-8f094cb291e9.jpg",
+            "block_image": "shopify:\/\/shop_images\/service-1-2.jpg",
             "block_heading": "The Best Shopify Theme You'll Ever Need",
             "block_link": ""
           }
@@ -56,7 +56,7 @@
         "72679f2c-e7b0-4996-aa30-d195fe375e97": {
           "type": "about",
           "settings": {
-            "block_image": "shopify:\/\/shop_images\/service-1-1_021eeadc-95f5-4984-81ae-22a151baf0a4.jpg",
+            "block_image": "shopify:\/\/shop_images\/service-1-1.jpg",
             "block_heading": "An All-in-One Web Solution for Your Business",
             "block_link": ""
           }
@@ -81,10 +81,18 @@
             "block_heading": "Scales across all devices",
             "block_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante nisi, aliquam id ultrices sed, finibus ut orci."
           }
+        },
+        "aa057152-1e19-4ed0-bda5-44bc5e24a78e": {
+          "type": "services",
+          "settings": {
+            "block_heading": "Endless design possibilities",
+            "block_description": "Cras nec nibh efficitur, sodales nibh sit amet, aliquam magna. Quisque quis leo ipsum. Aliquam semper urna quam, a efficitur turpis accumsan et."
+          }
         }
       },
       "block_order": [
-        "01c031c7-9ead-45e0-befd-45b2ed6f7d60"
+        "01c031c7-9ead-45e0-befd-45b2ed6f7d60",
+        "aa057152-1e19-4ed0-bda5-44bc5e24a78e"
       ],
       "settings": {
         "section_heading": "Services we offer",
