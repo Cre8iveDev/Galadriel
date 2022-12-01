@@ -13,7 +13,7 @@
                                 {% endif %}
                             </div><!-- /.blog-one__image -->
                             <div class="blog-one__content">
-                                <h2 class="blog-one__title"><a href="blog-details.html">{{ article.title }}</a></h2><!-- /.blog-one__title -->
+                                <h3 class="blog-one__title"><a href="blog-details.html">{{ article.title }}</a></h3><!-- /.blog-one__title -->
                                 {% if article.excerpt.size > 0 %}
                                     <p class="blog-one__text">{{ article.content | strip_html | truncatewords: 15 }}</p><!-- /.blog-one__text -->
                                 {% endif %}
@@ -37,6 +37,7 @@
 </section>
 
 <style>
+    .blog-one__title { line-height: 1.1; font-size: 24px; font-weight: 500; margin-bottom: 1rem; }
     .blog-one__single .blog-one__image img { min-height: 320px; }
 </style>
 
