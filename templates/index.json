@@ -117,12 +117,31 @@
         "section_heading": "Services we offer",
         "section_description": "Over a hundred clients so far. Our designs are used by busy people from amazing companies all over the world."
       }
+    },
+    "3d77d22c-4b4c-46c2-9b9f-5b316307366e": {
+      "type": "testimonials",
+      "blocks": {
+        "bf7ad46a-0d06-4c4d-93cd-8f5e49266962": {
+          "type": "testimonials",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/testi-qoute-1-1.png",
+            "block_text": "Replace this text from inside the Customizer > Testimonials",
+            "block_reviewer": "Jacob Holmes"
+          }
+        }
+      },
+      "block_order": [
+        "bf7ad46a-0d06-4c4d-93cd-8f5e49266962"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "template-header",
     "c906591f-9920-455d-be4e-1adef5ec6b7c",
     "fe41eb09-4862-4a41-b73d-46570b251ec2",
-    "f6df1bef-bfb2-4e83-b8cc-c2d98f7c6815"
+    "f6df1bef-bfb2-4e83-b8cc-c2d98f7c6815",
+    "3d77d22c-4b4c-46c2-9b9f-5b316307366e"
   ]
 }
