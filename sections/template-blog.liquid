@@ -7,7 +7,7 @@
                         <div class="blog-one__single">
                             <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
                                 {% if article.image %}
-                                    <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.img.alt | downcase }}">
+                                    <img src="{{ article.image | img_url: 'master' }}" alt="{{ article.img.alt | downcase }}">
                                 {% else %}
                                     {{ 'image' | placeholder_svg_tag: 'w-20' }}
                                 {% endif %}
