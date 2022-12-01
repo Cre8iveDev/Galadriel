@@ -1,23 +1,40 @@
-<div class="container py-3 py-md-4 py-lg-5">
-    {% paginate blog.articles by 10 %}
-        {% for article in blog.articles %}
-            <div>
-                {% if article.image %}
-                    <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.img.alt | downcase }}">
-                {% else %}
-                    {{ 'image' | placeholder_svg_tag: 'w-20' }}
-                {% endif %}
-            </div>
-        {% endfor %}
-        <h1 class="font-weight-bold mb-3 mb-md-4 mb-lg-5">{{ article.title }}</h1>
-
-        {% if article.excerpt.size > 0 %}
-
-        {% else %}
-            <p>{{ article.content | strip_html | truncatewords: 15 }}</p>
-        {% endif %}
-    {% endpaginate %}
-</div>
+<section class="blog-one">
+    <div class="container py-3 py-md-4 py-lg-5">
+        <div class="row">
+            {% paginate blog.articles by 10 %}                
+                {% for article in blog.articles %}
+                    <div class="col-lg-6">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
+                                {% if article.image %}
+                                    <img src="{{ article.image | img_url: 'medium' }}" alt="{{ article.img.alt | downcase }}">
+                                {% else %}
+                                    {{ 'image' | placeholder_svg_tag: 'w-20' }}
+                                {% endif %}
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <h2 class="blog-one__title"><a href="blog-details.html">{{ article.title }}</a></h2><!-- /.blog-one__title -->
+                                {% if article.excerpt.size > 0 %}
+                                    <p class="blog-one__text">{{ article.content | strip_html | truncatewords: 15 }}</p><!-- /.blog-one__text -->
+                                {% endif %}
+                                <a href="#" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-6 -->
+                {% endfor %}
+            {% endpaginate %}
+        </div><!-- /.row -->
+        <div class="post-pagination">
+            <a href="#"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">...</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#"><i class="fa fa-angle-double-right"></i><!-- /.fa fa-angle-double-left --></a>
+        </div><!-- /.post-pagination -->
+    </div><!-- /.container -->
+</section>
 
 {% schema %}
 {
