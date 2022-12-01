@@ -1,13 +1,25 @@
 {
   "sections": {
+    "9280e106-8f40-431b-8d11-d2a21bc5f6af": {
+      "type": "header-dark",
+      "settings": {
+        "logo_img": "shopify:\/\/shop_images\/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
+        "img_width_range": 164,
+        "menu": "main-menu"
+      }
+    },
     "31223083-cf43-45ae-bb5b-334980076c87": {
       "type": "hero-banner",
       "settings": {
-        "banner_heading": "Banner heading",
+        "banner_heading": "Default Blog",
+        "bg_image": "shopify:\/\/shop_images\/camera.jpg",
         "bg_color": "#1b181a",
         "show_bg_image": true
       }
     }
   },
-  "order": ["31223083-cf43-45ae-bb5b-334980076c87"]
+  "order": [
+    "9280e106-8f40-431b-8d11-d2a21bc5f6af",
+    "31223083-cf43-45ae-bb5b-334980076c87"
+  ]
 }
