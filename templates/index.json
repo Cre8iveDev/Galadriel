@@ -41,10 +41,61 @@
       ],
       "settings": {
       }
+    },
+    "fe41eb09-4862-4a41-b73d-46570b251ec2": {
+      "type": "about",
+      "blocks": {
+        "63c63456-ef14-4737-a04f-8c75c3a2bc94": {
+          "type": "about",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/service-1-2_58b5a59a-6a7b-417e-a85b-8f094cb291e9.jpg",
+            "block_heading": "The Best Shopify Theme You'll Ever Need",
+            "block_link": ""
+          }
+        },
+        "72679f2c-e7b0-4996-aa30-d195fe375e97": {
+          "type": "about",
+          "settings": {
+            "block_image": "shopify:\/\/shop_images\/service-1-1_021eeadc-95f5-4984-81ae-22a151baf0a4.jpg",
+            "block_heading": "An All-in-One Web Solution for Your Business",
+            "block_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "63c63456-ef14-4737-a04f-8c75c3a2bc94",
+        "72679f2c-e7b0-4996-aa30-d195fe375e97"
+      ],
+      "settings": {
+        "section_heading": "Discover Shopify Stores 2.0",
+        "section_description": "Replace this text from inside the Customizer > About"
+      }
+    },
+    "f6df1bef-bfb2-4e83-b8cc-c2d98f7c6815": {
+      "type": "services",
+      "blocks": {
+        "01c031c7-9ead-45e0-befd-45b2ed6f7d60": {
+          "type": "services",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-1-1.png",
+            "block_heading": "Scales across all devices",
+            "block_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ante nisi, aliquam id ultrices sed, finibus ut orci."
+          }
+        }
+      },
+      "block_order": [
+        "01c031c7-9ead-45e0-befd-45b2ed6f7d60"
+      ],
+      "settings": {
+        "section_heading": "Services we offer",
+        "section_description": "Over a hundred clients so far. Our designs are used by busy people from amazing companies all over the world."
+      }
     }
   },
   "order": [
     "template-header",
-    "c906591f-9920-455d-be4e-1adef5ec6b7c"
+    "c906591f-9920-455d-be4e-1adef5ec6b7c",
+    "fe41eb09-4862-4a41-b73d-46570b251ec2",
+    "f6df1bef-bfb2-4e83-b8cc-c2d98f7c6815"
   ]
 }
