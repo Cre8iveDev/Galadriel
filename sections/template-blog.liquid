@@ -1,5 +1,5 @@
 <section class="blog-one">
-    <div class="container py-3 py-md-4 py-lg-5">
+    <div class="container">
         <div class="row">
             {% paginate blog.articles by 10 %}                
                 {% for article in blog.articles %}
@@ -15,8 +15,6 @@
                             <div class="blog-one__content">
                                 <h3 class="blog-one__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h3><!-- /.blog-one__title -->
                                 <div class="blog-one__meta">
-                                    <a href="#" class="blog-one__meta-link"><i class="fa fa-user"></i>{{ article.author }}</a>
-                                    <!-- /.blog-one__meta-link -->
                                     <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y' }}</a>
                                     <!-- /.blog-one__meta-link -->
                                 </div><!-- /.blog-one__meta -->
@@ -29,7 +27,7 @@
                     </div><!-- /.col-lg-6 -->
                 {% endfor %}
                         
-                <div class="post-pagination">
+                <div class="post-pagination col-lg-12">
                     <a href="{{ paginate.previous.url }}"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
                     <a href="#" class="active">1</a>
                     <a href="#">2</a>
