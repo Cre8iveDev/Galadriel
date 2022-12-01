@@ -3,12 +3,48 @@
     "template-header": {
       "type": "header",
       "settings": {
-        "logo_img": "shopify://shop_images/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
+        "logo_img": "shopify:\/\/shop_images\/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
         "alt_text": "Awesome image",
         "img_width_range": 164,
         "menu": "main-menu"
       }
+    },
+    "c906591f-9920-455d-be4e-1adef5ec6b7c": {
+      "type": "hero",
+      "blocks": {
+        "255a0a80-e4d9-4b8a-8670-6988ef9e86e1": {
+          "type": "slider-image",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/slider-1-1_97fbab90-8125-4863-8433-d9fdad36498d.jpg",
+            "slide_headline": "We Build Amazing Shopify Themes",
+            "slide_description": "Converting your designs into the modern Shopify 2.0 store takes only as short as a couple of days to a max of 2 weeks.",
+            "show_btn": true,
+            "btn_text": "Discover More",
+            "btn_link": "#"
+          }
+        },
+        "bba6e396-fede-4fc2-ad49-ad6c5f825088": {
+          "type": "slider-image",
+          "settings": {
+            "slider_image": "shopify:\/\/shop_images\/slider-1-2_34f137bc-f07c-48ee-b15d-b352d66bc897.jpg",
+            "slide_headline": "Breathe fresh tech to your Online Stores",
+            "slide_description": "We can convert your ageing stores into the new Online Store 2.0 along with the latest Vue JS to breath fresh life in your pages.",
+            "show_btn": true,
+            "btn_text": "Read More...",
+            "btn_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "255a0a80-e4d9-4b8a-8670-6988ef9e86e1",
+        "bba6e396-fede-4fc2-ad49-ad6c5f825088"
+      ],
+      "settings": {
+      }
     }
   },
-  "order": ["template-header"]
+  "order": [
+    "template-header",
+    "c906591f-9920-455d-be4e-1adef5ec6b7c"
+  ]
 }
