@@ -14,6 +14,12 @@
                             </div><!-- /.blog-one__image -->
                             <div class="blog-one__content">
                                 <h3 class="blog-one__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h3><!-- /.blog-one__title -->
+                                <div class="blog-one__meta">
+                                    <a href="#" class="blog-one__meta-link"><i class="fa fa-user"></i>{{ article.author }}</a>
+                                    <!-- /.blog-one__meta-link -->
+                                    <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y' }}</a>
+                                    <!-- /.blog-one__meta-link -->
+                                </div><!-- /.blog-one__meta -->
                                 {% if article.excerpt.size > 0 %}
                                     <p class="blog-one__text">{{ article.content | strip_html | truncatewords: 15 }}</p><!-- /.blog-one__text -->
                                 {% endif %}
