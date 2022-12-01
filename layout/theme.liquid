@@ -22,11 +22,11 @@
         {{ 'responsive.css' | asset_url | stylesheet_tag }}
         {{ content_for_header }}
     </head>
+    <!-- Template Name: {{ template.name }} -->
     
     <body class="{% if template.name == 'index' %}home-one {% else %}{{ template.name }} {% endif %}bg-gray-700 px-10 py-20 mx-auto">
         <div class="preloader"></div><!-- /.preloader -->
         <main class="page-wrapper">
-            <!-- Template Name: {{ template.name }} -->
             {{ content_for_layout }}
             {% section 'footer' %}   
         </main><!-- /.page-wrapper -->
