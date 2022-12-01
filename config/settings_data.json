@@ -187,79 +187,79 @@
           "a6fa21ee-e294-4746-bf6c-1245e5d297cd": {
             "type": "portfolio",
             "settings": {
+              "block_image": "shopify:\/\/shop_images\/gallery-1-1.jpg",
               "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Shopify",
               "link_url1": "https:\/\/www.arnuld.net\/shopify",
               "block_specialization2": "WordPress",
-              "link_url2": "https:\/\/www.arnuld.net\/wordpress",
-              "block_image": "shopify:\/\/shop_images\/gallery-1-1.jpg"
+              "link_url2": "https:\/\/www.arnuld.net\/wordpress"
             }
           },
           "8e81cd9d-eb16-4460-b8a4-6b76bf8bda23": {
             "type": "portfolio",
             "settings": {
+              "block_image": "shopify:\/\/shop_images\/gallery-1-2.jpg",
               "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Vue JS",
               "link_url1": "https:\/\/www.arnuld.net\/vue",
               "block_specialization2": "",
-              "link_url2": "",
-              "block_image": "shopify:\/\/shop_images\/gallery-1-2.jpg"
+              "link_url2": ""
             }
           },
           "e5f3469a-1fb2-41f8-965e-7f339e6ef686": {
             "type": "portfolio",
             "settings": {
+              "block_image": "shopify:\/\/shop_images\/gallery-1-3.jpg",
               "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Tailwind CSS",
               "link_url1": "https:\/\/www.arnuld.net\/css\/tailwindcss",
               "block_specialization2": "PHP",
-              "link_url2": "https:\/\/www.arnuld.net\/php",
-              "block_image": "shopify:\/\/shop_images\/gallery-1-3.jpg"
+              "link_url2": "https:\/\/www.arnuld.net\/php"
             }
           },
           "ca42e5d7-75ec-44f8-b452-6ca62b17b786": {
             "type": "portfolio",
             "settings": {
+              "block_image": "shopify:\/\/shop_images\/gallery-1-4.jpg",
               "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "WooCommerce",
               "link_url1": "https:\/\/www.arnuld.net\/wordpress\/woocommerce",
               "block_specialization2": "Elementor",
-              "link_url2": "https:\/\/www.arnuld.net\/wordpress\/elementor",
-              "block_image": "shopify:\/\/shop_images\/gallery-1-4.jpg"
+              "link_url2": "https:\/\/www.arnuld.net\/wordpress\/elementor"
             }
           },
           "38af42e5-e990-4314-996a-11e65eecd51f": {
             "type": "portfolio",
             "settings": {
+              "block_image": "shopify:\/\/shop_images\/gallery-1-5.jpg",
               "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "PageFly",
               "link_url1": "https:\/\/www.arnuld.net\/shopify\/pagefly",
               "block_specialization2": "CSS",
-              "link_url2": "https:\/\/www.arnuld.net\/css",
-              "block_image": "shopify:\/\/shop_images\/gallery-1-5.jpg"
+              "link_url2": "https:\/\/www.arnuld.net\/css"
             }
           },
           "89b23e5b-6fd1-43b4-92e7-52b65fcbb4dd": {
             "type": "portfolio",
             "settings": {
+              "block_image": "shopify:\/\/shop_images\/gallery-1-6.jpg",
               "block_hover_color": "rgba(237, 44, 65, 0.7)",
               "block_dev": "Arnuld",
               "block_dev_url": "https:\/\/www.arnuld.net\/about",
               "block_specialization1": "Zapier",
               "link_url1": "https:\/\/www.arnuld.net\/automation\/zapier",
               "block_specialization2": "",
-              "link_url2": "",
-              "block_image": "shopify:\/\/shop_images\/gallery-1-6.jpg"
+              "link_url2": ""
             }
           }
         },
