@@ -1,3 +1,6 @@
+{% comment %}
+    Use sparingly for subpages only. The height of this header is smaller compared to hero.liquid
+{% endcomment %}
 <div class="inner-banner-one">
     <div class="container">
         <h2 class="inner-banner-one__title">{{ section.settings.banner_heading }}</h2><!-- /.inner-banner-one__title -->
@@ -23,7 +26,6 @@
 {% schema %}
 {
     "name": "Hero Banner",
-    "info": "Use for subpages only",
     "settings": [
         {
             "type": "text",
