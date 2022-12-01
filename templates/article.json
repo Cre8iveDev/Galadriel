@@ -38,13 +38,6 @@
         "bg_color": "#1b181a",
         "show_bg_image": true
       }
-    },
-    "article": {
-      "type": "template-article",
-      "settings": {
-        "enable_author": true,
-        "enable_published_date": true
-      }
     }
   }
 }
