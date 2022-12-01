@@ -85,14 +85,24 @@
         "aa057152-1e19-4ed0-bda5-44bc5e24a78e": {
           "type": "services",
           "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-1-2.png",
             "block_heading": "Endless design possibilities",
             "block_description": "Cras nec nibh efficitur, sodales nibh sit amet, aliquam magna. Quisque quis leo ipsum. Aliquam semper urna quam, a efficitur turpis accumsan et."
+          }
+        },
+        "dee2a3df-8367-434a-ae2e-0e1af9010df3": {
+          "type": "services",
+          "settings": {
+            "block_icon": "shopify:\/\/shop_images\/icon-1-3.png",
+            "block_heading": "Customer direct approach",
+            "block_description": "Sed ut nisi enim. Suspendisse ligula magna, elementum sit amet interdum sit amet, placerat vel nulla."
           }
         }
       },
       "block_order": [
         "01c031c7-9ead-45e0-befd-45b2ed6f7d60",
-        "aa057152-1e19-4ed0-bda5-44bc5e24a78e"
+        "aa057152-1e19-4ed0-bda5-44bc5e24a78e",
+        "dee2a3df-8367-434a-ae2e-0e1af9010df3"
       ],
       "settings": {
         "section_heading": "Services we offer",
