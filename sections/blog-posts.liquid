@@ -1,0 +1,52 @@
+<section class="blog-one">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                {% for blog in blogs %}
+                    {{ blog.title }}
+                {% endfor %}
+                {% comment %}
+                <div class="blog-one__single">
+                    <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
+                        <img src="images/blog-1.jpg" alt="">
+                    </div><!-- /.blog-one__image -->
+                    <div class="blog-one__content">
+                        <h3 class="blog-one__title"><a href="blog-details.html">Learn basic rules of new corporate
+                                business</a></h3><!-- /.blog-one__title -->
+                        <div class="blog-one__meta">
+                            <a href="#" class="blog-one__meta-link"><i class="fa fa-user"></i>By admin</a>
+                            <!-- /.blog-one__meta-link -->
+                            <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>March 5th, 2018</a>
+                            <!-- /.blog-one__meta-link -->
+                        </div><!-- /.blog-one__meta -->
+                        <p class="blog-one__text">Lorem Ipsum is simply dummy text of the new design printng and type
+                            setting Ipsum has been the is industrys ...</p><!-- /.blog-one__text -->
+                        <a href="#" class="blog-one__link">Read More</a><!-- /.blog-one__link -->
+                    </div><!-- /.blog-one__content -->
+                </div><!-- /.blog-one__single -->
+            {% endcomment %}
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->
+        <div class="post-pagination">
+            <a href="#"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">...</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+            <a href="#"><i class="fa fa-angle-double-right"></i><!-- /.fa fa-angle-double-left --></a>
+        </div><!-- /.post-pagination -->
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Blog Posts",
+    "settings": [],
+    "presets": [
+        {
+          "name": "Blog Posts",
+          "category": "Blog"
+        }
+    ]
+}
