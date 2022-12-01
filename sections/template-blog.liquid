@@ -13,7 +13,7 @@
                                 {% endif %}
                             </div><!-- /.blog-one__image -->
                             <div class="blog-one__content">
-                                <h3 class="blog-one__title"><a href="blog-details.html">{{ blog.title | escape }}</a></h3><!-- /.blog-one__title -->
+                                <h3 class="blog-one__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h3><!-- /.blog-one__title -->
                                 {% if article.excerpt.size > 0 %}
                                     <p class="blog-one__text">{{ article.content | strip_html | truncatewords: 15 }}</p><!-- /.blog-one__text -->
                                 {% endif %}
