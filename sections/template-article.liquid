@@ -24,9 +24,9 @@
                     <div class="blog-details__share-tags">
                         <div class="blog-details__tags">
                             <span>Tags:</span>
-                            <a href="#">business</a>
-                            <a href="#">onepage</a>
-                            <a href="#">agency</a>
+                            {% for tag in article.tags %}
+                                <a href="#">{{ tag | link_to_tag: tag }}</a>
+                            {% endfor %}
                         </div><!-- /.blog-details__tags -->
                         <div class="blog-details__share">
                             <a href="" class="fa fa-twitter"></a><!-- /.fa fa-twitter-->
