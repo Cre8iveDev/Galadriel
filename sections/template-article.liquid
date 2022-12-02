@@ -25,8 +25,9 @@
                         <div class="blog-details__tags">
                             <span>Tags:</span>
                             {% for tag in article.tags %}
-                                <a href="#">{{ tag | link_to_tag: tag }}</a>
+                                {{ tag | link_to_tag: tag }}
                             {% endfor %}
+
                         </div><!-- /.blog-details__tags -->
                         <div class="blog-details__share">
                             <a href="" class="fa fa-twitter"></a><!-- /.fa fa-twitter-->
