@@ -30,10 +30,9 @@
 
                         </div><!-- /.blog-details__tags -->
                         <div class="blog-details__share">
-                            <a href="" class="fa fa-twitter"></a><!-- /.fa fa-twitter-->
-                            <a href="" class="fa fa-pinterest-p"></a><!-- /.fa fa-pinterest-p -->
-                            <a href="" class="fa fa-facebook-f"></a><!-- /.fa fa-facebook-f -->
-                            <a href="" class="fa fa-youtube-play"></a><!-- /.fa fa-youtube-play-->
+                            {% for block in section.blocks %}
+                                <a href="{{ block.settings.social_link }}" class="{{ block.settings.social_icons }}"></a>
+                            {% endfor %}
                         </div><!-- /.blog-details__share -->
                     </div><!-- /.blog-details__share -->
                     <div class="blog-details__author">
