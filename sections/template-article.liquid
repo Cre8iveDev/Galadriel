@@ -7,7 +7,7 @@
             {% endif %}
 
             {% if section.settings.enable_published_date %}
-                <time datetime="{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</time>
+                <small><time datetime="{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</time></small>
             {% endif %}
         </div>
         <img class="mb-3" src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
