@@ -31,7 +31,7 @@
                     <a href="{{ paginate.previous.url }}"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
                     <a href="#" class="active">1</a>
                     <a href="#">2</a>
-                    <a href="#">...</a>
+                    <a href="#" class="disabled">...</a>
                     <a href="#">6</a>
                     <a href="#">7</a>
                     <a href="{{ paginate.next.url }}"><i class="fa fa-angle-double-right"></i><!-- /.fa fa-angle-double-left --></a>
@@ -47,6 +47,8 @@
     .blog-one__title { line-height: 1.25; font-size: 24px; font-weight: 500; margin-bottom: 1rem; }
     .blog-one__single .blog-one__image img { min-height: 320px; }
     .post-pagination a:not(.active):hover { background-color: {{ section.settings.btn_color }}; color: #ffffff; transition: all 0.65s ease; }
+    .disabled,
+    .disabled:hover { background-color: transparent; pointer-events: none; }    
 {% endstyle %}
 
 {% schema %}
