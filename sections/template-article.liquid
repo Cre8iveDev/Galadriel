@@ -3,11 +3,11 @@
         <h1 class="font-weight-bold mb-3 mb-md-2 mb-lg-1">{{ article.title }}</h1>
         <div class="meta mb-3">
             {% if section.settings.enable_author %}
-                <small>Author: {{ article.author }}</small>
+                <small>by {{ article.author }}</small>
             {% endif %}
 
             {% if section.settings.enable_published_date %}
-                <small>| Published on: <time datetime="{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</time></small>
+                <small> |  <time datetime="{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</time></small>
             {% endif %}
         </div>
         <img class="mb-3" src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
