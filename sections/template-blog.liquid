@@ -30,7 +30,8 @@
                 <-- {{ paginate.pages }} -->
                 <-- 
                     {% for part in paginate.parts %}
-                        {{ part.title }}
+                        {{ part.title }}                        
+                        {{ part.url }}
                     {% endfor %}
                 -->
                 {% if paginate.pages > 1 %}                        
