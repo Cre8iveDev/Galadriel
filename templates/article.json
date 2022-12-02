@@ -3,7 +3,7 @@
     "66703cf7-1b62-483d-91aa-e5ec9f8f2241": {
       "type": "header-dark",
       "settings": {
-        "logo_img": "shopify://shop_images/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
+        "logo_img": "shopify:\/\/shop_images\/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
         "img_width_range": 164,
         "menu": "main-menu"
       }
@@ -15,7 +15,7 @@
           "type": "link",
           "settings": {
             "block_text": "Home",
-            "link_url": "/",
+            "link_url": "\/",
             "active_link": false
           }
         },
@@ -23,7 +23,7 @@
           "type": "link",
           "settings": {
             "block_text": "Blog One",
-            "link_url": "https://cre8ive-dev.myshopify.com/blog/news/#",
+            "link_url": "https:\/\/cre8ive-dev.myshopify.com\/blog\/news\/#",
             "active_link": true
           }
         }
@@ -34,10 +34,58 @@
       ],
       "settings": {
         "banner_heading": "Banner heading",
-        "bg_image": "shopify://shop_images/camera.jpg",
+        "bg_image": "shopify:\/\/shop_images\/camera.jpg",
         "bg_color": "#1b181a",
         "show_bg_image": true
       }
+    },
+    "4e5a2a43-a016-427d-a093-34507abf9854": {
+      "type": "template-article",
+      "blocks": {
+        "bd4996ba-fbe4-48ef-a1a3-303b5117eb57": {
+          "type": "social-share",
+          "settings": {
+            "social_icons": "fa fa-twitter",
+            "social_link": "https:\/\/twitter.com\/arnuld.net"
+          }
+        },
+        "7d93cbaf-d3c2-4a3d-b366-175f9e7c2888": {
+          "type": "social-share",
+          "settings": {
+            "social_icons": "fa fa-pinterest-p",
+            "social_link": "https:\/\/www.pinterest.com\/arnuld.net"
+          }
+        },
+        "4cab8acc-cd3d-420b-bae3-965352cad563": {
+          "type": "social-share",
+          "settings": {
+            "social_icons": "fa fa-facebook-f",
+            "social_link": "https:\/\/www.facebook.com\/arnuld.net"
+          }
+        },
+        "b20fb975-36da-49cc-8679-538878788cd3": {
+          "type": "social-share",
+          "settings": {
+            "social_icons": "fa fa-youtube-play",
+            "social_link": "https:\/\/youtube.com\/arnuld.net"
+          }
+        }
+      },
+      "block_order": [
+        "bd4996ba-fbe4-48ef-a1a3-303b5117eb57",
+        "7d93cbaf-d3c2-4a3d-b366-175f9e7c2888",
+        "4cab8acc-cd3d-420b-bae3-965352cad563",
+        "b20fb975-36da-49cc-8679-538878788cd3"
+      ],
+      "settings": {
+        "enable_author": true,
+        "enable_published_date": true
+      }
     }
-  }
+  },
+  "order": [
+    "66703cf7-1b62-483d-91aa-e5ec9f8f2241",
+    "hero-banner",
+    "4e5a2a43-a016-427d-a093-34507abf9854"
+  ]
 }
