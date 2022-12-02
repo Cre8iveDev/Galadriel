@@ -26,14 +26,7 @@
                         </div><!-- /.blog-one__single -->
                     </div><!-- /.col-lg-6 -->           
                 {% endfor %}
-
-                <-- {{ paginate.pages }} -->
-                <-- 
-                    {% for part in paginate.parts %}
-                        {{ part.title }}                        
-                        {{ part.url }}
-                    {% endfor %}
-                -->
+                
                 {% if paginate.pages > 1 %}                        
                     <div class="post-pagination col-lg-12">
                         {% if paginate.previous %}
