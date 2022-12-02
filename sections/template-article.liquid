@@ -12,7 +12,10 @@
                         <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</a>
                         <!-- /.blog-one__meta-link -->
                     </div><!-- /.blog-one__meta -->
-                    <img src="images/blogd-1.jpg" alt="" class="img-fluid">
+                    
+                    {% if article.image %}
+                        <img class="img-fluid mb-3" src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
+                    {% endif %}
 
                     {{ article.content }}
 
