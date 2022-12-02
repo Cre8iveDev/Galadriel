@@ -16,10 +16,16 @@
         "bg_color": "#1b181a",
         "show_bg_image": true
       }
+    },
+    "82b5ffc8-fc44-4c9f-addd-aac72c29ed2c": {
+      "type": "template-blog",
+      "settings": {
+      }
     }
   },
   "order": [
     "9280e106-8f40-431b-8d11-d2a21bc5f6af",
-    "31223083-cf43-45ae-bb5b-334980076c87"
+    "31223083-cf43-45ae-bb5b-334980076c87",
+    "82b5ffc8-fc44-4c9f-addd-aac72c29ed2c"
   ]
 }
