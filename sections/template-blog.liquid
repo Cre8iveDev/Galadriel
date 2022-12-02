@@ -41,11 +41,12 @@
     </div><!-- /.container -->
 </section>
 
-<style>
-    .blog-one__link.btn_primary {  }
+{% style %}
+    .blog-one__link.btn_primary { background-color: {{ section.settings.btn_color }}; transition: all 0.65s ease; }
+    .blog-one__link.btn_primary:hover { background-color: #ffffff; }
     .blog-one__title { line-height: 1.25; font-size: 24px; font-weight: 500; margin-bottom: 1rem; }
     .blog-one__single .blog-one__image img { min-height: 320px; }
-</style>
+{% endstyle %}
 
 {% schema %}
 {
