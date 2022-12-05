@@ -99,7 +99,7 @@
                         {% endif %}
                     </div><!-- /.comment-one -->
                     {% endif %}
-
+{% comment %}
                     {% form 'new_comment', article %}
                         {% liquid
                           assign post_message = 'blogs.article.success'
@@ -222,6 +222,7 @@
                                 <input type="submit" class="button" value="{{ 'blogs.article.post' }}">
                     {% endform %}
                             </div><!-- /.comment-form -->
+{% endcomment %}
                 </div><!-- /.blog-details__content -->
             </div><!-- /.col-lg-8 -->
             <div class="col-lg-4">
