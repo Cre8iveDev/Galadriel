@@ -40,6 +40,7 @@
                             <img src="{{ section.settings.author_img | img_url: 'medium' }}" alt="{{ section.settings.author_name | downcase }}">
                         </div><!-- /.blog-details__author-img -->
                         <div class="blog-details__author-content">
+                            <!-- {{ blogs.article }}-->
                             <h3 class="blog-details__author-name">{{ section.settings.author_name }}</h3><!-- /.blog-details__author-name -->
                             <p class="blog-details__author-bio">{{ section.settings.author_bio }}</p><!-- /.blog-details__author-bio -->
                         </div><!-- /.blog-details__author-content -->
@@ -96,7 +97,7 @@
                     {% endif %}
 
                     {% form 'new_comment', article %}
-                        {%-liquid
+                        {% liquid
                           assign post_message = 'blogs.article.success'
                           if blog.moderated? and comment.status == 'unapproved'
                             assign post_message = 'blogs.article.success_moderated'
