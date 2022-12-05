@@ -79,7 +79,8 @@
       ],
       "settings": {
         "enable_author": true,
-        "enable_published_date": true
+        "enable_published_date": true,
+        "author": "shopify:\/\/shop_images\/author.jpg"
       }
     }
   },
