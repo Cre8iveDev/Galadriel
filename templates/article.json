@@ -80,7 +80,9 @@
       "settings": {
         "enable_author": true,
         "enable_published_date": true,
-        "author": "shopify:\/\/shop_images\/author.jpg"
+        "author": "shopify:\/\/shop_images\/author.jpg",
+        "author_name": "Nannie White",
+        "author_bio": "Lorem Ipsum is simply dummy text of the rinting and typesetting been the industry standard dummy text ever sincer nullam condimentum purus. In non ex at ligula fringilla lobortis et mauris auctor aliquet."
       }
     }
   },
