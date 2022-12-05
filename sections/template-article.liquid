@@ -42,7 +42,7 @@
                         <div class="blog-details__author-content">
                             <h3 class="blog-details__author-name">{{ section.settings.author_name }}</h3><!-- /.blog-details__author-name -->
                             <p class="blog-details__author-bio">
-                                {% if article.user.bio.empty? %}
+                                {% if article.user.bio != "" %}
                                     {{ section.settings.author_bio }}</p><!-- /.blog-details__author-bio -->
                                 {% endif %}
                         </div><!-- /.blog-details__author-content -->
