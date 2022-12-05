@@ -5,11 +5,15 @@
                 <div class="blog-details__content">
                     <h2 class="blog-details__title">{{ article.title }}</h2><!-- /.blog-details__title -->
                     <div class="blog-one__meta">
-                        <a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
+                        {% if section.settings.enable_author %}
+                            a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
+                        {% endif %}
                         <!-- /.blog-one__meta-link -->
                         <a href="{{ article.comment_post_url }}" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
                         <!-- /.blog-one__meta-link -->
-                        <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y'}}">{{ article.published_at | date: '%b %d, %Y' }}</a>
+                        {% if section.settings.published_at %}
+                            <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y'}}</a>
+                        {% endif %}
                         <!-- /.blog-one__meta-link -->
                     </div><!-- /.blog-one__meta -->
                     
