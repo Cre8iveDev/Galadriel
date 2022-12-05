@@ -37,7 +37,7 @@
                     </div><!-- /.blog-details__share -->
                     <div class="blog-details__author">
                         <div class="blog-details__author-img">
-                            <img src="images/author-1-1.jpg" alt="author img">
+                            <img src="{{ section.settings.author | img_url: 'medium' }}" alt="author img">
                         </div><!-- /.blog-details__author-img -->
                         <div class="blog-details__author-content">
                             <h3 class="blog-details__author-name">Nannie White</h3><!-- /.blog-details__author-name -->
@@ -207,6 +207,11 @@
             "id": "enable_published_date",
             "default": true,
             "label": "Show published date"
+        },
+        {
+            "type": "image_picker",
+            "id": "author",
+            "label": "Upload author's image"
         }
     ],
     "blocks": [
