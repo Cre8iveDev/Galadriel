@@ -40,19 +40,8 @@
                             <img src="{{ section.settings.author | img_url: 'medium' }}" alt="author img">
                         </div><!-- /.blog-details__author-img -->
                         <div class="blog-details__author-content">
-                            <h3 class="blog-details__author-name">
-                                {% if article.author %}
-                                    {{ article.author }}
-                                {% else %}
-                                    {{ section.settings.author_name }}
-                                {% endif %}
-                            </h3><!-- /.blog-details__author-name -->
-                            <p class="blog-details__author-bio">
-                                {% if section.settings.author_bio %}
-                                    {{ section.settings.author_bio }}</p><!-- /.blog-details__author-bio -->
-                                {% else %}
-                                    No bio for this author. Go to the article page and enter them in the sidebar.
-                                {% endif %}
+                            <h3 class="blog-details__author-name">{{ section.settings.author_name }}</h3><!-- /.blog-details__author-name -->
+                            <p class="blog-details__author-bio">{{ section.settings.author_bio }}</p><!-- /.blog-details__author-bio -->
                         </div><!-- /.blog-details__author-content -->
                     </div><!-- /.blog-details__author -->
                     
