@@ -48,11 +48,10 @@
                                 {% endif %}
                             </h3>
                             <p class="blog-details__author-bio">
-                                <-- {{ article.user.bio == '' }} -->
-                                {% if article.user.bio != '' %}
+                                {% if section.settings.author_bio != '' %}
                                     {{ section.settings.author_bio }}</p><!-- /.blog-details__author-bio -->
                                 {% else %}
-                                    No bio for this author
+                                    No bio for this author. Go to the article page and enter them in the sidebar.
                                 {% endif %}
                         </div><!-- /.blog-details__author-content -->
                     </div><!-- /.blog-details__author -->
