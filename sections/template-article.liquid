@@ -109,6 +109,11 @@
 
                     <div class="comment-form">
                         <h2 class="comment-one__title">Leave a Comment</h2><!-- /.comment-one__title -->   
+                        {% form 'new_comment', article %}
+                            <!--code for input fields and labels-->
+                        {% endform %}
+
+                        {% comment %}
                         <form action="inc/sendemail.php" class="comment-form__form row">
                             <div class="col-lg-6">
                                 <input type="text" placeholder="Your Name">
@@ -121,6 +126,7 @@
                                 <a href="#" class="thm-btn comment-form__btn">Submit Now</a><!-- /.thm-btn -->
                             </div><!-- /.col-lg-12 -->
                         </form><!-- /.comment-form__form -->
+                        {% endcomment %}
                     </div><!-- /.comment-form -->
                 </div><!-- /.blog-details__content -->
             </div><!-- /.col-lg-8 -->
