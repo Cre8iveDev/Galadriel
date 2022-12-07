@@ -56,7 +56,7 @@
                     {% if blog.comments_enabled? %}
                     <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
-                            {%- assign anchorId = '#Comments-' | append: article.id -%}
+                            {% assign anchorId = '#Comments-' | append: article.id %}
 
                                 <h2 class="comment-one__title">{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
                                 {% paginate article.comments by 5 %}
@@ -124,8 +124,8 @@
                               <textarea name="comment[body]" placeholder="Write Comments">{{ form.body }}</textarea>
                             </div>
                           
-                            <div class="submit">
-                              <input type="submit" value="Post">
+                            <div class="submit d-flex justify-content-center col-lg-12">
+                              <input type="submit" value="Post" class="thm-btn comment-form__btn">
                             </div>
                         {% endform %}
 
