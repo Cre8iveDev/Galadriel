@@ -12,7 +12,7 @@
                         <a href="{{ article.comment_post_url }}" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
                         <!-- /.blog-one__meta-link -->
                         {% if section.settings.enable_published_date %}
-                            <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y'}}{{ article.published_at | date: '%b %d, %Y' }}</a>
+                            <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y'}}</a>
                         {% endif %}
                         <!-- /.blog-one__meta-link -->
                     </div><!-- /.blog-one__meta -->
