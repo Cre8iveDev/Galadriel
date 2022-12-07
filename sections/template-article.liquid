@@ -109,20 +109,20 @@
 
                     <div class="comment-form">
                         <h2 class="comment-one__title">Leave a Comment</h2><!-- /.comment-one__title -->   
-                        {% form 'new_comment', article %}
+                        {% form 'new_comment', article, class:'comment-form__form row' %}
                             {{ form.errors | default_errors }}
                           
-                            <div class="name">
+                            <div class="name col-lg-6">
                               <label for="name">Name</label>
                               <input type="text" name="comment[author]" value="{{ form.author }}">
                             </div>
                           
-                            <div class="email">
+                            <div class="email col-lg-6">
                               <label for="email">Email</label>
                               <input type="email" name="comment[email]" value="{{ form.email }}">
                             </div>
                           
-                            <div class="comment">
+                            <div class="commentcol-lg-12">
                               <label for="comment">Comment</label>
                               <textarea name="comment[body]">{{ form.body }}</textarea>
                             </div>
