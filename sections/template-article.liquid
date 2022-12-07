@@ -113,18 +113,15 @@
                             {{ form.errors | default_errors }}
                           
                             <div class="name col-lg-6">
-                              <label for="name">Name</label>
-                              <input type="text" name="comment[author]" value="{{ form.author }}">
+                              <input type="text" name="comment[author]" value="{{ form.author }}" placeholder="Your Name">
                             </div>
                           
                             <div class="email col-lg-6">
-                              <label for="email">Email</label>
-                              <input type="email" name="comment[email]" value="{{ form.email }}">
+                              <input type="email" name="comment[email]" value="{{ form.email }}" placeholder="Your Email">
                             </div>
                           
-                            <div class="commentcol-lg-12">
-                              <label for="comment">Comment</label>
-                              <textarea name="comment[body]">{{ form.body }}</textarea>
+                            <div class="comment col-lg-12">
+                              <textarea name="comment[body]" placeholder="Write Comments">{{ form.body }}</textarea>
                             </div>
                           
                             <div class="submit">
