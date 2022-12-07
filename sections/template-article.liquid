@@ -5,16 +5,14 @@
                 <div class="blog-details__content">
                     <h2 class="blog-details__title">{{ article.title }}</h2><!-- /.blog-details__title -->
                     <div class="blog-one__meta">
-                        {%comment%}
                         {% if section.settings.enable_author %}
                             <a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
                         {% endif %}
-                        {%endcomment%}
                         <!-- /.blog-one__meta-link -->
                         <a href="{{ article.comment_post_url }}" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
                         <!-- /.blog-one__meta-link -->
                         {% if section.settings.published_at %}
-                            <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y'}}</a>
+                            <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y'}}{{ article.published_at | date: '%b %d, %Y' }}</a>
                         {% endif %}
                         <!-- /.blog-one__meta-link -->
                     </div><!-- /.blog-one__meta -->
@@ -33,6 +31,7 @@
                             {% for tag in article.tags %}
                                 {{ tag | link_to_tag: tag }}
                             {% endfor %}
+
                         </div><!-- /.blog-details__tags -->
                         <div class="blog-details__share">
                             {% for block in section.blocks %}
@@ -42,19 +41,21 @@
                     </div><!-- /.blog-details__share -->
                     <div class="blog-details__author">
                         <div class="blog-details__author-img">
-                            <img src="{{ section.settings.author_img | img_url: 'medium' }}" alt="{{ section.settings.author_name | downcase }}">
+                            <img src="{{ section.settings.author | img_url: 'medium' }}" alt="author img">
                         </div><!-- /.blog-details__author-img -->
                         <div class="blog-details__author-content">
-                            <!-- {{ blogs.article }}-->
                             <h3 class="blog-details__author-name">{{ section.settings.author_name }}</h3><!-- /.blog-details__author-name -->
-                            <p class="blog-details__author-bio">{{ section.settings.author_bio }}</p><!-- /.blog-details__author-bio -->
+                            <p class="blog-details__author-bio">
+                                {% if article.user.bio.empty? %}
+                                    {{ section.settings.author_bio }}</p><!-- /.blog-details__author-bio -->
+                                {% endif %}
                         </div><!-- /.blog-details__author-content -->
                     </div><!-- /.blog-details__author -->
                     
                     {% if blog.comments_enabled? %}
                     <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
-                            {% assign anchorId = '#Comments-' | append: article.id %}
+                            {%- assign anchorId = '#Comments-' | append: article.id -%}
 
                                 <h2 class="comment-one__title">{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
                                 {% paginate article.comments by 5 %}
@@ -75,7 +76,7 @@
                                             </div><!-- /.comment-one__content -->
                                         </div><!-- /.comment-one__single -->
                                     {% endfor %}                                    
-                                    {% comment %}{% render 'pagination', paginate: paginate, anchor: anchorId %}{% endcomment %}
+                                    {% render 'pagination', paginate: paginate, anchor: anchorId %}
 
                                     {% comment %}
                                     <div class="comment-one__single">
@@ -100,133 +101,24 @@
                         {% endif %}
                     </div><!-- /.comment-one -->
                     {% endif %}
-{% comment %}
-                    {% form 'new_comment', article %}
-                        {% liquid
-                          assign post_message = 'blogs.article.success'
-                          if blog.moderated? and comment.status == 'unapproved'
-                            assign post_message = 'blogs.article.success_moderated'
-                          endif
-                        %}
-                            <div class="comment-form">
-                                <h2 class="comment-one__title">
-                                    {% if {{ 'blogs.article.comment_form_title' }} %}
-                                        {{ 'blogs.article.comment_form_title' }}
-                                    {% else %}
-                                        Leave a Comment
-                                    {% endif %}
-                                </h2><!-- /.comment-one__title -->   
-                                {% if form.errors %}
-                                    <div class="form__message" role="alert">
-                                      <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
-                                        {% render 'icon-error' %} {{ 'templates.contact.form.error_heading' }}
-                                      </h3>
-                                    </div>
-                                    <ul class="form-status-list caption-large">
-                                      {%- for field in form.errors -%}
-                                        <li>
-                                          <a href="#CommentForm-{{ field }}" class="link">
-                                            {%- if form.errors.translated_fields[field] contains 'author' -%}
-                                              {{ 'blogs.article.name' }}
-                                            {%- elsif form.errors.translated_fields[field] contains 'body'-%}
-                                             {{ 'blogs.article.message' }}
-                                            {%- else -%}
-                                              {{ form.errors.translated_fields[field] }}
-                                            {%- endif -%}
-                                            {{ form.errors.messages[field] }}
-                                          </a>
-                                        </li>
-                                      {%- endfor -%}
-                                    </ul>
-                                {% elsif form.posted_successfully? %}
-                                    <div class="form-status-list form__message" role="status">
-                                      <h3 class="form-status" tabindex="-1" autofocus>{% render 'icon-success' %} {{ post_message }}</h3>
-                                    </div>
-                                {% endif %}
 
-                                <div{% if blog.moderated? == false %} class="article-template__comments-fields"{% endif %}>
-                                  <div class="article-template__comment-fields">
-                                    <div class="field field--with-error">
-                                      <input
-                                        type="text"
-                                        name="comment[author]"
-                                        id="CommentForm-author"
-                                        class="field__input"
-                                        autocomplete="name"
-                                        value="{{ form.author }}"
-                                        aria-required="true"
-                                        required
-                                        {% if form.errors contains 'author' %}
-                                          aria-invalid="true"
-                                          aria-describedby="CommentForm-author-error"
-                                        {% endif %}
-                                        placeholder="{{ 'blogs.article.name' }}"
-                                      >
-                                      <label class="field__label" for="CommentForm-author">{{ 'blogs.article.name' }} <span aria-hidden="true">*</span></label>
-                                      {%- if form.errors contains 'author' -%}
-                                        <small id="CommentForm-author-error">
-                                          <span class="form__message">{% render 'icon-error' %}{{ 'blogs.article.name' }} {{ form.errors.messages['author'] }}.</span>
-                                        </small>
-                                      {%- endif -%}
-                                    </div>
-                                    <div class="field field--with-error">
-                                      <input
-                                        type="email"
-                                        name="comment[email]"
-                                        id="CommentForm-email"
-                                        autocomplete="email"
-                                        class="field__input"
-                                        value="{{ form.email }}"
-                                        autocorrect="off"
-                                        autocapitalize="off"
-                                        aria-required="true"
-                                        required
-                                        {% if form.errors contains 'email' %}
-                                          aria-invalid="true"
-                                          aria-describedby="CommentForm-email-error"
-                                        {% endif %}
-                                        placeholder="{{ 'blogs.article.email' }}"
-                                      >
-                                      <label class="field__label" for="CommentForm-email">{{ 'blogs.article.email' }} <span aria-hidden="true">*</span></label>
-                                      {%- if form.errors contains 'email' -%}
-                                        <small id="CommentForm-email-error">
-                                          <span class="form__message">{% render 'icon-error' %}{{ 'blogs.article.email' }} {{ form.errors.messages['email'] }}.</span>
-                                        </small>
-                                      {%- endif -%}
-                                    </div>
-                                  </div>
-                                  <div class="field field--with-error">
-                                    <textarea
-                                      rows="5"
-                                      name="comment[body]"
-                                      id="CommentForm-body"
-                                      class="text-area field__input"
-                                      aria-required="true"
-                                      required
-                                      {% if form.errors contains 'body' %}
-                                        aria-invalid="true"
-                                        aria-describedby="CommentForm-body-error"
-                                      {% endif %}
-                                      placeholder="{{ 'blogs.article.message' }}"
-                                    >{{ form.body }}</textarea>
-                                      <label class="form__label field__label" for="CommentForm-body">{{ 'blogs.article.message' }} <span aria-hidden="true">*</span></label>
-                                  </div>
-                                  {%- if form.errors contains 'body' -%}
-                                    <small id="CommentForm-body-error">
-                                      <span class="form__message">{% render 'icon-error' %}{{ 'blogs.article.message' }} {{ form.errors.messages['body'] }}.</span>
-                                    </small>
-                                  {%- endif -%}
-                                </div>
-                                {%- if blog.moderated? -%}
-                                  <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' }}</p>
-                                {%- endif -%}
-                                <input type="submit" class="button" value="{{ 'blogs.article.post' }}">
-                    {% endform %}
-                            </div><!-- /.comment-form -->
-{% endcomment %}
+                    <div class="comment-form">
+                        <h2 class="comment-one__title">Leave a Comment</h2><!-- /.comment-one__title -->   
+                        <form action="inc/sendemail.php" class="comment-form__form row">
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Your Name">
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <input type="text" placeholder="Your Email">
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-12">
+                                <textarea placeholder="Write Comments"></textarea>
+                                <a href="#" class="thm-btn comment-form__btn">Submit Now</a><!-- /.thm-btn -->
+                            </div><!-- /.col-lg-12 -->
+                        </form><!-- /.comment-form__form -->
+                    </div><!-- /.comment-form -->
                 </div><!-- /.blog-details__content -->
             </div><!-- /.col-lg-8 -->
-{% comment %}
             <div class="col-lg-4">
                 <div class="sidebar">
                     <div class="sidebar__single">
@@ -267,7 +159,6 @@
                     </div><!-- /.sidebar__single -->
                 </div><!-- /.sidebar -->
             </div><!-- /.col-lg-4 -->
-{% endcomment%}
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section><!-- /.blog-details -->
@@ -319,7 +210,7 @@
         },
         {
             "type": "image_picker",
-            "id": "author_img",
+            "id": "author",
             "label": "Upload author's image"
         },
         {
