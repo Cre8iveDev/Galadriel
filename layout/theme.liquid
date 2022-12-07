@@ -44,9 +44,10 @@
         {{ 'wow.js' | asset_url | script_tag }}
         {{ 'waypoints.min.js' | asset_url | script_tag }}
         {{ 'jquery.counterup.min.js' | asset_url | script_tag }}
-        {%comment%}{{ 'progressbar.min.js' | asset_url | script_tag }}{%endcomment%}
+        {%comment%}{%endcomment%}
         {{ 'jquery.mCustomScrollbar.concat.min.js' | asset_url | script_tag }}
-        {% if template.name == "index" %}            
+        {% if template.name == "index" %}          
+            {{ 'progressbar.min.js' | asset_url | script_tag }}  
             {{ 'jquery.validate.min.js' | asset_url | script_tag }}
         {% endif %}
         {{ 'typed.min.js' | asset_url | script_tag }}
