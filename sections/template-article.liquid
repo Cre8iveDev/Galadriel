@@ -68,9 +68,9 @@
                                             <div class="comment-one__content">
                                                 <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
                                                 <p class="comment-one__meta">
-                                                    <a href="#">20 Mar, 2019</a>
+                                                    <a href="#">{{ article.published_at | date: '%B %d, %Y'}}</a>
                                                     <span class="comment-one__meta-sep">-</span><!-- /.comment-one__meta-sep -->
-                                                    <a href="#">4.00 pm</a>
+                                                    <a href="#">{{ article.published_at | date: '%I:%M %P'}}</a>
                                                 </p><!-- /.comment-one__meta -->
                                                 <p class="comment-one__text">{{ comment.content }}</p><!-- /.comment-one__text -->
                                                 <a href="#" class="thm-btn comment-one__btn">Reply</a><!-- /.thm-btn comment-one__btn -->
