@@ -124,25 +124,10 @@
                               <textarea name="comment[body]" placeholder="Write Comments">{{ form.body }}</textarea>
                             </div>
                           
-                            <div class="submit d-flex justify-content-center col-lg-12">
-                              <input type="submit" value="Post" class="thm-btn comment-form__btn">
+                            <div class="submit text-center px-3">
+                              <input type="submit" value="Post" class="thm-btn comment-form__btn px-5">
                             </div>
                         {% endform %}
-
-                        {% comment %}
-                        <form action="inc/sendemail.php" class="comment-form__form row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Name">
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Your Email">
-                            </div><!-- /.col-lg-6 -->
-                            <div class="col-lg-12">
-                                <textarea placeholder="Write Comments"></textarea>
-                                <a href="#" class="thm-btn comment-form__btn">Submit Now</a><!-- /.thm-btn -->
-                            </div><!-- /.col-lg-12 -->
-                        </form><!-- /.comment-form__form -->
-                        {% endcomment %}
                     </div><!-- /.comment-form -->
                 </div><!-- /.blog-details__content -->
             </div><!-- /.col-lg-8 -->
@@ -193,6 +178,26 @@
 <style>
     .container.article > .flex {
         overflow-x: hidden;
+    }
+
+    .thm-btn {
+        border: none;
+        outline: none;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #ed2c41;
+        color: #fff;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 15.5px 75.5px;
+        border-radius: 30.5px;
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    .thm-btn:hover {
+        background-color: #1b181a;
+        color: #fff;
     }
 
     blockquote {
