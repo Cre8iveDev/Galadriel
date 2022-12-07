@@ -6,7 +6,7 @@
                     <h2 class="blog-details__title">{{ article.title }}</h2><!-- /.blog-details__title -->
                     <div class="blog-one__meta">
                         {% if section.settings.enable_author %}
-                            a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
+                            <a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
                         {% endif %}
                         <!-- /.blog-one__meta-link -->
                         <a href="{{ article.comment_post_url }}" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
