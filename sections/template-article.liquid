@@ -5,9 +5,11 @@
                 <div class="blog-details__content">
                     <h2 class="blog-details__title">{{ article.title }}</h2><!-- /.blog-details__title -->
                     <div class="blog-one__meta">
+                        {%comment%}
                         {% if section.settings.enable_author %}
                             <a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
                         {% endif %}
+                        {%endcomment%}
                         <!-- /.blog-one__meta-link -->
                         <a href="{{ article.comment_post_url }}" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
                         <!-- /.blog-one__meta-link -->
@@ -31,7 +33,6 @@
                             {% for tag in article.tags %}
                                 {{ tag | link_to_tag: tag }}
                             {% endfor %}
-
                         </div><!-- /.blog-details__tags -->
                         <div class="blog-details__share">
                             {% for block in section.blocks %}
@@ -53,7 +54,7 @@
                     {% if blog.comments_enabled? %}
                     <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
-                            {%- assign anchorId = '#Comments-' | append: article.id -%}
+                            {% assign anchorId = '#Comments-' | append: article.id %}
 
                                 <h2 class="comment-one__title">{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
                                 {% paginate article.comments by 5 %}
@@ -74,7 +75,7 @@
                                             </div><!-- /.comment-one__content -->
                                         </div><!-- /.comment-one__single -->
                                     {% endfor %}                                    
-                                    {% render 'pagination', paginate: paginate, anchor: anchorId %}
+                                    {% comment %}{% render 'pagination', paginate: paginate, anchor: anchorId %}{% endcomment %}
 
                                     {% comment %}
                                     <div class="comment-one__single">
