@@ -40,7 +40,7 @@
     </div><!-- /.container -->
 </section><!-- /.contact-one -->
 
-<script src="{{' jquery.validate.min.js' | asset_url }}"></script>
+{{' jquery.validate.min.js' | asset_url | script_tag }}
 
 {% style %}
     #result:not(:empty) {
