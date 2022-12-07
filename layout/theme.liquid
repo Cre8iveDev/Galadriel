@@ -46,6 +46,7 @@
         {{ 'jquery.counterup.min.js' | asset_url | script_tag }}
         {{ 'jquery.mCustomScrollbar.concat.min.js' | asset_url | script_tag }}
         {% if template.name == "index" %}          
+            {{' jquery.validate.min.js' | asset_url | script_tag }}
             {{ 'progressbar.min.js' | asset_url | script_tag }}  
         {% endif %}
         {{ 'typed.min.js' | asset_url | script_tag }}
