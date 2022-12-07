@@ -73,7 +73,7 @@
                                                     <a href="#">{{ article.published_at | date: '%I:%M %p'}}</a>
                                                 </p><!-- /.comment-one__meta -->
                                                 <p class="comment-one__text">{{ comment.content }}</p><!-- /.comment-one__text -->
-                                                <a href="#" class="thm-btn comment-one__btn">Reply</a><!-- /.thm-btn comment-one__btn -->
+                                                <a href="#" class="thm-btn comment-one__btn btn-disabled">Reply</a><!-- /.thm-btn comment-one__btn -->
                                             </div><!-- /.comment-one__content -->
                                         </div><!-- /.comment-one__single -->
                                     {% endfor %}    
@@ -205,6 +205,11 @@
         height: 45px;
         max-width: 94px;
         padding: 15.5px;
+    }
+
+    .btn-disabled {
+        background-color: #e9e9e9 !important;
+        cursor: default;
     }
 
     blockquote {
