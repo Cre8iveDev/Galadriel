@@ -63,7 +63,7 @@
                                     {% for comment in article.comments %}
                                         <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
                                             <div class="comment-one__img">
-                                                <img src="{{ 'comment-1-1.jpg' | asset_url: '115x115' }}" alt="{{ comment.author | downcase }}">
+                                                <img src="{{ 'comment-1-1.jpg' | asset_url }}" alt="{{ comment.author | downcase }}">
                                             </div><!-- /.comment-one__img -->
                                             <div class="comment-one__content">
                                                 <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
