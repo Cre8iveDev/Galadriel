@@ -206,7 +206,6 @@ a:visited {
 .preloader {
   position: fixed;
   background-color: #fff;
-  background-image: url({{"preloader.gif"|asset_url}});
   background-position: center center;
   background-repeat: no-repeat;
   top: 0;
@@ -4417,10 +4416,6 @@ h6 {
 .home-two .portfolio-popup .thm-btn,
 .home-two .header-navigation ul.navigation-box > li > a > .active-line::after {
   background-color: #ff9409;
-}
-
-.home-two .preloader {
-  background-image: url({{"preloader-2.gif"|asset_url}});
 }
 
 .home-two .team-one__single:hover .team-one__social a,
