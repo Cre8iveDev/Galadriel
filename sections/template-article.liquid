@@ -61,12 +61,6 @@
                                 <h2 class="comment-one__title">{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
                                 {% paginate article.comments by 5 %}
                                     {% for comment in article.comments %}
-                                        {{ comment.id }}
-                                        {{ article.user }}
-                                        {{ comment.content }}
-                                    {% endfor %}    
-
-                                    {% comment %}
                                         <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
                                             <div class="comment-one__img">
                                                 <img src="images/comment-1-1.jpg" alt="comment avatar">
@@ -82,7 +76,9 @@
                                                 <a href="#" class="thm-btn comment-one__btn">Reply</a><!-- /.thm-btn comment-one__btn -->
                                             </div><!-- /.comment-one__content -->
                                         </div><!-- /.comment-one__single -->
-                                    {% endfor %}                                    
+                                    {% endfor %}    
+
+                                    {% comment %}                                  
                                     {% render 'pagination', paginate: paginate, anchor: anchorId %}
                                     <div class="comment-one__single">
                                         <div class="comment-one__img">
