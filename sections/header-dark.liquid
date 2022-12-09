@@ -13,13 +13,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
-                    {% for link in section.settings.menu.links %}
+                    {% for link in linklists.main-menu.links %}
                         {% if link.links != blank %}
                             <li class="scrollToLink">
                                 <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>
                                 <ul class="sub-menu">
-                                    {% for childlink in link.links %}
-                                        <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                                    {% for child_link in link.links %}
+                                        <li><a href="{{ child_link.url }}">{{ child_link.title | escape }}</a></li>
                                     {% endfor %}
                                     {%comment%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%endcomment%}
                                 </ul><!-- /.sub-menu -->
