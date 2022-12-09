@@ -18,7 +18,10 @@
                             <li class="scrollToLink">
                                 <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                    {% for childlink in link.links %}
+                                        <li><a href="{{ childlink.url }}">{{ childlink.title | escape }}</a></li>
+                                    {% endfor %}
+                                    {%comment%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%endcomment%}
                                 </ul><!-- /.sub-menu -->
                             </li>
                         {% else %}
