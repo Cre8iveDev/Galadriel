@@ -14,20 +14,34 @@
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
                     {% for link in section.settings.menu.links %}
+                        <li class="scrollToLink">
+                            <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+
+                            {% if child_link.links.size > 0 %}
+                                <ul class="sub-menu">
+                                  {% for grandchild_link in child_link.links %}
+                                    <li class="grandchild-menu">
+                                      <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                                    </li>
+                                  {% endfor %}
+                                </ul><!-- /.sub-menu -->
+                              {% endif %}
+                        </li>
+
+                        {%comment%}
                         {% if link.links != blank %}
                             <li class="scrollToLink">
-                                <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>                          
+                                <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>
                                 <ul class="sub-menu">
-                                    {% for child_link in link.links %}
-                                        <li><a href="{{ child_link.url }}">{{ child_link.title | escape }}</a></li>
-                                    {% endfor %}
-                                </ul><!-- /.sub-menu -->                                
+                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                </ul><!-- /.sub-menu -->
                             </li>
                         {% else %}
                             <li class="scrollToLink">
                                 <a href="{{ link.url }}">{{ link.title }}</a>
                             </li>
                         {% endif %}
+                        {%endcomment%}
                     {% endfor %}
                 </ul>
             </div><!-- /.navbar-collapse -->
