@@ -16,15 +16,12 @@
                     {% for link in section.settings.menu.links %}
                         {% if link.links != blank %}
                             <li class="scrollToLink">
-                                {%comment%}<a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>{%endcomment%}
-                                {% if link.links.size > 0 %}
-                                    <ul class="sub-menu">
-                                        {% for child_link in link.links %}
-                                            <li><a href="{{ child_link.url }}">{{ child_link.title | escape }}</a></li>
-                                        {% endfor %}
-                                        {%comment%}<li><a href="{{ link.url }}">{{ link.title }}</a></li>{%endcomment%}
-                                    </ul><!-- /.sub-menu -->
-                                {% endif %}
+                                <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>                          
+                                <ul class="sub-menu">
+                                    {% for child_link in link.links %}
+                                        <li><a href="{{ child_link.url }}">{{ child_link.title | escape }}</a></li>
+                                    {% endfor %}
+                                </ul><!-- /.sub-menu -->                                
                             </li>
                         {% else %}
                             <li class="scrollToLink">
