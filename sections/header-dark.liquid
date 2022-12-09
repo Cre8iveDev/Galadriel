@@ -13,7 +13,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
-                    {% for link in linklists.main-menu.links %}
+                    {% for link in section.settings.menu.links %}
                         {% if link.links != blank %}
                             <li class="scrollToLink">
                                 {%comment%}<a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>{%endcomment%}
