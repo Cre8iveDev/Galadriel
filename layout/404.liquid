@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html lang="en">    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'favicon.apple-touch-icon.png' | asset_url }}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{ 'favicon-32x32.png' | asset_url }}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{ 'favicon-16x16.png' | asset_url }}">
+        <link rel="manifest" href="{{ 'favicon.site.webmanifest' | asset_url }}">
+        <title>Cre8iveDev's Portfolio</title>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
+        {{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+        {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
+        {{ 'animate.min.css' | asset_url | stylesheet_tag }}
+        {{ 'creatic.style.css' | asset_url | stylesheet_tag }}
+        {{ 'Rage-Italic.css' | asset_url | stylesheet_tag }}
+        {{ 'style.css' | asset_url | stylesheet_tag }}
+        {{ 'responsive.css' | asset_url | stylesheet_tag }}
+        {{ content_for_header }}
+    </head>
+    <!-- Template Name: {{ template.name }} -->
+    
+    <body class="{% if template.name == 'index' %}home-one {% else %}{{ template.name }} {% endif %}bg-gray-700 px-10 py-20 mx-auto">
+        <div class="preloader"></div><!-- /.preloader -->
+        <main class="page-wrapper">
+            {{ content_for_layout }}
+            Custom Error 404 Layout
+            {% section 'footer' %}   
+        </main><!-- /.page-wrapper -->
+
+        {% section 'popup-search' %}      
+        {% section 'popup-side-menu' %}
+        {% section 'popup-portfolio' %}  
+
+        <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+        {{ 'jquery.min.js' | asset_url | script_tag }}
+        {{ 'bootstrap.bundle.min.js' | asset_url | script_tag }}
+        {{ 'waypoints.min.js' | asset_url | script_tag }}
+        {{ 'typed.min.js' | asset_url | script_tag }}
+        {{ 'theme.js' | asset_url | script_tag }}
+
+        <script data-shopify>
+            const queryString = window.location.search;
+            const params = new URLSearchParams(queryString);
+            const email_sent = params.get('contact_posted');
+
+            if ( email_sent == 'true' ) {
+                let result = document.getElementById('result');
+                result.innerHTML += 'Email sent successfully!';
+            }
+        </script>
+    </body>
+</html>
