@@ -3,13 +3,13 @@
   "layout": "404",
   "wrapper": "div#404_template.error-404-class[data-template=error-404]",
   "sections": {
-    "template-404": {
-      "type": "error-404",
+    "error-404": {
+      "type": "404",
       "settings": {
         "title": "Error 404",
         "subtext": "This is embarassing... the page you're looking for cannot be found!"
       }
     }
   },
-  "order": ["template-404"]
+  "order": ["error-404"]
 }
