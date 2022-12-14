@@ -1,1 +1,22 @@
-Sections > 404.liquid
+<h1>{{ 'section.settings.title' | t }}</h1>
+<p>{{ 'section.settings.subtext' | t }}</p>
+
+{% schema %}
+{
+    "name": "Template 404",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "404",
+            "label": "404 Heading title"
+        },
+        {
+            "type": "text",
+            "id": "subtext",
+            "default": "The page you're looking for is not found",
+            "label": "404 Subtext"
+        }
+    ]
+}
+{% endschema %}
