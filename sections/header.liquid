@@ -1,3 +1,9 @@
+{% if section.settings.menu.links == blank %}
+    {% assign main_menu_linklist = linklists[section.settings.menu].links %}
+{% else %}
+    {% assign main_menu_linklist = section.settings.menu.links %}
+{% endif %}
+
 <header class="site-header site-header__header-one ">
     <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
         <div class="container clearfix">
@@ -13,7 +19,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
-                    {% for link in section.settings.menu.links %}                        
+                    {% for link in main_menu_linklist %}                        
                         {% if link.links != blank %}                       
                             {% assign link_handle = link.handle %}
                             <li class="scrollToLink main-menu-item"{% if link.links.size > 0 %} x-data="{ {{ link_handle }}: false }"{% endif %}>
