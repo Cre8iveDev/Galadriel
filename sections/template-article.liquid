@@ -121,15 +121,6 @@
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
                             <ul class="list-unstyled sidebar__cat-list">
                                 <li><a href="{{ blog.url }}">News</a></li>
-                                <!-- {{ blog.all_tags }} -->
-                            {% comment %}
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">Event Organisation</a></li>
-                                <li><a href="#">Social Media</a></li>
-                                <li><a href="#">Travel</a></li>
-                                <li><a href="#">Personal Life</a></li>
-                            {% endcomment %}
                             </ul><!-- /.sidebar__cat-list -->
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
@@ -137,17 +128,6 @@
                             <div class="sidebar__tagslist">
                                 {% for tag in article.tags %}
                                     <a href="#">{{ tag | downcase }}</a>
-                                {% endfor %}
-                                {%comment %}
-                                <a href="#">business</a>
-                                <a href="#">onepage</a>
-                                <a href="#">agency</a>
-                                <a href="#">corporate</a>
-                                <a href="#">customers</a>
-                                <a href="#">hello</a>
-                                <a href="#">responsiveness</a>
-                                <a href="#">professional</a>
-                                {%endcomment%}
                             </div><!-- /.sidebar__tagslist -->
                         </div><!-- /.sidebar__single -->
                     </div><!-- /.sidebar -->
