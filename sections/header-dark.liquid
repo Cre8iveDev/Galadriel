@@ -35,7 +35,7 @@
                         
                         {% if link.links != blank %}                            
                             {% assign link_handle = link.handle %}
-                            <li class="scrollToLink menu-item{% if link.links.size > 0 %} x-data=\"{ {{ link_handle }}: false }\"{% endif %}">
+                            <li class="scrollToLink menu-item"{% if link.links.size > 0 %} x-data="{ {{ link_handle }}: false }"{% endif %}>
                                 <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>                               
                                 {% if link.links.size > 0 %}
                                     <ul class="sub-menu">
