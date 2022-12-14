@@ -33,12 +33,15 @@
                         {% endif %}
                         {%endcomment%}
                         
-                        {% if link.links != blank %}
-                            <li class="scrollToLink">
-                                <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>
-                                <ul class="sub-menu">
-                                    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-                                </ul><!-- /.sub-menu -->
+                        {% if link.links != blank %}                            
+                            {% assign link_handle = link.handle %}
+                            <li class="scrollToLink menu-item{% if link.links.size > 0 %} x-data=\"{ {{ link_handle }}: false }\"{% endif %}">
+                                <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>                               
+                                {% if link.links.size > 0 %}
+                                    <ul class="sub-menu">
+                                        <li class="sub-menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                    </ul><!-- /.sub-menu -->
+                                {% endif %}
                             </li>
                         {% else %}
                             <li class="scrollToLink">
