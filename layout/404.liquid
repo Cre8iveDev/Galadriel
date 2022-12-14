@@ -14,6 +14,9 @@
         {{ 'font-awesome.min.css' | asset_url | stylesheet_tag }}
         {{ 'animate.min.css' | asset_url | stylesheet_tag }}
         {{ 'creatic.style.css' | asset_url | stylesheet_tag }}
+        {{ 'owl.carousel.min.css' | asset_url | stylesheet_tag }}
+        {{ 'owl.theme.default.min.css' | asset_url | stylesheet_tag }}
+        {{ 'jquery.mCustomScrollbar.min.css' | asset_url | stylesheet_tag }}
         {{ 'Rage-Italic.css' | asset_url | stylesheet_tag }}
         {{ 'style.css' | asset_url | stylesheet_tag }}
         {{ 'responsive.css' | asset_url | stylesheet_tag }}
@@ -25,7 +28,7 @@
         <div class="preloader"></div><!-- /.preloader -->
         <main class="page-wrapper">
             {{ content_for_layout }}
-            Custom Error 404 Layout
+            Layout > 404.liquid
             {% section 'footer' %}   
         </main><!-- /.page-wrapper -->
 
@@ -36,7 +39,17 @@
         <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
         {{ 'jquery.min.js' | asset_url | script_tag }}
         {{ 'bootstrap.bundle.min.js' | asset_url | script_tag }}
+        {{ 'TweenMax.min.js' | asset_url | script_tag }}
+        {{ 'owl.carousel.min.js' | asset_url | script_tag }}
+        {{ 'jquery.easing.min.js' | asset_url | script_tag }}
+        {{ 'wow.js' | asset_url | script_tag }}
         {{ 'waypoints.min.js' | asset_url | script_tag }}
+        {{ 'jquery.counterup.min.js' | asset_url | script_tag }}
+        {{ 'jquery.mCustomScrollbar.concat.min.js' | asset_url | script_tag }}
+        {% if template.name == "index" %}          
+            {{' jquery.validate.min.js' | asset_url | script_tag }}
+            {{ 'progressbar.min.js' | asset_url | script_tag }}  
+        {% endif %}
         {{ 'typed.min.js' | asset_url | script_tag }}
         {{ 'theme.js' | asset_url | script_tag }}
 
