@@ -33,7 +33,8 @@
                         {% endif %}
                         {%endcomment%}
                         
-                        {% if link.links != blank %}                            
+                        {% if link.links != blank %}        
+                        <!-- link.links is not blank -->                    
                             {% assign link_handle = link.handle %}
                             <li class="scrollToLink main-menu-item"{% if link.links.size > 0 %} x-data="{ {{ link_handle }}: false }"{% endif %}>
                                 <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>                               
