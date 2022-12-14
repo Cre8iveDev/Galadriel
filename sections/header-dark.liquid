@@ -14,6 +14,7 @@
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
                     {% for link in section.settings.menu.links %}
+                        {%comment%}
                         {% if link.links != blank %}
                             {% assign link_handle = link.handle %}
                         <li class="scrollToLink" x-data="{ {{ link_handle }}: false }">
@@ -30,8 +31,8 @@
                               {% endif %}
                         </li>
                         {% endif %}
+                        {%endcomment%}
                         
-                        {%comment%}
                         {% if link.links != blank %}
                             <li class="scrollToLink">
                                 <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>
@@ -44,7 +45,6 @@
                                 <a href="{{ link.url }}">{{ link.title }}</a>
                             </li>
                         {% endif %}
-                        {%endcomment%}
                     {% endfor %}
                 </ul>
             </div><!-- /.navbar-collapse -->
