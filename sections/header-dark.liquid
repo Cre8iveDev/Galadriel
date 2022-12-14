@@ -39,7 +39,9 @@
                                 <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>                               
                                 {% if link.links.size > 0 %}
                                     <ul class="sub-menu">
-                                        <li class="sub-menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                        {% for childlink in link.links %}
+                                            <li class="sub-menu-item"><a href="{{ childlink.url }}">{{ childlink.title }}</a></li>
+                                        {% endfor %}
                                     </ul><!-- /.sub-menu -->
                                 {% endif %}
                             </li>
