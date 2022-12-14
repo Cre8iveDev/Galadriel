@@ -14,8 +14,9 @@
             <div class="main-navigation">
                 <ul class=" navigation-box one-page-scroll-menu ">
                     {% for link in section.settings.menu.links %}
-                        <!-- {{ link.links }} -->
-                        <li class="scrollToLink">
+                        {% if link.links != blank %}
+                            {% assign link_handle = link.handle %}
+                        <li class="scrollToLink" x-data="{ {{ link_handle }}: false }">
                             <a href="{{ child_link.url }}">{{ child_link.title }}</a>
 
                             {% if child_link.links.size > 0 %}
@@ -28,7 +29,8 @@
                                 </ul><!-- /.sub-menu -->
                               {% endif %}
                         </li>
-
+                        {% endif %}
+                        
                         {%comment%}
                         {% if link.links != blank %}
                             <li class="scrollToLink">
