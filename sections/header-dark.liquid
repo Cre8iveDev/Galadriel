@@ -35,16 +35,16 @@
                         
                         {% if link.links != blank %}                            
                             {% assign link_handle = link.handle %}
-                            <li class="scrollToLink menu-item"{% if link.links.size > 0 %} x-data="{ {{ link_handle }}: false }"{% endif %}>
+                            <li class="scrollToLink main-menu-item"{% if link.links.size > 0 %} x-data="{ {{ link_handle }}: false }"{% endif %} x-on:click="{{ link_handle }}  = ! {{ link_handle }}" @click.away="{{ link_handle }} = false">
                                 <a href="{{ link.url }}">{{ link.title }} {% render 'icon-chevron-down' %}</a>                               
                                 {% if link.links.size > 0 %}
-                                    <ul class="sub-menu">
+                                    <ul class="main-sub-menu">
                                         <li class="sub-menu-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
                                     </ul><!-- /.sub-menu -->
                                 {% endif %}
                             </li>
                         {% else %}
-                            <li class="scrollToLink">
+                            <li class="scrollToLink main-menu-item">
                                 <a href="{{ link.url }}">{{ link.title }}</a>
                             </li>
                         {% endif %}
