@@ -3,7 +3,7 @@
     "66703cf7-1b62-483d-91aa-e5ec9f8f2241": {
       "type": "header-dark",
       "settings": {
-        "logo_img": "shopify:\/\/shop_images\/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
+        "logo_img": "shopify:\/\/shop_images\/logo-light_b8c98a3c-4c49-4f29-8ccd-1ac895f73089.png",
         "img_width_range": 164,
         "menu": "main-menu"
       }
@@ -78,6 +78,7 @@
         "b20fb975-36da-49cc-8679-538878788cd3"
       ],
       "settings": {
+        "show_sidebar": true,
         "enable_author": true,
         "enable_published_date": true,
         "author": "shopify:\/\/shop_images\/author.jpg",
