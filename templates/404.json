@@ -1,15 +1,16 @@
 {
-  "name": "Template 404",
   "layout": "404",
   "wrapper": "div#404_template.error-404-class[data-template=error-404]",
   "sections": {
     "error-404": {
       "type": "404",
       "settings": {
-        "title": "Error 404",
-        "subtext": "This is embarassing... the page you're looking for cannot be found!"
+        "title": "Error 404!",
+        "subtext": "The page you're looking for cannot be found!"
       }
     }
   },
-  "order": ["error-404"]
+  "order": [
+    "error-404"
+  ]
 }
