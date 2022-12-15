@@ -46,22 +46,7 @@
         {{ 'waypoints.min.js' | asset_url | script_tag }}
         {{ 'jquery.counterup.min.js' | asset_url | script_tag }}
         {{ 'jquery.mCustomScrollbar.concat.min.js' | asset_url | script_tag }}
-        {% if template.name == "index" %}          
-            {{' jquery.validate.min.js' | asset_url | script_tag }}
-            {{ 'progressbar.min.js' | asset_url | script_tag }}  
-        {% endif %}
         {{ 'typed.min.js' | asset_url | script_tag }}
         {{ 'theme.js' | asset_url | script_tag }}
-
-        <script data-shopify>
-            const queryString = window.location.search;
-            const params = new URLSearchParams(queryString);
-            const email_sent = params.get('contact_posted');
-
-            if ( email_sent == 'true' ) {
-                let result = document.getElementById('result');
-                result.innerHTML += 'Email sent successfully!';
-            }
-        </script>
     </body>
 </html>
