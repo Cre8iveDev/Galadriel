@@ -1,5 +1,29 @@
-<h1>{{ section.settings.title }}</h1>
+<h1 class="h1 display-3">{{ section.settings.title }}</h1>
 <p>{{ section.settings.subtext }}</p>
+
+{% style %}    
+    {% if section.settings.center_text %} 
+        {
+            [id^="error-404"],
+            [id*="error-404"] {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                padding-top: 66px;
+            }
+        }
+    {% endif %}
+{% endstyle %}
 
 {% schema %}
 {
@@ -16,6 +40,13 @@
             "id": "subtext",
             "default": "The page you're looking for is not found",
             "label": "404 Subtext"
+        },
+        {
+            "type": "checkbox",
+            "id": "center_text",
+            "label": "Center text",
+            "default": true,
+            "info": "Toggle to center the text on the screen"
         }
     ]
 }
