@@ -27,9 +27,34 @@
             padding-top: 66px;
         }
 
+        [id^="error-404"] h1,
+        [id*="error-404"] h1 {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
         [id^="error-404"] h1 span:first-child,
         [id*="error-404"] h1 span:first-child {
-            
+            background-color: var(--danger);
+            color: var(--white);
+            margin: auto;
+            padding: 10px 20px;
+            text-transform: uppercase;
+            position: absolute;
+            width: 180px;
         }
     {% endif %}
 
