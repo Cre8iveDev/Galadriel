@@ -13,8 +13,9 @@
     "error-404": {
       "type": "404",
       "settings": {
-        "title": "Error 404!",
-        "subtext": "The page you're looking for cannot be found!"
+        "title": "Error",
+        "subtext": "The page you're looking for cannot be found!",
+        "center_text": true
       }
     }
   },
