@@ -2,6 +2,14 @@
   "layout": "404",
   "wrapper": "div#404_template.error-404-class[data-template=error-404]",
   "sections": {
+    "ae39237c-1c94-417f-bb8f-dd11d45c91a2": {
+      "type": "header-dark",
+      "settings": {
+        "logo_img": "shopify:\/\/shop_images\/logo-light_8cb6f15f-618f-419c-a7f5-9588788c5397.png",
+        "img_width_range": 164,
+        "menu": "main-menu"
+      }
+    },
     "error-404": {
       "type": "404",
       "settings": {
@@ -11,6 +19,7 @@
     }
   },
   "order": [
+    "ae39237c-1c94-417f-bb8f-dd11d45c91a2",
     "error-404"
   ]
 }
