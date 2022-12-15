@@ -1,4 +1,9 @@
-<h1 class="h1 display-3">{{ section.settings.title }}</h1>
+<div class="wrap">
+    <h1 class="h1">
+        <span>{{ section.settings.boxed_text }}</span>
+        <span>{{ section.settings.big_text}}</span>
+    </h1>
+</div>
 <p>{{ section.settings.subtext }}</p>
 
 {% style %}    
@@ -20,6 +25,11 @@
             flex-direction: column;
             height: 100%;
             padding-top: 66px;
+        }
+
+        [id^="error-404"] h1 span:first-child,
+        [id*="error-404"] h1 span:first-child {
+            
         }
     {% endif %}
 
@@ -47,9 +57,15 @@
     "settings": [
         {
             "type": "text",
-            "id": "title",
+            "id": "boxed_text",
+            "default": "Error",
+            "label": "Boxed text"
+        },
+        {
+            "type": "text",
+            "id": "big_text",
             "default": "404",
-            "label": "404 Heading title"
+            "label": "Background text"
         },
         {
             "type": "textarea",
