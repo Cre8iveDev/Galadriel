@@ -58,6 +58,7 @@
                         {% if article.comments_count > 0 %}
                             {% assign anchorId = '#Comments-' | append: article.id %}
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
+                                
                                 {% paginate article.comments by 1 %}
                                     {% for comment in article.comments %}
                                         <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
@@ -67,7 +68,7 @@
                                             <div class="comment-one__content">
                                                 <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
                                                 <p class="comment-one__meta">
-                                                    <a href="#">{{ article.published_at | date: '%B %d, %Y'}}</a>
+                                                    <a href="#">{{ comment.created_at | date: '%B %d, %Y'}}</a>
                                                     <span class="comment-one__meta-sep">-</span><!-- /.comment-one__meta-sep -->
                                                     <a href="#">{{ 'now' | date: '%I:%M %p'}}</a>
                                                 </p><!-- /.comment-one__meta -->
@@ -77,7 +78,7 @@
                                         </div><!-- /.comment-one__single -->
                                     {% endfor %}    
 
-                                    {% render 'pagination', paginate: paginate, anchor: anchorId %}
+                                    {%comment%}{% render 'pagination', paginate: paginate, anchor: anchorId %}{%endcomment%}
                                 {% endpaginate %}
                         
                         {% else %}
