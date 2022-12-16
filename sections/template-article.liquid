@@ -57,7 +57,6 @@
                     <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
                             {% assign anchorId = '#Comments-' | append: article.id %}
-
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
                                 {% paginate article.comments by 1 %}
                                     {% for comment in article.comments %}
@@ -80,8 +79,18 @@
 
                                     {% render 'pagination', paginate: paginate, anchor: anchorId %}
                                 {% endpaginate %}
+                        
+                        {% else %}
+
+                            <p>Be the first to comment on this article.</p>
                         {% endif %}
                     </div><!-- /.comment-one -->
+                        
+                    {% else %}
+                    <div class="comment-one">    
+                        <p>Comments are currently disabled.</p>
+                    </div>
+
                     {% endif %}
 
                     <div class="comment-form">
