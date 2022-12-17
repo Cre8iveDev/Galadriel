@@ -57,46 +57,30 @@
                     <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
                             {% assign anchorId = '#Comments-' | append: article.id %}
-                                <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
 
-                               {% paginate article.comments by 1 %}
-                                    <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
-                                        <div class="comment-one__img">
-                                            <img src="{{ 'comment-1-1.jpg' | asset_url }}" alt="{{ comment.author | downcase }}">
-                                        </div><!-- /.comment-one__img -->
-                                        <div class="comment-one__content">
-                                            <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
-                                            <p class="comment-one__meta">
-                                                <a href="#">{{ comment.created_at | date: '%B %d, %Y'}}</a>
-                                                <span class="comment-one__meta-sep">-</span><!-- /.comment-one__meta-sep -->
-                                                <a href="#">{{ comment.created_at | date: '%I:%M %p'}}</a>
-                                            </p><!-- /.comment-one__meta -->
-                                            <p class="comment-one__text">{{ comment.content }}</p><!-- /.comment-one__text -->
-                                            <a href="#" class="thm-btn comment-one__btn btn-disabled">Reply</a><!-- /.thm-btn comment-one__btn -->
-                                        </div><!-- /.comment-one__content -->
-                                    </div><!-- /.comment-one__single -->
-                                    
-                                    {%comment%}
-                                    {% for part in paginate.parts %}
-                                        {% if part.is_link %}
-                                            {{ part.title | link_to: part.url }}
-                                        {% else %}
-                                            {{ part.title }}
-                                        {% endif %}
-                                    {% endfor %}
-                                        
-                                    <div class="post-pagination">
-                                        <a href="#"><i class="fa fa-angle-double-left"></i></a>
-                                        <a href="#" class="active">1</a>
-                                        <a href="#">2</a>
-                                        <a href="#">...</a>
-                                        <a href="#">6</a>
-                                        <a href="#">7</a>
-                                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
-                                    </div><!-- /.post-pagination -->   
-                                    {%endcomment%}
-                                    
-                               {% endpaginate %}
+                                <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
+                                {% paginate article.comments by 5 %}
+                                    {% for comment in article.comments %}
+                                        <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
+                                            <div class="comment-one__img">
+                                                <img src="{{ 'comment-1-1.jpg' | asset_url }}" alt="{{ comment.author | downcase }}">
+                                            </div><!-- /.comment-one__img -->
+                                            <div class="comment-one__content">
+                                                <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
+                                                <p class="comment-one__meta">
+                                                    <a href="#">{{ comment.created_at | date: '%B %d, %Y'}}</a>
+                                                    <span class="comment-one__meta-sep">-</span><!-- /.comment-one__meta-sep -->
+                                                    <a href="#">{{ comment.created_at | date: '%I:%M %p'}}</a>
+                                                </p><!-- /.comment-one__meta -->
+                                                <p class="comment-one__text">{{ comment.content }}</p><!-- /.comment-one__text -->
+                                                <a href="#" class="thm-btn comment-one__btn btn-disabled">Reply</a><!-- /.thm-btn comment-one__btn -->
+                                            </div><!-- /.comment-one__content -->
+                                        </div><!-- /.comment-one__single -->
+                                    {% endfor %}    
+
+                                    {% render 'pagination', paginate: paginate, anchor: anchorId %}
+                                {% endpaginate %}
+                                {%endcomment%}
                         {% endif %}
                     </div><!-- /.comment-one -->
                     {% endif %}
@@ -126,49 +110,49 @@
                 </div><!-- /.blog-details__content -->
             </div><!-- /.col-lg-8 -->
             {% if section.settings.show_sidebar %}
-            <div class="col-lg-4">
-                <div class="sidebar">
-                    <div class="sidebar__single">
-                        <form action="#" class="sidebar__search">
-                            <input type="text" placeholder="Search here...">
-                            <button type="submit"><i class="fa fa-search"></i><!-- /.fa fa-search --></button>
-                        </form>
-                    </div><!-- /.sidebar__single -->
-                    <div class="sidebar__single">
-                        <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
-                        <ul class="list-unstyled sidebar__cat-list">
-                            <li><a href="{{ blog.url }}">News</a></li>
-                            <!-- {{ blog.all_tags }} -->
-                        {% comment %}
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Research</a></li>
-                            <li><a href="#">Event Organisation</a></li>
-                            <li><a href="#">Social Media</a></li>
-                            <li><a href="#">Travel</a></li>
-                            <li><a href="#">Personal Life</a></li>
-                        {% endcomment %}
-                        </ul><!-- /.sidebar__cat-list -->
-                    </div><!-- /.sidebar__single -->
-                    <div class="sidebar__single">
-                        <h2 class="sidebar__title">Tags</h2><!-- /.sidebar__title -->
-                        <div class="sidebar__tagslist">
-                            {% for tag in article.tags %}
-                                <a href="#">{{ tag | downcase }}</a>
-                            {% endfor %}
-                            {%comment %}
-                            <a href="#">business</a>
-                            <a href="#">onepage</a>
-                            <a href="#">agency</a>
-                            <a href="#">corporate</a>
-                            <a href="#">customers</a>
-                            <a href="#">hello</a>
-                            <a href="#">responsiveness</a>
-                            <a href="#">professional</a>
-                            {%endcomment%}
-                        </div><!-- /.sidebar__tagslist -->
-                    </div><!-- /.sidebar__single -->
-                </div><!-- /.sidebar -->
-            </div><!-- /.col-lg-4 -->
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="sidebar__single">
+                            <form action="#" class="sidebar__search">
+                                <input type="text" placeholder="Search here...">
+                                <button type="submit"><i class="fa fa-search"></i><!-- /.fa fa-search --></button>
+                            </form>
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
+                            <ul class="list-unstyled sidebar__cat-list">
+                                <li><a href="{{ blog.url }}">News</a></li>
+                                <!-- {{ blog.all_tags }} -->
+                            {% comment %}
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Event Organisation</a></li>
+                                <li><a href="#">Social Media</a></li>
+                                <li><a href="#">Travel</a></li>
+                                <li><a href="#">Personal Life</a></li>
+                            {% endcomment %}
+                            </ul><!-- /.sidebar__cat-list -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h2 class="sidebar__title">Tags</h2><!-- /.sidebar__title -->
+                            <div class="sidebar__tagslist">
+                                {% for tag in article.tags %}
+                                    <a href="#">{{ tag | downcase }}</a>
+                                {% endfor %}
+                                {%comment %}
+                                <a href="#">business</a>
+                                <a href="#">onepage</a>
+                                <a href="#">agency</a>
+                                <a href="#">corporate</a>
+                                <a href="#">customers</a>
+                                <a href="#">hello</a>
+                                <a href="#">responsiveness</a>
+                                <a href="#">professional</a>
+                                {%endcomment%}
+                            </div><!-- /.sidebar__tagslist -->
+                        </div><!-- /.sidebar__single -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-lg-4 -->
             {% endif %}
         </div><!-- /.row -->
     </div><!-- /.container -->
