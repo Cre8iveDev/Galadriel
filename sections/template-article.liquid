@@ -95,12 +95,12 @@
                             {% for part in paginate.parts %}
                                 <a href="{{ paginate.url }}"{% if part.is_link == false %} class="active"{% endif %}>{{ part.title }}</a>
                             {% endfor %}
+                            {%comment%}
                             {% if paginate.next %}
                                 <a href="{{ paginate.next }}">
                                     <i class="fa fa-angle-double-right"></i>
                                 </a>
-                            {% endif %}
-                            {%comment%}{{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}{%endcomment%}
+                            {% endif %}{{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}{%endcomment%}
                         {% endpaginate %}
                         </div><!-- /.post-pagination -->  
                     {% endif %}
