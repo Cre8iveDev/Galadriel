@@ -61,7 +61,7 @@
                             {% assign anchorId = '#Comments-' | append: article.id %}
 
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
-                                {% paginate article.comments by 5 %}
+                                {% paginate article.comments by 3 %}
                                     {% for comment in article.comments %}
                                         <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
                                             <div class="comment-one__img">
@@ -88,7 +88,7 @@
                                 
                     {% if article.comments_count > 0 %}
                         <div class="post-pagination">
-                        {% paginate article.comments by 5 %}
+                        {% paginate article.comments by 3 %}
                             {% if paginate.previous %}
                                 <a href="{{ paginate.previous.url }}">
                                     <i class="fa fa-angle-double-left"></i>
@@ -143,7 +143,7 @@
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
                             <ul class="list-unstyled sidebar__cat-list">
                                 <li><a href="{{ blog.url }}">News</a></li>
-                                <!-- {{ blog.all_tags }} -->
+                                <!-- {{ blog }} -->
                             {% comment %}
                                 <li><a href="#">Business</a></li>
                                 <li><a href="#">Research</a></li>
