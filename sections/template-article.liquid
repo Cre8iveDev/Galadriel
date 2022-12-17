@@ -76,13 +76,13 @@
                                                 <a href="#" class="thm-btn comment-one__btn btn-disabled">Reply</a><!-- /.thm-btn comment-one__btn -->
                                             </div><!-- /.comment-one__content -->
                                         </div><!-- /.comment-one__single -->
-                                    {% endfor %}
                                     
                                         {% if part.is_link %}
                                             {{ part.title | link_to: part.url }}
                                         {% else %}
                                             {{ part.title }}
                                         {% endif %}
+                                    {% endfor %}
                                     
                                     {%comment%}      
                                     <div class="post-pagination">
