@@ -141,8 +141,9 @@
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
+
                             {{ blog.handle | camelcase }}
-                            {{ article.handle | split: '/' | first  | capitalize }}
+                            {{ blog.handle.url }}
 
                             {% comment %}
                             
