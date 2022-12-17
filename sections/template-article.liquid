@@ -61,11 +61,28 @@
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
                                {% paginate article.comments by 1 %}
                                     {% for part in paginate.parts %}
-                                    {% if part.is_link %}
-                                            {{ part.title | link_to: part.url }}
-                                    {% else %}
-                                        {{ part.title }}
-                                    {% endif %}
+                                        <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
+                                            <div class="comment-one__img">
+                                                <img src="{{ 'comment-1-1.jpg' | asset_url }}" alt="{{ comment.author | downcase }}">
+                                            </div><!-- /.comment-one__img -->
+                                            <div class="comment-one__content">
+                                                <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
+                                                <p class="comment-one__meta">
+                                                    <a href="#">{{ comment.created_at | date: '%B %d, %Y'}}</a>
+                                                    <span class="comment-one__meta-sep">-</span><!-- /.comment-one__meta-sep -->
+                                                    <a href="#">{{ comment.created_at | date: '%I:%M %p'}}</a>
+                                                </p><!-- /.comment-one__meta -->
+                                                <p class="comment-one__text">{{ comment.content }}</p><!-- /.comment-one__text -->
+                                                <a href="#" class="thm-btn comment-one__btn btn-disabled">Reply</a><!-- /.thm-btn comment-one__btn -->
+                                            </div><!-- /.comment-one__content -->
+                                        </div><!-- /.comment-one__single -->
+                                        <div class="comment-pagination">
+                                            {% if part.is_link %}
+                                                {{ part.title | link_to: part.url }}
+                                            {% else %}
+                                                {{ part.title }}
+                                            {% endif %}
+                                        </div>
                                    {% endfor %}
                                {% endpaginate %}
                                 {%comment%}
