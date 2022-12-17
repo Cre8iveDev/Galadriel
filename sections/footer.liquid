@@ -11,13 +11,15 @@
 </footer><!-- /.site-footer -->
 
 {% style %}
-    .site-footer__copy > a {
-        display: block;
-    }
+    @media only screen and (max-width: 375px) {
+        .site-footer__copy > a {
+            display: block;
+        }
 
-    .site-footer__social a {
-        width: 40px;
-        height: 40px;
+        .site-footer__social a {
+            width: 40px;
+            height: 40px;
+        }
     }
 {% endstyle %}
 

@@ -57,8 +57,8 @@
                     <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
                             {% assign anchorId = '#Comments-' | append: article.id %}
-
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
+
                                {% paginate article.comments by 1 %}
                                     {% for part in paginate.parts %}
                                         <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
@@ -78,6 +78,7 @@
                                         </div><!-- /.comment-one__single -->
                                     {% endfor %}
                                     
+                                    {%comment%}      
                                     <div class="post-pagination">
                                         <a href="#"><i class="fa fa-angle-double-left"></i></a>
                                         <a href="#" class="active">1</a>
@@ -86,8 +87,7 @@
                                         <a href="#">6</a>
                                         <a href="#">7</a>
                                         <a href="#"><i class="fa fa-angle-double-right"></i></a>
-                                    </div><!-- /.post-pagination --> 
-                                    {%comment%}        
+                                    </div><!-- /.post-pagination -->   
                                         {% if part.is_link %}
                                             {{ part.title | link_to: part.url }}
                                         {% else %}
