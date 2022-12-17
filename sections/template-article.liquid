@@ -68,7 +68,7 @@
                                             <div class="comment-one__content">
                                                 <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
                                                 <p class="comment-one__meta">
-                                                    <!-- {{ comment.created_at }} -->
+                                                    {{ comment.published_at }}
                                                     <a href="#">{{ comment.created_at | date: '%B %d, %Y'}}</a>
                                                     <span class="comment-one__meta-sep">-</span><!-- /.comment-one__meta-sep -->
                                                     <a href="#">{{ comment.updated_at | date: '%I:%M %p'}}</a>
