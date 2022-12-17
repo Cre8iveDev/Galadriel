@@ -87,8 +87,9 @@
                     {% if article.comments_count > 0 %}
                         <div class="post-pagination">
                         {% paginate article.comments by 1 %}
+                        <!-- {{ paginate.previous }} -->
                             {% if paginate.previous %}
-                                <a href="{{ paginate.url }}">
+                                <a href="{{ paginate.previous.url }}">
                                     <i class="fa fa-angle-double-left"></i>
                                 </a>
                             {% endif %}
@@ -96,11 +97,10 @@
                                 <a href="{{ part.url }}"{% if part.is_link == false %} class="active"{% endif %}>{{ part.title }}</a>
                             {% endfor %}
                             {% if paginate.next %}
-                                <a href="{{ paginate.url }}">
+                                <a href="{{ paginate.next.url }}">
                                     <i class="fa fa-angle-double-right"></i>
                                 </a>
                             {% endif %}
-                            {%comment%}{{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}{%endcomment%}
                         {% endpaginate %}
                         </div><!-- /.post-pagination -->  
                     {% endif %}
