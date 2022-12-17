@@ -142,7 +142,9 @@
                         <div class="sidebar__single">
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->                            
                             <ul class="list-unstyled sidebar__cat-list">
-                                <li><a href="{{ blog.url }}">{{ blog.handle | camelcase }}</a></li>
+                                <li>
+                                    <a href="{{ blog.url }}">{{ blog.handle | camelcase }}</a>
+                                </li>
                             </ul><!-- /.sidebar__cat-list -->              
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
@@ -151,16 +153,6 @@
                                 {% for tag in article.tags %}
                                     <a href="#">{{ tag | downcase }}</a>
                                 {% endfor %}
-                                {%comment %}
-                                <a href="#">business</a>
-                                <a href="#">onepage</a>
-                                <a href="#">agency</a>
-                                <a href="#">corporate</a>
-                                <a href="#">customers</a>
-                                <a href="#">hello</a>
-                                <a href="#">responsiveness</a>
-                                <a href="#">professional</a>
-                                {%endcomment%}
                             </div><!-- /.sidebar__tagslist -->
                         </div><!-- /.sidebar__single -->
                     </div><!-- /.sidebar -->
@@ -171,6 +163,10 @@
 </section><!-- /.blog-details -->
 
 <style>
+    .sidebar__cat-list li a:hover {
+        color: #ed2c41;
+    }
+
     .container.article > .flex {
         overflow-x: hidden;
     }
