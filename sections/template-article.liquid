@@ -93,7 +93,7 @@
                                 </a>
                             {% endif %}
                             {% for part in paginate.parts %}
-                                <a href="{{ paginate.url }}"{% if part.is_link == false %} class="active"{% endif %}>{{ part.title }}</a>
+                                <a href="{{ part.url }}"{% if part.is_link == false %} class="active"{% endif %}>{{ part.title }}</a>
                             {% endfor %}
                             {%comment%}
                             {% if paginate.next %}
