@@ -143,8 +143,7 @@
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
                             
                             {% for blog in blogs.articles %}
-                                {% assign blog_name = article.handle | split: '/' | first %}
-                                {{ blog_name | capitalize }}
+                                {{ blog.id }}
                             {% endfor %}
 
                             {% comment %}
@@ -158,6 +157,7 @@
                                 <li><a href="#">Personal Life</a></li>
                             </ul><!-- /.sidebar__cat-list -->
                             {% endcomment %}
+              
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
                             <h2 class="sidebar__title">Tags</h2><!-- /.sidebar__title -->
