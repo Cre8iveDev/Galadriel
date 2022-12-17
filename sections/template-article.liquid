@@ -59,6 +59,16 @@
                             {% assign anchorId = '#Comments-' | append: article.id %}
 
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
+                               {% paginate collection.products by 5 %}
+                                    {% for part in paginate.parts %}
+                                    {% if part.is_link %}
+                                            {{ part.title | link_to: part.url }}
+                                    {% else %}
+                                        {{ part.title }}
+                                    {% endif %}
+                                   {% endfor %}
+                               {% endpaginate %}
+                                {%comment%}
                                 {% paginate article.comments by 5 %}
                                     {% for comment in article.comments %}
                                         <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
@@ -80,6 +90,7 @@
 
                                     {% render 'pagination', paginate: paginate, anchor: anchorId %}
                                 {% endpaginate %}
+                                {%endcomment%}
                         {% endif %}
                     </div><!-- /.comment-one -->
                     {% endif %}
