@@ -83,16 +83,19 @@
                         {% endif %}
                     </div><!-- /.comment-one -->
                     {% endif %}
-                                        
-                    <div class="post-pagination">
-                        <a href="#"><i class="fa fa-angle-double-left"></i></a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">...</a>
-                        <a href="#">6</a>
-                        <a href="#">7</a>
-                        <a href="#"><i class="fa fa-angle-double-right"></i></a>
-                    </div><!-- /.post-pagination -->  
+                                
+                    {% if article.comments_count > 0 %}
+                        {% paginate article.comments by 1 %}
+                            <div class="post-pagination">
+                                <a href="#"><i class="fa fa-angle-double-left"></i></a>
+                                {% for part in paginate.parts %}
+                                <a href="#" class="active">1</a>
+                                <a href="part.url">{{ part.title }}</a>
+                                {% endfor %}
+                                <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                            </div><!-- /.post-pagination -->  
+                        {% endpaginate %}
+                    {% endif %}
 
                     <div class="comment-form">
                         <h2 class="comment-one__title">Leave a Comment</h2><!-- /.comment-one__title -->   
