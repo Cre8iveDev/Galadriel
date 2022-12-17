@@ -94,6 +94,7 @@
                                 {% endfor %}
                                 <a href="#"><i class="fa fa-angle-double-right"></i></a>
                             </div><!-- /.post-pagination -->  
+                            {{ paginate | default_pagination: next: 'Older', previous: 'Newer' }}
                         {% endpaginate %}
                     {% endif %}
 
