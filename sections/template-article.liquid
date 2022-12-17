@@ -51,10 +51,11 @@
                                     {{ section.settings.author_bio }}</p>
                                 {% endif %}<!-- /.blog-details__author-bio -->
                         </div><!-- /.blog-details__author-content -->
+                        <a name="#comments"></a>
                     </div><!-- /.blog-details__author -->
                     
                     {% if blog.comments_enabled? %}
-                    <div class="comment-one" id="comments">                        
+                    <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
                             {% assign anchorId = '#Comments-' | append: article.id %}
 
