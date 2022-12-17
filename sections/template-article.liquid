@@ -78,7 +78,7 @@
                                         </div><!-- /.comment-one__single -->
                                     {% endfor %}    
 
-                                    {% render 'pagination', paginate: paginate, anchor: anchorId %}
+                                    {%comment%}{% render 'pagination', paginate: paginate, anchor: anchorId %}{%endcomment%}
                                 {% endpaginate %}
                         {% endif %}
                     </div><!-- /.comment-one -->
