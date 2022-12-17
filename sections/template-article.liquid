@@ -86,7 +86,7 @@
                                 
                     {% if article.comments_count > 0 %}
                         <div class="post-pagination">
-                        {% paginate article.comments by 1 %}
+                        {% paginate article.comments by 5 %}
                             {% if paginate.previous %}
                                 <a href="{{ paginate.previous.url }}">
                                     <i class="fa fa-angle-double-left"></i>
