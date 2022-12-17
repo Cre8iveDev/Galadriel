@@ -57,9 +57,9 @@
                     <div class="comment-one">                        
                         {% if article.comments_count > 0 %}
                             {% assign anchorId = '#Comments-' | append: article.id %}
+
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
-                                
-                                {% paginate article.comments by 1 %}
+                                {% paginate article.comments by 5 %}
                                     {% for comment in article.comments %}
                                         <div id="{{ comment.id }}" class="comment-one__single" {% assign anchorId = '#Comments-' | append: article.id %}>
                                             <div class="comment-one__img">
@@ -68,10 +68,9 @@
                                             <div class="comment-one__content">
                                                 <h3 class="comment-one__avatar-name">{{ comment.author }}</h3><!-- /.comment-one__avatar-name -->
                                                 <p class="comment-one__meta">
-                                                    {{ comment.published_at }}
-                                                    <a href="#">{{ comment.created_at | date: '%B %d, %Y'}}</a>
+                                                    <a href="#">{{ comment.published_at | date: '%B %d, %Y'}}</a>
                                                     <span class="comment-one__meta-sep">-</span><!-- /.comment-one__meta-sep -->
-                                                    <a href="#">{{ comment.updated_at | date: '%I:%M %p'}}</a>
+                                                    <a href="#">{{ 'now' | date: '%I:%M %p'}}</a>
                                                 </p><!-- /.comment-one__meta -->
                                                 <p class="comment-one__text">{{ comment.content }}</p><!-- /.comment-one__text -->
                                                 <a href="#" class="thm-btn comment-one__btn btn-disabled">Reply</a><!-- /.thm-btn comment-one__btn -->
@@ -79,21 +78,10 @@
                                         </div><!-- /.comment-one__single -->
                                     {% endfor %}    
 
-                                    {%comment%}{% render 'pagination', paginate: paginate, anchor: anchorId %}{%endcomment%}
+                                    {% render 'pagination', paginate: paginate, anchor: anchorId %}
                                 {% endpaginate %}
-                        
-                        {% else %}
-
-                            <p>Be the first to comment on this article.</p>
-                            
                         {% endif %}
                     </div><!-- /.comment-one -->
-                        
-                    {% else %}
-                    <div class="comment-one">    
-                        <p>Comments are currently disabled.</p>
-                    </div>
-
                     {% endif %}
 
                     <div class="comment-form">
@@ -133,6 +121,15 @@
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
                             <ul class="list-unstyled sidebar__cat-list">
                                 <li><a href="{{ blog.url }}">News</a></li>
+                                <!-- {{ blog.all_tags }} -->
+                            {% comment %}
+                                <li><a href="#">Business</a></li>
+                                <li><a href="#">Research</a></li>
+                                <li><a href="#">Event Organisation</a></li>
+                                <li><a href="#">Social Media</a></li>
+                                <li><a href="#">Travel</a></li>
+                                <li><a href="#">Personal Life</a></li>
+                            {% endcomment %}
                             </ul><!-- /.sidebar__cat-list -->
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
@@ -140,6 +137,17 @@
                             <div class="sidebar__tagslist">
                                 {% for tag in article.tags %}
                                     <a href="#">{{ tag | downcase }}</a>
+                                {% endfor %}
+                                {%comment %}
+                                <a href="#">business</a>
+                                <a href="#">onepage</a>
+                                <a href="#">agency</a>
+                                <a href="#">corporate</a>
+                                <a href="#">customers</a>
+                                <a href="#">hello</a>
+                                <a href="#">responsiveness</a>
+                                <a href="#">professional</a>
+                                {%endcomment%}
                             </div><!-- /.sidebar__tagslist -->
                         </div><!-- /.sidebar__single -->
                     </div><!-- /.sidebar -->
