@@ -59,7 +59,7 @@
                             {% assign anchorId = '#Comments-' | append: article.id %}
 
                                 <h2 class="comment-one__title">{{ article.comments_count }} {{ article.comments_count | pluralize: 'Comment', 'Comments' }}</h2><!-- /.comment-one__title -->
-                               {% paginate collection.products by 5 %}
+                               {% paginate collection.products by 1 %}
                                     {% for part in paginate.parts %}
                                     {% if part.is_link %}
                                             {{ part.title | link_to: part.url }}
