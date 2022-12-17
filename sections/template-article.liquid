@@ -140,27 +140,10 @@
                             </form>
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
-                            <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
-
-                            {{ blog.handle | camelcase }}
-                            {{ blog.url }}
-
-                            {% comment %}
-                            
-                            {% for blog in blogs.articles %}
-                                {{ blog.id }}
-                            {% endfor %}
+                            <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->                            
                             <ul class="list-unstyled sidebar__cat-list">
-                                <li><a href="{{ blog.url }}">News</a></li>
-                                <li><a href="#">Business</a></li>
-                                <li><a href="#">Research</a></li>
-                                <li><a href="#">Event Organisation</a></li>
-                                <li><a href="#">Social Media</a></li>
-                                <li><a href="#">Travel</a></li>
-                                <li><a href="#">Personal Life</a></li>
-                            </ul><!-- /.sidebar__cat-list -->
-                            {% endcomment %}
-              
+                                <li><a href="{{ blog.url }}">{{ blog.handle | camelcase }}</a></li>
+                            </ul><!-- /.sidebar__cat-list -->              
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
                             <h2 class="sidebar__title">Tags</h2><!-- /.sidebar__title -->
