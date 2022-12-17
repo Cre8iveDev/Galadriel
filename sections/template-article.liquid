@@ -9,7 +9,7 @@
                             <a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
                         {% endif %}
                         <!-- /.blog-one__meta-link -->
-                        <a href="#comments" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
+                        <a href="{{ article.comment_post_url }}" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
                         <!-- /.blog-one__meta-link -->
                         {% if section.settings.enable_published_date %}
                             <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%B %d, %Y'}}</a>
@@ -51,11 +51,10 @@
                                     {{ section.settings.author_bio }}</p>
                                 {% endif %}<!-- /.blog-details__author-bio -->
                         </div><!-- /.blog-details__author-content -->
-                        <a id="#comments"></a>
                     </div><!-- /.blog-details__author -->
                     
                     {% if blog.comments_enabled? %}
-                    <div class="comment-one">                        
+                    <div class="comment-one" id="comments">                        
                         {% if article.comments_count > 0 %}
                             {% assign anchorId = '#Comments-' | append: article.id %}
 
