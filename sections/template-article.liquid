@@ -76,6 +76,7 @@
                                         </div><!-- /.comment-one__content -->
                                     </div><!-- /.comment-one__single -->
                                     
+                                    {%comment%}
                                     {% for part in paginate.parts %}
                                         {% if part.is_link %}
                                             {{ part.title | link_to: part.url }}
@@ -93,6 +94,7 @@
                                         <a href="#">7</a>
                                         <a href="#"><i class="fa fa-angle-double-right"></i></a>
                                     </div><!-- /.post-pagination -->   
+                                    {%endcomment%}
                                     
                                {% endpaginate %}
                         {% endif %}
