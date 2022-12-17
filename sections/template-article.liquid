@@ -142,10 +142,8 @@
                         <div class="sidebar__single">
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->
 
-                            {% for article in blogs.articles %}
-                                {% assign blog_name = article.handle | split: '/' | first %}
+                            {% assign blog_name = article.handle | split: '/' | first %}
                                 {{ blog_name | capitalize }}
-                            {% endfor %}
 
                             {% comment %}
                             
