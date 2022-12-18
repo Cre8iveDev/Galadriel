@@ -4,9 +4,11 @@
         <div class="cursor-follower"></div>
     </div><!-- /.search-popup__overlay -->
     <div class="search-popup__inner">
-        <form action="#" class="search-popup__form">
-            <input type="text" name="search" placeholder="Type here to Search....">
-            <button type="submit"><i class="creatic-search"></i></button>
+        <form action="{{ routes.search_url }}" class="search-popup__form">
+            <input type="text" placeholder="Looking for something? Type it here..." name="q" value="{{ search.terms | escape }}">
+            <button type="submit">
+                <i class="creatic-search"></i><!-- /.fa fa-search -->
+            </button>
         </form>
     </div><!-- /.search-popup__inner -->
 </div><!-- /.search-popup -->
