@@ -134,10 +134,21 @@
                 <div class="col-lg-4">
                     <div class="sidebar">
                         <div class="sidebar__single">
+                            <form action="{{ routes.search_url }}" class="sidebar__search">
+                                <input type="text"
+                                  placeholder="Search"
+                                  name="q"
+                                  value="{{ search.terms | escape }}"
+                               >
+                                {%comment%}<input type="submit" value="Search">{%endcomment%}
+                                <button type="submit"><i class="fa fa-search"></i><!-- /.fa fa-search --></button>
+                            </form>
+                            {%comment%}
                             <form action="#" class="sidebar__search">
                                 <input type="text" placeholder="Search here...">
                                 <button type="submit"><i class="fa fa-search"></i><!-- /.fa fa-search --></button>
                             </form>
+                            {%endcomment%}
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->                            
