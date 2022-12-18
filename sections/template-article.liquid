@@ -2,26 +2,28 @@
     <div class="container">
         <div class="row">
             <div class="{% if section.settings.show_sidebar %}col-lg-8{% else %}col-lg-12{% endif %}">
-                <div class="blog-details__content">
-                    <h2 class="blog-details__title">{{ article.title }}</h2><!-- /.blog-details__title -->
+                <article class="blog-details__content" itemscope itemtype="http://schema.org/BlogPosting">
+                    <h1 class="blog-details__title" itemprop="headline">{{ article.title }}</h1><!-- /.blog-details__title -->
                     <div class="blog-one__meta">
                         {% if section.settings.enable_author %}
-                            <a href="{{ article.user.homepage }}" class="blog-one__meta-link"><i class="fa fa-user"></i>by {{ article.author }}</a>
+                            <a href="{{ article.user.homepage }}" class="blog-one__meta-link" itemscope itemtype="http://schema.org/Person"><i class="fa fa-user"></i>by <span itemprop="author">{{ article.author }}</span></a>
                         {% endif %}
                         <!-- /.blog-one__meta-link -->
                         <a href="{{ article.comment_post_url }}" class="blog-one__meta-link"><i class="fa fa-comments"></i>{{ article.comments_count | pluralize: 'Comment', 'Comments' }}</a>
                         <!-- /.blog-one__meta-link -->
                         {% if section.settings.enable_published_date %}
-                            <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%B %d, %Y'}}</a>
+                            <a href="article.url" class="blog-one__meta-link"><i class="fa fa-clock-o"></i><time itemprop="datePublished dateCreated">{{ article.published_at | date: '%B %d, %Y'}}</time></a>
                         {% endif %}
                         <!-- /.blog-one__meta-link -->
                     </div><!-- /.blog-one__meta -->
                     
                     {% if article.image %}
-                        <img class="img-fluid mb-3" src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
+                        <img itemprop="image" class="img-fluid mb-3" src="{{ article.image | img_url: 'master' }}" alt="{{ article.image.alt }}">
                     {% endif %}
 
-                    {{ article.content }}
+                    <div itemprop="articleBody" class="article-content">
+                        {{ article.content }}
+                    </div>
 
                     <!-- /.blog-details__text -->
 
@@ -128,7 +130,7 @@
                             </div>
                         {% endform %}
                     </div><!-- /.comment-form -->
-                </div><!-- /.blog-details__content -->
+                </article><!-- /article.blog-details__content -->
             </div><!-- /.col-lg-8 -->
             {% if section.settings.show_sidebar %}
                 <div class="col-lg-4">
