@@ -5,5 +5,5 @@
       "settings": {}
     }
   },
-  "order": ["main"]
+  "order": ["header"]
 }
