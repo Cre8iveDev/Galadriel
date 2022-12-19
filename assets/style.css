@@ -2216,17 +2216,29 @@ h6 {
   .inner-banner-one__title {
     font-size: 80px;
   }
+
+  .blog-details__title {
+    font-size: 40px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .inner-banner-one__title {
     font-size: 50px;
   }
+
+  .blog-details__title {
+    font-size: 30px;
+  }
 }
 
 @media only screen and (max-width: 375px) {
   .inner-banner-one__title {
     font-size: 32px;
+  }
+
+  .blog-details__title {
+    font-size: 22px;
   }
 }
 
