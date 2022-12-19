@@ -1,7 +1,7 @@
 <section class="blog-one">
     <div class="container">
         <div class="row">
-            {% paginate blog.articles by 1 %}                
+            {% paginate blog.articles by 10 %}                
                 {% for article in blog.articles %}
                     <div class="col-lg-6">
                         <div class="blog-one__single">
@@ -31,7 +31,7 @@
 
                 {% if paginate.pages > 1 %}                        
                     <div class="post-pagination pt-3 pt-md-4 pt-lg-5 col-lg-12">
-                        {% paginate blog.articles by 1 %}
+                        {% paginate blog.articles by 10 %}
                             {% if paginate.previous %}
                                 <a href="{{ paginate.previous.url }}">
                                     <i class="fa fa-angle-double-left"></i>
