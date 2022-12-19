@@ -244,6 +244,23 @@
     }
 </style>
 
+{% script %}
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ article.title | json }},
+    "articleBody": {{ article.content | strip_html | json }},
+    {% if article.excerpt != blank %}
+        "description": {{ article.excerpt | strip_html | json }},
+    {% endif %}
+    {% if article.image %}
+        "image": [
+            {{ article.image | img_url: "medium" | prepend: 'https:' | json }}
+        ],
+    {% endif %}
+}
+{% endscript %}
+
 {% schema %}
 {
     "name": "Blog Article",
