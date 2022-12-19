@@ -29,21 +29,9 @@
 
                 {% if paginate.pages > 1 %}                        
                     <div class="post-pagination col-lg-12">
-                        {% if paginate.previous %}
-                            <a href="{{ paginate.previous.url }}"><i class="fa fa-angle-double-left"></i><!-- /.fa fa-angle-double-left --></a>
-                        {% endif %}
-
-                        {% comment %}
-                        <a href="#" class="active" title="You are here">1</a>
-                        <a href="#">2</a>
-                        <a href="#" class="disabled">...</a>
-                        <a href="#">6</a>
-                        <a href="#">7</a>
-                        {% endcomment %}
-
-                        {% if paginate.next %}
-                            <a href="{{ paginate.next.url }}"><i class="fa fa-angle-double-right"></i><!-- /.fa fa-angle-double-left --></a>
-                        {% endif %}
+                        {% for article in blog.articles %}
+                          {{ article.author }} @ {{ article.created_at }}
+                        {% endfor %}
                     </div><!-- /.post-pagination -->
                 {% endif %}
             {% endpaginate %}
