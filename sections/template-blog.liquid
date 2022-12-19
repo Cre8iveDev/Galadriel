@@ -31,7 +31,7 @@
 
                 {% if paginate.pages > 1 %}                        
                     <div class="post-pagination col-lg-12">
-                        {% paginate articles by 5 %}
+                        {% paginate articles by 1 %}
                             {% if paginate.previous %}
                                 <a href="{{ paginate.previous.url }}">
                                     <i class="fa fa-angle-double-left"></i>
