@@ -262,8 +262,7 @@
     "dateCreated": {{ article.created_at | date: format: "default" | json }},
     "author": {
         "@type": "Person",
-        "name": {{ article.author | json }},
-        "url": {{ shop.url }}
+        "name": {{ article.author | json }}
     },
     "publisher": {
         "@type": "Organization",
