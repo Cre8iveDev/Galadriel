@@ -2218,15 +2218,15 @@ h6 {
   }
 }
 
-@media only screen and (max-width: 375px) {
-  .inner-banner-one__title {
-    font-size: 32px;
-  }
-}
-
 @media only screen and (max-width: 767px) {
   .inner-banner-one__title {
     font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .inner-banner-one__title {
+    font-size: 32px;
   }
 }
 
