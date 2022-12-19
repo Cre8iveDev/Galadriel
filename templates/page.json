@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "header-dark",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
