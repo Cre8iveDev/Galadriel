@@ -260,7 +260,11 @@
     {% endif %}
     "datePublished": {{ article.published_at | date: format: "default" | json  }},
     "dateCreated": {{ article.created_at | date: format: "default" | json }},
-    "author": {{ article.author | json }},
+    "author": {
+        "@type": "Person",
+        "name": {{ article.author | json }},
+        "url": {{ article.user.homepage }}
+    },
     "publisher": {
         "@type": "Organization",
         "name": {{ shop.name | json }}
