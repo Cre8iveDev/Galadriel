@@ -62,7 +62,15 @@
     .post-pagination a.active { pointer-events: none; }
     .post-pagination a:not(.active):hover { background-color: {{ section.settings.btn_color }}; color: #ffffff; transition: all 0.65s ease; }
     .disabled,
-    .disabled:hover { background-color: transparent !important; pointer-events: none; }    
+    .disabled:hover { background-color: transparent !important; pointer-events: none; }  
+
+    @media only screen and (max-width: 767px) {
+        .blog-one { padding: 60px 0; }
+    }
+
+    @media only screen and (max-width: 375px) {
+        .blog-one { padding: 15px 0; }
+    }
 {% endstyle %}
 
 {% schema %}
