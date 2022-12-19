@@ -29,9 +29,21 @@
 
                 {% if paginate.pages > 1 %}                        
                     <div class="post-pagination col-lg-12">
-                        {% for article in blog.articles %}
-                          {{ article.author }} @ {{ article.created_at }}
-                        {% endfor %}
+                        {% paginate articles by 1 %}
+                            {% if paginate.previous %}
+                                <a href="{{ paginate.previous.url }}">
+                                    <i class="fa fa-angle-double-left"></i>
+                                </a>
+                            {% endif %}
+                            {% for part in paginate.parts %}
+                                <a href="{{ part.url }}"{% if part.is_link == false %} class="active"{% endif %}>{{ part.title }}</a>
+                            {% endfor %}
+                            {% if paginate.next %}
+                                <a href="{{ paginate.next.url }}">
+                                    <i class="fa fa-angle-double-right"></i>
+                                </a>
+                            {% endif %}
+                        {% endpaginate %}
                     </div><!-- /.post-pagination -->
                 {% endif %}
             {% endpaginate %}
