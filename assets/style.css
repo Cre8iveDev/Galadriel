@@ -2212,15 +2212,15 @@ h6 {
   color: #ed2c41;
 }
 
-@media only screen and (min-width: 375px) {
-  .inner-banner-one__title {
-    font-size: 32px;
-  }
-}
-
 @media only screen and (min-width: 768px) {
   .inner-banner-one__title {
     font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .inner-banner-one__title {
+    font-size: 32px;
   }
 }
 
