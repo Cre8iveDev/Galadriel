@@ -244,7 +244,7 @@
     }
 </style>
 
-{% script %}
+<script type="application/ld+json">
 {
     "@context": "http://schema.org",
     "@type": "BlogPosting",
@@ -258,8 +258,18 @@
             {{ article.image | img_url: "medium" | prepend: 'https:' | json }}
         ],
     {% endif %}
+    "datePublished": {{ article.published_at | date: format: "default" | json  }},
+    "dateCreated": {{ article.created_at | date: format: "default" | json }},
+    "author": {
+        "@type": "Person",
+        "name": {{ article.author | json }}
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+    }
 }
-{% endscript %}
+</script>
 
 {% schema %}
 {
