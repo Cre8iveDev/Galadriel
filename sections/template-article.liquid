@@ -148,10 +148,18 @@
                         <div class="sidebar__single">
                             <h2 class="sidebar__title">Categories</h2><!-- /.sidebar__title -->                            
                             <ul class="list-unstyled sidebar__cat-list">
-                                <!-- {{ article.metafields.custom.category }} -->
+                                {% for link in linklist.blogs.links %}
+                                  {% assign blog = link.object %}
+                                  {% for article in blog.articles %}
+                                    <li>
+                                        <a href="{{ article.url }}">{{ article.title }}</a>
+                                    </li>
+                                  {% endfor %}
+                                {% endfor %}
+                                <!-- {{ article.metafields.custom.category }}
                                 <li>
                                     <a href="{{ blog.url }}">{{ blog.handle | camelcase }}</a>
-                                </li>
+                                </li> -->
                             </ul><!-- /.sidebar__cat-list -->              
                         </div><!-- /.sidebar__single -->
                         <div class="sidebar__single">
