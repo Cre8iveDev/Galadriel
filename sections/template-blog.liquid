@@ -1,8 +1,7 @@
 <section class="blog-one">
     <div class="container">
         <div class="row">
-            <!-- {{ blogs.news }} -->
-            {% paginate blogs by 10 %}                
+            {% paginate blog.articles by 10 %}                
                 {% for article in blog.articles %}
                     <div class="col-lg-6">
                         <div class="blog-one__single">
