@@ -1,7 +1,8 @@
 <section class="blog-one">
     <div class="container">
         <div class="row">
-            {% paginate blog.articles by 10 %}                
+            {% paginate blog.articles by 10 %}  
+                {%comment%}              
                 {% for article in blog.articles %}
                     <div class="col-lg-6">
                         <div class="blog-one__single">
@@ -25,6 +26,16 @@
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->
                     </div><!-- /.col-lg-6 -->           
+                {% endfor %}
+                {%endcomment%}
+
+                {% for link in linklist.blogs.links %}
+                    {% assign blog = link.object %}
+                    {% for article in blog.articles %}
+                      <li>
+                          <a href="{{ article.url }}">{{ article.title }}</a>
+                      </li>
+                    {% endfor %}
                 {% endfor %}
 
                 <!-- Pagination -->
