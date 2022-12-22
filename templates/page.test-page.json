@@ -11,14 +11,22 @@
     "e8071285-313c-4c72-90f2-92440fce215f": {
       "type": "hero-banner",
       "settings": {
-        "banner_heading": "Banner heading",
+        "hero_text_color": "#ffffff",
         "bg_color": "#1b181a",
+        "banner_heading": "Banner heading",
         "show_bg_image": true
+      }
+    },
+    "389ace35-571d-4a04-97db-2bf354dadeda": {
+      "type": "template-blog",
+      "settings": {
+        "btn_color": "#ed2c41"
       }
     }
   },
   "order": [
     "main",
-    "e8071285-313c-4c72-90f2-92440fce215f"
+    "e8071285-313c-4c72-90f2-92440fce215f",
+    "389ace35-571d-4a04-97db-2bf354dadeda"
   ]
 }
