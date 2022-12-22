@@ -1,7 +1,7 @@
 <section class="blog-one">
     <div class="container">
         <div class="row">
-            {% paginate linklists.blogs by 10 %}  
+            {% paginate linklists.blogs.links by 10 %}  
                 {% for link in linklists.blogs.links %}
                     {% assign blog = link.object %}   
                     {% for article in blog.articles %}
