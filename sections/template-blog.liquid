@@ -4,6 +4,7 @@
             {% paginate blog.articles by 10 %}  
                 {% for link in linklists.blogs.links %}
                     {% assign blog = link.object %} 
+                    <!-- {{ blog }} -->
                     {% for article in blog.articles %}
                         <div class="col-lg-6">
                             <div class="blog-one__single">
