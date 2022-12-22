@@ -1,7 +1,7 @@
 {% comment %}
     Use sparingly for subpages only. The height of this header is smaller compared to hero.liquid
 {% endcomment %}
-<div class="inner-banner-one" style="background-color: {{ section.settings.bg_color }};">
+<div class="inner-banner-one">
     <div class="container">
         <h2 class="inner-banner-one__title">{{ section.settings.banner_heading }}</h2><!-- /.inner-banner-one__title -->
         <ul class="list-unstyled thm-breadcrumb">
@@ -14,7 +14,11 @@
 
 {% style %}
     .inner-banner-one {
-        background-image: url({{ section.settings.bg_image | img_url: 'large' }});
+        {% if section.settings.bg_image %}
+            background-image: url({{ section.settings.bg_image | img_url: 'large' }});
+        {% else %}
+            background-color: {{ section.settings.bg_color }};
+        {% endif %}
         opacity: 0.9;
     }
 
