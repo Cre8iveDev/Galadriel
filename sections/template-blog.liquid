@@ -1,7 +1,7 @@
 <section class="blog-one">
     <div class="container">
         <div class="row">
-            {% paginate linklists.blogs.links by 10 %}  
+            {%comment%}{% paginate blog.articles by 10 %}{%endcomment%}
                 {% for link in linklists.blogs.links %}
                     {% assign blog = link.object %}   
                     {% for article in blog.articles %}
@@ -51,7 +51,7 @@
                         {% endpaginate %}
                     </div><!-- /.post-pagination -->
                 {% endif %}
-            {% endpaginate %}
+            {%comment%}{% endpaginate %}{%endcomment%}
         </div><!-- /.row -->
     </div><!-- /.container -->
 </section>
