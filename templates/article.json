@@ -22,8 +22,8 @@
         "30c48fb9-efad-4392-ae70-5d9442cc98d8": {
           "type": "link",
           "settings": {
-            "block_text": "Blog One",
-            "link_url": "https:\/\/cre8ive-dev.myshopify.com\/blog\/news\/#",
+            "block_text": "All News",
+            "link_url": "https:\/\/cre8ive-dev.myshopify.com\/blogs\/news\/",
             "active_link": true
           }
         }
@@ -83,8 +83,7 @@
         "enable_published_date": true,
         "author": "shopify:\/\/shop_images\/author.jpg",
         "author_name": "Nannie White",
-        "author_bio": "Lorem Ipsum is simply dummy text of the rinting and typesetting been the industry standard dummy text ever sincer nullam condimentum purus. In non ex at ligula fringilla lobortis et mauris auctor aliquet.",
-        "comment_count": 1
+        "author_bio": "Lorem Ipsum is simply dummy text of the rinting and typesetting been the industry standard dummy text ever sincer nullam condimentum purus. In non ex at ligula fringilla lobortis et mauris auctor aliquet."
       }
     }
   },
