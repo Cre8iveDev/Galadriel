@@ -3,11 +3,20 @@
     "main": {
       "type": "header-dark",
       "settings": {
-        "logo_img": "shopify://shop_images/logo-light_b8c98a3c-4c49-4f29-8ccd-1ac895f73089.png",
+        "logo_img": "shopify:\/\/shop_images\/logo-light_b8c98a3c-4c49-4f29-8ccd-1ac895f73089.png",
         "img_width_range": 164,
         "menu": "main-menu"
       }
+    },
+    "545b70a4-259a-4850-aca7-db41301301d3": {
+      "type": "template-blog",
+      "settings": {
+        "btn_color": "#ed2c41"
+      }
     }
   },
-  "order": ["header", "page"]
+  "order": [
+    "main",
+    "545b70a4-259a-4850-aca7-db41301301d3"
+  ]
 }
