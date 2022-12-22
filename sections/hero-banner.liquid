@@ -1,7 +1,7 @@
 {% comment %}
     Use sparingly for subpages only. The height of this header is smaller compared to hero.liquid
 {% endcomment %}
-<div class="inner-banner-one">
+<div class="inner-banner-one" style="background-color: {{ bg_color }};">
     <div class="container">
         <h2 class="inner-banner-one__title">{{ section.settings.banner_heading }}</h2><!-- /.inner-banner-one__title -->
         <ul class="list-unstyled thm-breadcrumb">
@@ -27,6 +27,13 @@
 {
     "name": "Hero Banner",
     "settings": [
+        {
+            "type": "color",
+            "id": "hero_text_color",
+            "label": "Hero text color",
+            "default": "#ffffff",
+            "info": "Outputs a collection picker field. Outputting the setting directly will returns the color object. 'blank' if no selection has been made."
+        },
         {
             "type": "text",
             "id": "banner_heading",
