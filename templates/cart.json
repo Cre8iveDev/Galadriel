@@ -3,19 +3,26 @@
     "979d1f09-c0e0-478f-9c63-9876edd6fb03": {
       "type": "header-dark",
       "settings": {
-        "logo_img": "shopify:\/\/shop_images\/logo-light_b8c98a3c-4c49-4f29-8ccd-1ac895f73089.png",
+        "logo_img": "shopify://shop_images/logo-light_b8c98a3c-4c49-4f29-8ccd-1ac895f73089.png",
         "img_width_range": 164,
         "menu": "main-menu"
       }
     },
     "cart": {
       "type": "template-cart",
-      "settings": {
-      }
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal"
+        },
+        "update-button": {
+          "type": "update_button"
+        },
+        "checkout-button": {
+          "type": "checkout_button"
+        }
+      },
+      "block_order": ["subtotal", "update-button", "checkout-button"]
     }
   },
-  "order": [
-    "979d1f09-c0e0-478f-9c63-9876edd6fb03",
-    "cart"
-  ]
+  "order": ["979d1f09-c0e0-478f-9c63-9876edd6fb03", "cart"]
 }
