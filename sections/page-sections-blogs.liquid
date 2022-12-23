@@ -2,25 +2,25 @@
     <div class="container">
         <div class="row">
             
-            {% assign allBlogs = 'news,projects' | split: ',' %}
-            {% assign featArticles = false %}
+            {% assign featuredBlogs = 'projects,news' | split:',' %}
+            {% assign featuredArticles = false %}
 
-            <!-- {{ allBlogs }}-->
-
-            {% for featBlog in allBlogs %}
-                {% if blogs[blog].articles %}
-                    {% assign featArticles = featArticles | concat: blogs[featBlog].articles %}
-                {% else %}
-                    {% assign featArticles = blogs[featBlog].articles %}
+            {% for featuredBlog in featuredBlogs %}
+                {% if blogs[featuredBlog].articles %}
+                    {% if featuredArticles %}
+                        {% assign featuredArticles = featuredArticles | concat:blogs[featuredBlog].articles %}
+                    {% else %}
+                        {% assign featuredArticles = blogs[featuredBlog].articles %}
+                    {% endif %}
                 {% endif %}
             {% endfor %}
 
-            {% if featArticles %}
-                {% assign featArticles = featArticles | sort: 'published_at' | reverse %}
-                {% for article in featArticles lmiti: 10 %}
-                    {{ article.title }} 
-                    {{ article.published_at }}
+            {% if featuredArticles %}
+                {% assign featuredArticles = featuredArticles | sort:'published_at' | reverse %}            
+                {% for article in featuredArticles limit:10 %}
+                    <p><b>{{ article.title }}: </b><br>{{ article.published_at }}</p>
                 {% endfor %}
+            
             {% endif %}
 
         </div>
