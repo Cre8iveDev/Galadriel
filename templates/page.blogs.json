@@ -7,16 +7,9 @@
         "img_width_range": 164,
         "menu": "main-menu"
       }
-    },
-    "b74c108e-4b90-4451-bded-2aeb452a56a4": {
-      "type": "template-blog",
-      "settings": {
-        "btn_color": "#ed2c41"
-      }
     }
   },
   "order": [
-    "main",
-    "b74c108e-4b90-4451-bded-2aeb452a56a4"
+    "main"
   ]
 }
