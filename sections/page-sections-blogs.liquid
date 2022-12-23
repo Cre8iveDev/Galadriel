@@ -15,9 +15,9 @@
             {% endfor %}
 
             {% if featuredArticles %}
-                {% paginate featuredBlogs by 2 %}
+                {% paginate featuredArticles by 2 %}
                     {% assign featuredArticles = featuredArticles | sort:'published_at' | reverse %}        
-                    {% for article in featuredArticles limit: 2 %}
+                    {% for article in featuredArticles %}
                         <div class="col-lg-6">
                             <div class="blog-one__single">
                                 <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
