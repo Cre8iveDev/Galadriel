@@ -5,6 +5,7 @@
             {% assign featuredBlogs = 'projects,news' | split:',' %}
             {% assign featuredArticles = false %}
 
+            {% paginate featuredBlogs by 2 %}
             {% for featuredBlog in featuredBlogs %}
                 {% if blogs[featuredBlog].articles %}
                     {% if featuredArticles %}
@@ -43,6 +44,9 @@
                 {% endfor %}     
                 <!-- {{ featuredArticles }} -->    
             {% endif %}
+            
+                {{ paginate | default_pagination }}
+            {% endpaginate %}
 
         </div>
     </div>
