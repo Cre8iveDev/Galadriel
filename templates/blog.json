@@ -13,7 +13,7 @@
       "settings": {
         "hero_text_color": "#ffffff",
         "bg_color": "#1b181a",
-        "banner_heading": "Default Blog",
+        "banner_heading": "All Blogs",
         "bg_image": "shopify:\/\/shop_images\/camera.jpg",
         "show_bg_image": true
       }
