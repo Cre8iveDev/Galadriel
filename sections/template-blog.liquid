@@ -6,8 +6,8 @@
                 {% for article in blog.articles %}
                   <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
                 {% endfor %} 
-              {% endfor %}
-            {%comment%}{% paginate blog.articles by 10 %}{%endcomment%}  
+            {% endfor %}
+            {%comment%}{% paginate blog.articles by 10 %}
                 {% for article in blog.articles %}
                     <div class="col-lg-6">
                         <div class="blog-one__single">
@@ -31,7 +31,7 @@
                             </div><!-- /.blog-one__content -->
                         </div><!-- /.blog-one__single -->
                     </div><!-- /.col-lg-6 -->           
-                {% endfor %}
+                {% endfor %}{%endcomment%}  
 
                 <!-- Pagination -->
 
