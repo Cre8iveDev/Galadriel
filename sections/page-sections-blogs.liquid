@@ -4,8 +4,6 @@
             
             {% assign featuredBlogs = 'projects,news' | split:',' %}
             {% assign featuredArticles = false %}
-
-            {% paginate featuredBlogs by 2 %}
             {% for featuredBlog in featuredBlogs %}
                 {% if blogs[featuredBlog].articles %}
                     {% if featuredArticles %}
@@ -17,36 +15,37 @@
             {% endfor %}
 
             {% if featuredArticles %}
-                {% assign featuredArticles = featuredArticles | sort:'published_at' | reverse %}        
-                {% for article in featuredArticles limit: 2 %}
-                    <div class="col-lg-6">
-                        <div class="blog-one__single">
-                            <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
-                                {% if article.image %}
-                                    <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.img.alt | downcase }}">
-                                {% else %}
-                                    {{ 'image' | placeholder_svg_tag: 'w-20' }}
-                                {% endif %}
-                            </div><!-- /.blog-one__image -->
-                            <div class="blog-one__content">
-                                <h3 class="blog-one__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h3><!-- /.blog-one__title -->
-                                <div class="blog-one__meta">
-                                    <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y' }}</a>
-                                    <!-- /.blog-one__meta-link -->
-                                </div><!-- /.blog-one__meta -->
-                                {% if article.excerpt.size > 0 %}
-                                    <p class="blog-one__text">{{ article.content | strip_html | truncatewords: 15 }}</p><!-- /.blog-one__text -->
-                                {% endif %}
-                                <a href="{{ article.url }}" class="blog-one__link btn_primary">Read More</a><!-- /.blog-one__link -->
-                            </div><!-- /.blog-one__content -->
-                        </div><!-- /.blog-one__single -->
-                    </div><!-- /.col-lg-6 -->
-                {% endfor %}     
-                <!-- {{ featuredArticles }} -->    
-            {% endif %}
+                {% paginate featuredBlogs by 2 %}
+                    {% assign featuredArticles = featuredArticles | sort:'published_at' | reverse %}        
+                    {% for article in featuredArticles limit: 2 %}
+                        <div class="col-lg-6">
+                            <div class="blog-one__single">
+                                <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
+                                    {% if article.image %}
+                                        <img src="{{ article.image | img_url: 'large' }}" alt="{{ article.img.alt | downcase }}">
+                                    {% else %}
+                                        {{ 'image' | placeholder_svg_tag: 'w-20' }}
+                                    {% endif %}
+                                </div><!-- /.blog-one__image -->
+                                <div class="blog-one__content">
+                                    <h3 class="blog-one__title"><a href="{{ article.url }}">{{ article.title | escape }}</a></h3><!-- /.blog-one__title -->
+                                    <div class="blog-one__meta">
+                                        <a href="#" class="blog-one__meta-link"><i class="fa fa-clock-o"></i>{{ article.published_at | date: '%b %d, %Y' }}</a>
+                                        <!-- /.blog-one__meta-link -->
+                                    </div><!-- /.blog-one__meta -->
+                                    {% if article.excerpt.size > 0 %}
+                                        <p class="blog-one__text">{{ article.content | strip_html | truncatewords: 15 }}</p><!-- /.blog-one__text -->
+                                    {% endif %}
+                                    <a href="{{ article.url }}" class="blog-one__link btn_primary">Read More</a><!-- /.blog-one__link -->
+                                </div><!-- /.blog-one__content -->
+                            </div><!-- /.blog-one__single -->
+                        </div><!-- /.col-lg-6 -->
+                    {% endfor %}     
+                    <!-- {{ featuredArticles }} -->  
             
-                {{ paginate | default_pagination }}
-            {% endpaginate %}
+                    {{ paginate | default_pagination }}
+                {% endpaginate %}  
+            {% endif %}
 
         </div>
     </div>
