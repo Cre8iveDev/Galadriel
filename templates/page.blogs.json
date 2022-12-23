@@ -7,9 +7,15 @@
         "img_width_range": 164,
         "menu": "main-menu"
       }
+    },
+    "74e1493c-35d7-47d4-b645-429019382a36": {
+      "type": "page-sections-blogs",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "74e1493c-35d7-47d4-b645-429019382a36"
   ]
 }
