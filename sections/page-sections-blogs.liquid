@@ -17,7 +17,7 @@
 
             {% if featuredArticles %}
                 {% assign featuredArticles = featuredArticles | sort:'published_at' | reverse %}        
-                {% for article in featuredArticles %}
+                {% for article in featuredArticles limit: 2 %}
                     <div class="col-lg-6">
                         <div class="blog-one__single">
                             <div class="blog-one__image wow fadeIn" data-wow-duration="1s">
