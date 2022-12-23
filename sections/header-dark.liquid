@@ -48,7 +48,7 @@
     </nav>
 </header><!-- /.site-header -->
 
-{% style %}
+{% stylesheet %}
     .navigation-box li svg {
         margin-left: 10px;
         width: 20px;
@@ -62,6 +62,10 @@
         padding: 18px 0;
     }
 
+    .right-side-box svg {
+        width: 28px;
+    }
+
     .preloader {
         background-image: url({{"preloader.gif"|asset_url}});
     }
@@ -69,7 +73,7 @@
     .home-two .preloader {
         background-image: url({{"preloader-2.gif"|asset_url}});
     }
-{% endstyle %}
+{% endstylesheet %}
 
 {% schema %}
 {
