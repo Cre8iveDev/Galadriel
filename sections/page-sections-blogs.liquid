@@ -2,6 +2,13 @@
     <div class="container">
         <div class="row">
             This section can be edited from Sections > page-sections-blogs.liquid
+
+            {% for link in linklists.blogs.links %}
+                {% assign blog = link.object %}
+                {% for article in blog.articles %}
+                  <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
+                {% endfor %} 
+            {% endfor %}
         </div>
     </div>
 </section>
