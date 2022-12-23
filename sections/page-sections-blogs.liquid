@@ -5,6 +5,8 @@
             {% assign allBlogs = 'news,projects' | split: ',' %}
             {% assign featArticles = false %}
 
+            <!-- {{ allBlogs }}-->
+
             {% for featBlog in allBlogs %}
                 {% if blogs[blog].articles %}
                     {% assign featArticles = featArticles | concat: blogs[featBlog].articles %}
