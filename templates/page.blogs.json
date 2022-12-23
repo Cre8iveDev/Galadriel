@@ -7,18 +7,9 @@
         "img_width_range": 164,
         "menu": "main-menu"
       }
-    },
-    "e8071285-313c-4c72-90f2-92440fce215f": {
-      "type": "hero-banner",
-      "settings": {
-        "banner_heading": "Banner heading",
-        "bg_color": "#1b181a",
-        "show_bg_image": true
-      }
     }
   },
   "order": [
-    "main",
-    "e8071285-313c-4c72-90f2-92440fce215f"
+    "main"
   ]
 }
