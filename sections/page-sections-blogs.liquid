@@ -3,6 +3,8 @@
         <div class="row">
             
             {% assign allBlogs = 'news,projects' | split: ',' %}
+            {% assign featArticles = false %}
+
             {% for featBlog in allBlogs %}
                 {% if blogs[blog].articles %}
                     {% assign featArticles = featArticles | concat: blogs[featBlog].articles %}
@@ -10,6 +12,14 @@
                     {% assign featArticles = blogs[featBlog].articles %}
                 {% endif %}
             {% endfor %}
+
+            {% if featArticles %}
+                {% assign featArticles = featArticles | sort: 'published_at' | reverse %}
+                {% for article in featArticles lmiti: 10 %}
+                    {{ article.title }} 
+                    {{ article.published_at }}
+                {% endfor %}
+            {% endif %}
 
         </div>
     </div>
